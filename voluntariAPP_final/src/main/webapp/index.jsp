@@ -59,7 +59,6 @@
     </div>
 </div>
 <jsp:include page="./layouts/footer.jsp"/>
-
 <script>
     window.addEventListener("DOMContentLoaded", () => {
         const form = document.getElementById("user-form");
@@ -102,6 +101,14 @@
             });
         }
     }, false);
+</script>
+<script>
+
+
+    window.history.pushState(null, "", window.location.href);
+    window.onpopstate = function (event) {
+        window.history.pushState(null, "", window.location.href);
+    };
 </script>
 </body>
 </html>

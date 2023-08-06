@@ -1,9 +1,9 @@
 package mx.edu.utez.voluntariapp_final.models.organization;
 
-import mx.edu.utez.voluntariapp_final.models.CRUD.DaoRepository;
 import mx.edu.utez.voluntariapp_final.models.Role.Role;
 import mx.edu.utez.voluntariapp_final.models.user.DaoAdmin;
 import mx.edu.utez.voluntariapp_final.models.user.User;
+import mx.edu.utez.voluntariapp_final.models.volunteer.DaoVolunteer;
 import mx.edu.utez.voluntariapp_final.utils.MYSQLConnection;
 
 import java.sql.*;
@@ -69,6 +69,44 @@ public class DaoOrgan {
         }
         return null;
     }
+    public Organ findOneByUser(Long id) {
+        System.out.println(id);
+        try {
+            conn = new MYSQLConnection().connect();
+            String query = "SELECT o.*,u.* ,r.* FROM organizations o INNER JOIN users u ON u.id = o.user_id " +
+                    "INNER JOIN  roles r on r.id= u.role_id where u.id =?;";
+            pstm = conn.prepareStatement(query);
+            pstm.setLong(1, id);
+            rs = pstm.executeQuery();
+            if (rs.next()) {
+            Organ organ = new Organ();
+            organ.setId(rs.getLong("id"));
+            organ.setBussines_name(rs.getString("bussines_name"));
+            organ.setStreet(rs.getString("street"));
+            organ.setCologne(rs.getString("cologne"));
+            organ.setPostal_code(rs.getString("postal_code"));
+            organ.setMunicipality(rs.getString("municipality"));
+            organ.setPhone(rs.getString("phone"));
+            organ.setRfc(rs.getString("rfc"));
+            organ.setUser_id(rs.getString("user_id"));
+
+
+            User user = new User();
+            organ.setUser(user);
+                System.out.println(organ.getUser());
+
+            Role role = new Role();
+            organ.setRole(role);
+
+                return organ;
+            }
+        } catch (Exception e) {
+            Logger.getLogger(DaoVolunteer.class.getName()).log(Level.SEVERE, "ERROR findOne" + e.getMessage());
+        } finally {
+            close();
+        }
+        return null;
+    }
 
     public boolean save(Organ organ) {
         try {
@@ -96,15 +134,23 @@ public class DaoOrgan {
         return false;
     }
 
-
-    public boolean update(Organ organ, String email, String password) {
+   public boolean update(Organ organ) {
         try {
             conn = new MYSQLConnection().connect();
-            String query = "UPDATE organizations SET email = ?, password = ?, Active = ? WHERE id_user = ?;";
-            pstm = conn.prepareStatement(query);
-            pstm.setString(1, email);
-            pstm.setString(2, password);
-            return pstm.executeUpdate() > 0; // ==1
+            String query = "CALL actualizar_organizacion(?, ?, ?, ?, ?, ?, ?, ?, ?);";
+           cs = conn.prepareCall(query);
+           cs.setLong(1, organ.getId());
+            cs.setString(2, organ.getBussines_name());
+            cs.setString(3,organ.getMunicipality());
+            cs.setString(4,organ.getPostal_code());
+            cs.setString(5,organ.getCologne());
+            cs.setString(6,organ.getStreet());
+            cs.setString(7,organ.getPhone());
+            cs.setString(8, organ.getUser().getEmail());
+            cs.setString(9, organ.getUser().getPassword());
+            //pstm.setString(1, email);
+            //pstm.setString(2, password);
+            return cs.executeUpdate() > 0; // ==1
         } catch (SQLException e) {
             Logger.getLogger(DaoOrgan.class.getName())
                     .log(Level.SEVERE, "Error findAll"

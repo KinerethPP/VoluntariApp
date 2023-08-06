@@ -109,6 +109,9 @@ public class ServletUser extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html");
         action = req.getServletPath();
+
+
+
         switch (action){
             case "/user/main":
                 email = req.getParameter("email");
@@ -139,6 +142,15 @@ public class ServletUser extends HttpServlet {
                                     StandardCharsets.UTF_8);
                 }
                 break;
+            case "/user/login":
+                // Código para cerrar sesión
+                req.getSession().invalidate();
+                // Redirigir al usuario a la página de inicio de sesión
+                redirect = "/index.jsp";
+                break;
+
+
+
             case "/user/save":
                 email = req.getParameter("email");
                 password = req.getParameter("password");

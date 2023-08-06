@@ -27,7 +27,7 @@
         <div>
             <!-- Imagen del logo de la app -->
             <div class="brand-logo d-flex align-items-center justify-content-between">
-                <a href="/organ/organs" class="text-nowrap logo-img">
+                <a href="/organ/main" class="text-nowrap logo-img">
                     <!-- Logo parte superior izquierda -->
                     <img src="../../assets/images/logos_voluntariapp/logo_extend.png" style="width:180px"
                          alt="" /><!-- Logo de la barra lateral -->
@@ -45,7 +45,7 @@
                         <span class="hide-menu">Home</span>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="/organ/organs" aria-expanded="false">
+                        <a class="sidebar-link" href="/organ/main" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>

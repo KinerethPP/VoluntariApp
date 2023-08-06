@@ -9,40 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31e2b270-0c92-4374-9bbc-96361ea52dd2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/voluntariapp_final/controllers/organization/ServletOrgan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/voluntariapp_final/controllers/organization/ServletOrgan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/voluntariapp_final/controllers/users/ServletAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/voluntariapp_final/controllers/users/ServletAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/voluntariapp_final/controllers/users/ServletUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/voluntariapp_final/controllers/users/ServletUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/voluntariapp_final/controllers/volunteer/ServletVolun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/voluntariapp_final/controllers/volunteer/ServletVolun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/voluntariapp_final/models/organization/DaoOrgan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/voluntariapp_final/models/organization/DaoOrgan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/voluntariapp_final/models/volunteer/DaoVolunteer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/voluntariapp_final/models/volunteer/DaoVolunteer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mx/edu/utez/voluntariapp_final/models/volunteer/Volunteer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mx/edu/utez/voluntariapp_final/models/volunteer/Volunteer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/layouts/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/layouts/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/layouts/head.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/layouts/head.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/accounts/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/accounts/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/accounts/organization.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/accounts/organization.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/accounts/volunteer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/accounts/volunteer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/administrators/administrator_porfile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/administrators/administrator_porfile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/administrators/administrators_admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/administrators/administrators_admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/administrators/administrators_aprob.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/administrators/administrators_aprob.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/administrators/administrators_organization.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/administrators/administrators_organization.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/administrators/administrators_stadist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/administrators/administrators_stadist.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/administrators/administrators_surveys.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/administrators/administrators_surveys.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/administrators/administrators_volun.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/administrators/administrators_volun.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/administrators/index_admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/administrators/index_admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/organizations/index_organ.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/organizations/index_organ.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/organizations/organizations_aprob.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/organizations/organizations_aprob.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/organizations/organizations_events.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/organizations/organizations_events.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/organizations/organizations_porfile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/organizations/organizations_porfile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/organizations/organizations_postulates.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/organizations/organizations_postulates.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/organizations/organizations_surveys.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/organizations/organizations_surveys.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/volunteers/index_volunt.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/volunteers/index_volunt.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/volunteers/volunteer_events.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/volunteers/volunteer_events.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/volunteers/volunteer_forms.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/volunteers/volunteer_forms.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/volunteers/volunteer_porfile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/volunteers/volunteer_porfile.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="31e2b270-0c92-4374-9bbc-96361ea52dd2" name="Changes" comment="Perfiles actualizados y validaciones" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,9 +19,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Jsp File" />
         <option value="package-info" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -71,6 +38,14 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2SdPyl3x7r1cNBLhCCjxLo1fgfg" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -84,12 +59,14 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Blanch/Desktop",
+    "last_opened_file_path": "D:/Jassiel/VoluntariApp/voluntariAPP_final",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "vcs.Git",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -104,27 +81,9 @@
       <recent name="C:\IntelliJ IDEA 2023.1.1\documents\voluntariAPP_final\src\main\webapp" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.10">
-    <configuration name="MYSQLConnection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="mx.edu.utez.voluntariapp_final.utils.MYSQLConnection" />
-      <module name="voluntariAPP_final" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mx.edu.utez.voluntariapp_final.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="index_volunt.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/pages/volunteers/index_volunt.jsp">
-      <method v="2" />
-    </configuration>
-    <configuration name="volunteer.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/pages/accounts/volunteer.jsp">
-      <method v="2" />
-    </configuration>
-    <configuration name="Tomcat 10.1.10" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.10" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="Tomcat-10" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat-10" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="11" nameIsGenerated="true">
+      <option name="BROWSER_ID" value="53e2f627-b1a7-4dfa-bfa7-5b83cc034776" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="voluntariAPP_final:war exploded">
@@ -211,21 +170,11 @@
         </option>
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.MYSQLConnection" />
-      <item itemvalue="JavaScript Debug.index_volunt.jsp" />
-      <item itemvalue="JavaScript Debug.volunteer.jsp" />
-      <item itemvalue="Tomcat Server.Tomcat 10.1.10" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JavaScript Debug.index_volunt.jsp" />
-        <item itemvalue="JavaScript Debug.volunteer.jsp" />
-        <item itemvalue="Application.MYSQLConnection" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\pccom\AppData\Roaming\Subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="31e2b270-0c92-4374-9bbc-96361ea52dd2" name="Changes" comment="" />
@@ -246,6 +195,17 @@
       <workItem from="1690480929452" duration="2149000" />
       <workItem from="1690501269431" duration="16791000" />
       <workItem from="1690521620822" duration="28422000" />
+      <workItem from="1690865381383" duration="5903000" />
+      <workItem from="1690920592135" duration="10655000" />
+      <workItem from="1691000340678" duration="1542000" />
+      <workItem from="1691006772338" duration="2980000" />
+      <workItem from="1691024243428" duration="3435000" />
+      <workItem from="1691098179596" duration="6876000" />
+      <workItem from="1691124619871" duration="914000" />
+      <workItem from="1691159902172" duration="319000" />
+      <workItem from="1691160506275" duration="33730000" />
+      <workItem from="1691249616547" duration="17479000" />
+      <workItem from="1691274037098" duration="5999000" />
     </task>
     <servers />
   </component>
@@ -262,5 +222,22 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.Exception" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

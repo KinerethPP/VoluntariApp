@@ -80,14 +80,7 @@
                         </a>
                     </li>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="/volunteer/postulates" aria-expanded="false">
-                <span>
-                  <i class="ti ti-user-circle"></i>
-                </span>
-                            <span class="hide-menu">Postulaciones</span>
-                        </a>
-                    </li>
+
                 </ul>
             </nav>
             <!-- End Sidebar navigation -->
@@ -145,14 +138,7 @@
                                         <i class="ti ti-user fs-6"></i>
                                         <p class="mb-0 fs-3">Mi perfil</p>
                                     </a>
-                                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                                        <i class="ti ti-tools fs-6"></i>
-                                        <p class="mb-0 fs-3">Perzonalizar</p>
-                                    </a>
-                                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                                        <i class="ti ti-list-check fs-6"></i>
-                                        <p class="mb-0 fs-3">Otros</p>
-                                    </a>
+
                                     <a href="/user/login" class="btn btn-outline-primary mx-3 mt-2 d-block">Cerrar
                                         Sesion</a>
                                 </div>
