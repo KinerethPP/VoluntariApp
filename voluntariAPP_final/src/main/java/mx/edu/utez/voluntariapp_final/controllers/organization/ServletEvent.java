@@ -109,7 +109,7 @@ public class ServletEvent extends HttpServlet {
                 } catch (Exception e) {
                     e.printStackTrace();
                     // Redirigir con mensaje de error
-                    response.sendRedirect("/organ/main?result=false&message=No%20se%20pudo%20guardar%20el%20evento");
+                    response.sendRedirect("/organ/create_event-event?result=false&message=No%20se%20pudo%20guardar%20el%20evento");
                 }
                 break;
 

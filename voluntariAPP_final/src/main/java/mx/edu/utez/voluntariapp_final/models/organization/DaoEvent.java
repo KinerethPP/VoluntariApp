@@ -60,7 +60,7 @@ public class DaoEvent {
                 event.setMunicipality(rs.getString("municipality"));
                 event.setEvent_time(rs.getString("event_time"));
                 event.setCategory(rs.getString("category"));
-               // Category category = new Category(Long.parseLong(category_id));
+
                // category.setId(rs.getLong("id"));
                 //event.setCategory(category);
                 User user =new User();

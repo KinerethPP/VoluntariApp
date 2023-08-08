@@ -59,7 +59,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/pccom/Desktop",
+    "last_opened_file_path": "D:/Jassiel/VoluntariApp/VoluntariApp-9d5beb2a9d0b35ec693c6524e7c4b30e0c54cda2/voluntariAPP_final",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -210,7 +210,9 @@
       <workItem from="1691286997346" duration="6230000" />
       <workItem from="1691356028649" duration="19649000" />
       <workItem from="1691429692463" duration="1238000" />
-      <workItem from="1691430945449" duration="31401000" />
+      <workItem from="1691430945449" duration="32315000" />
+      <workItem from="1691512762221" duration="6160000" />
+      <workItem from="1691521685988" duration="5827000" />
     </task>
     <servers />
   </component>

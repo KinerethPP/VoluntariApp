@@ -26,7 +26,7 @@ public class DaoUser implements DaoRepository<User> {
         System.out.println(email + password);
         try {
             conn = new MYSQLConnection().connect();
-            String query = "SELECT u.id, u.email, r.description FROM users u JOIN roles r ON u.role_id = r.id where email=? and password=?;";
+            String query = "SELECT u.id, u.email, u.password,r.description FROM users u JOIN roles r ON u.role_id = r.id where email=? and password=?;";
             pstm = conn.prepareStatement(query);
             pstm.setString(1, email);
             pstm.setString(2, password);
@@ -35,6 +35,7 @@ public class DaoUser implements DaoRepository<User> {
                 User user = new User();
                 user.setId_user(rs.getLong("id"));
                 user.setEmail(rs.getString("email"));
+                user.setPassword(rs.getString("password"));
 
                 Role description = new Role();
                 description.setDescription(rs.getString("description"));
@@ -59,7 +60,7 @@ public class DaoUser implements DaoRepository<User> {
         //AND u.password = 'admin';
         try {
             conn = new MYSQLConnection().connect();
-            String query = "SELECT u.id_user, u.email,u.is_active, r.description, r.id_role FROM users u JOIN roles r ON u.id_user = r.id_role;";
+            String query = "SELECT u.id_user, u.email,u.password,u.is_active, r.description, r.id_role FROM users u JOIN roles r ON u.id_user = r.id_role;";
             pstm = conn.prepareStatement(query);
             rs = pstm.executeQuery();
             while (rs.next()) {
@@ -130,7 +131,7 @@ public class DaoUser implements DaoRepository<User> {
             rs = pstm.executeQuery();
             while (rs.next()) {
                 Role role = new Role();
-                role.setId(rs.getInt("id"));//Ver despues  *************
+                role.setId(rs.getInt("id"));//Ver despues  *****
                 role.setDescription(rs.getString("description"));
                 types.add(role);
             }

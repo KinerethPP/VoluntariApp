@@ -16,14 +16,14 @@ import java.util.List;
 
 @WebServlet(name = "admins", urlPatterns = {
         "/admin/main",
-      //  "/admin/admins",
+        //  "/admin/admins",
         "/admin/register",
         "/admin/admin-view",
         "/admin/save",
         "/admin/admin-view-update",
         "/admin/update",
         "/admin/delete",
-       //Redirecciones de Administrador
+        //Redirecciones de Administrador
         "/admin/administrators",
         "/admin/main-organ",
         "/admin/main-volunt",

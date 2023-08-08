@@ -60,9 +60,10 @@ public class ServletOrgan extends HttpServlet {
     private String cologne;
     private String postal_code;
     private String municipality;
-    private String state;
+     private String state;
     private String rfc;
     private String phone;
+
 
 
     private Organ organ;
@@ -174,9 +175,9 @@ public class ServletOrgan extends HttpServlet {
                 organ1.setCologne(cologne);
                 organ1.setPostal_code(postal_code);
                 organ1.setMunicipality(municipality);
-                organ1.setState(state);
                 organ1.setRfc(rfc);
                 organ1.setPhone(phone);
+                organ1.setState(state);
                 organ1.setUser(user1);
                 // Configurar el rol (asumiendo que 2 es el ID del rol para organizaciones)
                 organ1.setRole(new Role(2, ""));
@@ -197,26 +198,25 @@ public class ServletOrgan extends HttpServlet {
                     // Obtener los valores de los parámetros del formulario
                     id = request.getParameter("id");
                     bussines_name = request.getParameter("bussines_name");
+                    street = request.getParameter("street");
+                    cologne = request.getParameter("cologne");
+                    postal_code = request.getParameter("postal_code");
                     municipality = request.getParameter("municipality");
                     state = request.getParameter("state");
-                    postal_code = request.getParameter("postal_code");
-                    cologne = request.getParameter("cologne");
-                    street = request.getParameter("street");
                     phone = request.getParameter("phone");
                     email=request.getParameter("email");
                     password=request.getParameter("password");
-                    System.out.println(id + bussines_name+street+cologne+postal_code+municipality+state + phone + email + password);
+                    // System.out.println(id + address + phone + email + password);
                     // Crear y configurar el objeto "Voluntario"
                     Organ organ = new Organ();
                     organ.setId(Long.valueOf(id));
                     organ.setBussines_name(bussines_name);
+                    organ.setStreet(street);
+                    organ.setCologne(cologne);
+                    organ.setPostal_code(postal_code);
                     organ.setMunicipality(municipality);
                     organ.setState(state);
-                    organ.setPostal_code(postal_code);
-                    organ.setCologne(cologne);
-                    organ.setStreet(street);
                     organ.setPhone(phone);
-
                     // Crear y configurar el objeto "User"
                     User user = new User();
                     user.setEmail(email);
@@ -226,7 +226,6 @@ public class ServletOrgan extends HttpServlet {
                     if (new DaoOrgan().update(organ))
                         redirect = "/organ/porfile?result=false&message=" + URLEncoder.encode("¡Error! Acción no realizada correctamente.", StandardCharsets.UTF_8);
                     else{
-
 
                     }
 

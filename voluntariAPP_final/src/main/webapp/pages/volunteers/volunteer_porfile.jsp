@@ -184,9 +184,8 @@
                                     <div class="row pt-1">
                                         <div class="col-6 mb-3">
                                             <h6>Nombre</h6>
-                                            <c:out value="${volunteer.name}"/> <c:out value="${volunteer.surname}"/>
-
-
+                                            <c:out value="${volunteer.name}"/>
+                                            <c:out value="${volunteer.surname}"/>
                                         </div>
                                         <div class="col-6 mb-3">
                                             <h6>Apellido</h6>
@@ -216,8 +215,6 @@
                                         </div>
 
                                     </div>
-
-
                                     <div class="row pt-1">
                                         <div class="col-6 mb-3">
                                             <h6>Correo</h6>
@@ -228,6 +225,7 @@
                                             <c:out value="${user.password}"/>
                                         </div>
                                     </div>
+
                                     <!-- Boton Modal -->
                                     <div class="row pt-8">
                                         <button type="button" class="btn btn-warning " data-bs-toggle="modal"
