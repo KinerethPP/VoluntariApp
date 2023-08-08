@@ -14,16 +14,18 @@
 </head>
 
 <body>
-<div class="text-md-start p-4">
-    <img src="../assets/images/logos_voluntariapp/logo_extend.png" style="width:200px" alt="">
-</div>
+<a href="/user/role">
+    <div class="text-md-start p-4">
+        <img src="${pageContext.request.contextPath}/assets/images/logos_voluntariapp/logo_extend.png" style="width:200px" alt="">
+    </div>
+</a>
 <div class="container-fluid d-flex align-items-center justify-content-center">
     <div class="container bg-white rounded shadow">
         <!-- shadow -->
         <div class="row align-items-stretch">
             <div class="col bg-white p-5 rounded-end">
                 <h3 class="fw-bold text-center ">Crear una cuenta de VoluntariApp</h3>
-                <h4 class="fw-bold text-center colorcito_azulito">Organización</h4>
+                <h4 class="fw-bold text-center c-blu">Organización</h4>
                 <br>
                 <!-- Register -->
                 <form class="needs-validation" id="organ-form" novalidate action="/organ/save" method="post">
@@ -45,12 +47,22 @@
                     <div class="row">
                         <div class="col-md-6 mb-4">
                             <div class="form-floating">
+                                <input name="state" type="text" id="state" class="form-control"
+                                       placeholder="Estado"
+                                       required>
+                                <label for="state">Estado</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="form-floating">
                                 <input name="municipality" type="text" id="municipality" class="form-control"
                                        placeholder="Municipio"
                                        required>
                                 <label for="municipality">Municipio</label>
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6 mb-4">
                             <div class="form-floating">
                                 <input name="postal_code" type="text" id="postal_code" class="form-control"
@@ -59,8 +71,6 @@
                                 <label for="postal_code">Código Postal</label>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-6 mb-4">
                             <div class="form-floating">
                                 <input name="cologne" type="text" id="cologne" class="form-control"
@@ -68,6 +78,8 @@
                                 <label for="cologne">Colonia</label>
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6 mb-4">
                             <div class="form-floating">
                                 <input name="street" type="text" id="street" class="form-control" placeholder="Calle"
@@ -75,8 +87,6 @@
                                 <label for="street">Calle</label>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-6 mb-4">
                             <div class="form-floating">
                                 <input name="phone" type="tel" id="phone" class="form-control" placeholder="Teléfono"

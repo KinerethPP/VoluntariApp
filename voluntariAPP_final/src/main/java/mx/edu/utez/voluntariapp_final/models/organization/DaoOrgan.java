@@ -69,6 +69,7 @@ public class DaoOrgan {
         }
         return null;
     }
+
     public Organ findOneByUser(Long id) {
         System.out.println(id);
         try {
@@ -79,24 +80,25 @@ public class DaoOrgan {
             pstm.setLong(1, id);
             rs = pstm.executeQuery();
             if (rs.next()) {
-            Organ organ = new Organ();
-            organ.setId(rs.getLong("id"));
-            organ.setBussines_name(rs.getString("bussines_name"));
-            organ.setStreet(rs.getString("street"));
-            organ.setCologne(rs.getString("cologne"));
-            organ.setPostal_code(rs.getString("postal_code"));
-            organ.setMunicipality(rs.getString("municipality"));
-            organ.setPhone(rs.getString("phone"));
-            organ.setRfc(rs.getString("rfc"));
-            organ.setUser_id(rs.getString("user_id"));
+                Organ organ = new Organ();
+                organ.setId(rs.getLong("id"));
+                organ.setBussines_name(rs.getString("bussines_name"));
+                organ.setStreet(rs.getString("street"));
+                organ.setCologne(rs.getString("cologne"));
+                organ.setPostal_code(rs.getString("postal_code"));
+                organ.setMunicipality(rs.getString("municipality"));
+                organ.setState(rs.getString("state"));
+                organ.setPhone(rs.getString("phone"));
+                organ.setRfc(rs.getString("rfc"));
+                organ.setUser_id(rs.getString("user_id"));
 
 
-            User user = new User();
-            organ.setUser(user);
+                User user = new User();
+                organ.setUser(user);
                 System.out.println(organ.getUser());
 
-            Role role = new Role();
-            organ.setRole(role);
+                Role role = new Role();
+                organ.setRole(role);
 
                 return organ;
             }
@@ -111,7 +113,7 @@ public class DaoOrgan {
     public boolean save(Organ organ) {
         try {
             conn = new MYSQLConnection().connect();
-            String query = "call dividir_info(?, ?, ?,?,?, ?, ?,?,?, ?,?);";
+            String query = "call dividir_info(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
             cs = conn.prepareCall(query);
             cs.setString(1, organ.getUser().getEmail());
             cs.setString(2, organ.getUser().getPassword());
@@ -122,9 +124,11 @@ public class DaoOrgan {
             cs.setString(7, organ.getCologne());
             cs.setString(8, organ.getPostal_code());
             cs.setString(9, organ.getMunicipality());
-            cs.setString(10, organ.getRfc());
-            cs.setString(11, organ.getPhone());
+            cs.setString(10, organ.getState());
+            cs.setString(11, organ.getRfc());
+            cs.setString(12, organ.getPhone());
             cs.executeQuery();
+           // System.out.println("Ayuddddddddddddddaaaaaaaaaaaaaaa");
             return true;
         } catch (SQLException e) {
             Logger.getLogger(DaoOrgan.class.getName()).log(Level.SEVERE, "Error save " + e.getMessage());
@@ -134,22 +138,22 @@ public class DaoOrgan {
         return false;
     }
 
-   public boolean update(Organ organ) {
+    public boolean update(Organ organ) {
         try {
             conn = new MYSQLConnection().connect();
-            String query = "CALL actualizar_organizacion(?, ?, ?, ?, ?, ?, ?, ?, ?);";
-           cs = conn.prepareCall(query);
-           cs.setLong(1, organ.getId());
+            String query = "CALL actualizar_organizacion(?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+            cs = conn.prepareCall(query);
+            cs.setLong(  1, organ.getId());
             cs.setString(2, organ.getBussines_name());
-            cs.setString(3,organ.getMunicipality());
-            cs.setString(4,organ.getPostal_code());
-            cs.setString(5,organ.getCologne());
-            cs.setString(6,organ.getStreet());
-            cs.setString(7,organ.getPhone());
-            cs.setString(8, organ.getUser().getEmail());
-            cs.setString(9, organ.getUser().getPassword());
-            //pstm.setString(1, email);
-            //pstm.setString(2, password);
+            cs.setString(3, organ.getMunicipality());
+            cs.setString(4,organ.getState());
+            cs.setString(5, organ.getPostal_code());
+            cs.setString(6, organ.getCologne());
+            cs.setString(7, organ.getStreet());
+            cs.setString(8, organ.getPhone());
+            cs.setString(9, organ.getUser().getEmail());
+            cs.setString(10, organ.getUser().getPassword());
+            System.out.println("Ayuddddddddddddddaaaaaaaaaaaaaaa");
             return cs.executeUpdate() > 0; // ==1
         } catch (SQLException e) {
             Logger.getLogger(DaoOrgan.class.getName())

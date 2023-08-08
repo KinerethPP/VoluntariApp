@@ -30,7 +30,7 @@ public class User {
         this.status = status;
     }
 
-    public Long getId_user() {return id_user;}
+
     public void setId_user(Long id_user) {this.id_user = id_user;}
 
     public String getEmail() {return email;}
@@ -47,5 +47,9 @@ public class User {
     }
     public void setDescription(Role description) {
         this.description = description;
+    }
+
+    public long getId_user() {
+        return 0;
     }
 }

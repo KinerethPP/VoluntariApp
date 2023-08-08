@@ -4,6 +4,20 @@ body {
     flex-direction: column;
 }
 
+.fotos {
+    background-image: url(../../images/logos_voluntariapp/logo_VOLUNTARIAPP.png);
+    max-width: 1000px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
 .container-fluid {
     height: 100vh;
     display: flex;
@@ -11,14 +25,6 @@ body {
     justify-content: center;
 }
 
-.bg {
-    background-image: url(../../images/logos_voluntariapp/left_login_img.png);
-    max-width: 1000px;
-    /* max-height: 1000px; */
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 .form-control-icon {
     position: relative;

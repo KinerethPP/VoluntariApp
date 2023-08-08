@@ -13,12 +13,13 @@ public class Organ {
     private String rfc;
     private String phone;
     private String user_id;
+    private String state;
     private User user;
     private Role role;
     public Organ() {
     }
 
-    public Organ(Long id, String bussines_name, String street, String cologne, String postal_code, String municipality, String rfc, String phone,String user_id, User user, Role role) {
+    public Organ(Long id, String bussines_name, String street, String cologne, String postal_code, String municipality, String rfc, String phone, String user_id, String state, User user, Role role) {
         this.id = id;
         this.bussines_name = bussines_name;
         this.street = street;
@@ -28,36 +29,47 @@ public class Organ {
         this.rfc = rfc;
         this.phone = phone;
         this.user_id = user_id;
+        this.state = state;
         this.user = user;
         this.role = role;
     }
+
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
+
     public String getBussines_name() {
         return bussines_name;
     }
+
     public void setBussines_name(String bussines_name) {
         this.bussines_name = bussines_name;
     }
+
     public String getStreet() {
         return street;
     }
+
     public void setStreet(String street) {
         this.street = street;
     }
+
     public String getCologne() {
         return cologne;
     }
+
     public void setCologne(String cologne) {
         this.cologne = cologne;
     }
+
     public String getPostal_code() {
         return postal_code;
     }
+
     public void setPostal_code(String postal_code) {
         this.postal_code = postal_code;
     }
@@ -68,6 +80,13 @@ public class Organ {
 
     public void setMunicipality(String municipality) {
         this.municipality = municipality;
+    }
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getRfc() {
@@ -85,6 +104,7 @@ public class Organ {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
     public String getUser_id() {
         return user_id;
     }
@@ -94,13 +114,6 @@ public class Organ {
     }
 
 
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
 
     public User getUser() {
         return user;
@@ -108,6 +121,14 @@ public class Organ {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     @Override
@@ -119,6 +140,7 @@ public class Organ {
                 ", cologne='" + cologne + '\'' +
                 ", postal_code='" + postal_code + '\'' +
                 ", municipality='" + municipality + '\'' +
+                ", state='" + state + '\'' +
                 ", rfc='" + rfc + '\'' +
                 ", phone='" + phone + '\'' +
                 ", user_id='" + user_id + '\'' +

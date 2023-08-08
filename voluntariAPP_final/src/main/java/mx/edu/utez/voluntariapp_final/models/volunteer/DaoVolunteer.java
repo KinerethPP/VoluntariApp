@@ -125,7 +125,6 @@ public class DaoVolunteer {
     public boolean save(Volunteer volunteer) {
         try {
             conn = new MYSQLConnection().connect();
-
             String query = "CALL div_volunteer(?,?,?,?,?,?,?,?,?,?,?);";
             cs = conn.prepareCall(query);
             cs.setString(1, volunteer.getUser().getEmail());

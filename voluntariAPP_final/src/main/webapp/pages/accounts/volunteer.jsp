@@ -14,16 +14,19 @@
 </head>
 
 <body>
-<div class="text-md-start p-4">
-    <img src="../assets/images/logos_voluntariapp/logo_extend.png" style="width:200px" alt="">
-</div>
+<a href="/user/role">
+    <div class="text-md-start p-4">
+        <img src="${pageContext.request.contextPath}/assets/images/logos_voluntariapp/logo_extend.png" style="width:200px" alt="">
+    </div>
+</a>
+
 <div class="container-fluid d-flex align-items-center justify-content-center">
     <div class="container bg-white rounded shadow">
         <!-- shadow -->
         <div class="row align-items-stretch">
             <div class="col bg-white p-5 rounded-end">
                 <h3 class="fw-bold text-center ">Crear una cuenta de VoluntariApp</h3>
-                <h4 class="fw-bold text-center colorcito_azulito">Voluntario</h4>
+                <h4 class="fw-bold text-center c-blu">Voluntario</h4>
                 <br>
                 <!-- Register -->
                 <form class="needs-validation" id="volunteer-form" novalidate

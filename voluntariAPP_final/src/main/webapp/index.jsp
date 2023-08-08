@@ -54,7 +54,8 @@
 
 
             </div>
-            <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-7 rounded"></div>
+<%--            <div class="col fotos d-none d-lg-block col-md-5 col-lg-5 col-xl-7 rounded"></div>--%>
+
         </div>
     </div>
 </div>

@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="../../assets/css/styles.min.css"/>
     <link rel="stylesheet" href="../../assets/css/css/style_dashboard.css">
     <link rel="stylesheet"
-          href="{pageContext.request.contextPath}https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet"
-          href="{pageContext.request.contextPath}https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+          href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/css/sweetalert2.min.css">
 </head>
 
 <body>
@@ -232,7 +233,6 @@
                     </a>
                 </div>
 
-
                 <div class="col-md-4">
                     <%-- Después de esto va el botón --%>
                     <a href="/organ/create_forms" class="card align-items-center text-center btn">
@@ -250,13 +250,16 @@
     </div>
 </div>
 <!-- JS -->
-<script src="../../assets/js/jquery.min.js"></script>
-<script src="../../assets/js/bootstrap.bundle.min.js"></script>
-<script src="../../assets/js/sidebarmenu.js"></script>
-<script src="../../assets/js/app.min.js"></script>
+<!-- JS -->
+<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/bootstrap.bundle.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/sidebarmenu.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/app.min.js"></script>
 <!-- Estadisticas Library -->
-<script src="../../assets/js/apexcharts.min.js"></script>
-<script src="../../assets/js/dashboard.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/apexcharts.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/dashboard.js"></script>
+
+<script src="${pageContext.request.contextPath}/assets/js/sweetalert2.js"></script>
 </body>
 
 </html>

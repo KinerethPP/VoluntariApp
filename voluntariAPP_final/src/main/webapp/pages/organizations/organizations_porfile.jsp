@@ -9,13 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VoluntariApp Perfil</title>
     <!-- Se inserta la foto del logo de la empresa -->
-    <link rel="shortcut icon" type="image/png" href="../../assets/images/logos_voluntariapp/logo_VOLUNTARIAPP.png"/>
-    <link rel="stylesheet" href="../../assets/css/styles.min.css"/>
-    <link rel="stylesheet" href="../../assets/css/css/style_dashboard.css">
-    <link rel="stylesheet"
-          href="{pageContext.request.contextPath}https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet"
-          href="{pageContext.request.contextPath}https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link rel="shortcut icon" type="image/png"
+          href="${pageContext.request.contextPath}/assets/images/logos_voluntariapp/logo_VOLUNTARIAPP.png"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/styles.min.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/css/style_dashboard.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/css/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <!-- Sweet Alert CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.0.2/dist/sweetalert2.min.css">
 </head>
 
 <body>
@@ -181,7 +183,10 @@
             </nav>
         </header>
         <!--  Header End -->
-        <!-- Inicio Contenedor (Principal) -->
+
+
+
+        <!--        ======================                Inicio Contenedor (Principal)              ========================         -->
         <div class="container-fluid">
             <div class="row">
                 <div class="row">
@@ -210,6 +215,7 @@
                                 <div class="card-body p-4">
                                     <h6>Información</h6>
                                     <hr class="mt-0 mb-4">
+
                                     <div class="row pt-1">
                                         <div class="col-md-6 mb-4">
                                             <div class="form-floating">
@@ -224,6 +230,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="row pt-1">
                                         <div class="col-md-6 mb-3">
                                             <div class="form-floating">
@@ -238,6 +245,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="row pt-1">
                                         <div class="col-md-6 mb-4">
                                             <div class="form-floating">
@@ -252,6 +260,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="row pt-1">
                                         <div class="col-md-6 mb-4">
                                             <div class="form-floating">
@@ -266,13 +275,20 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <%--<div class="row pt-1">
-                                          <div class="col-6 mb-3">
-                                            <h6>Password</h6>
-                                              <c:out value="${user.password}"/>
-                                          </div>
-                                         </div>--%>
-
+                                    <div class="row pt-1">
+                                        <div class="col-6 mb-3">
+                                            <div class="form-floating">
+                                                <h6>Password</h6>
+                                                <c:out value="${user.password}"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <div class="form-floating">
+                                                <h6>Estado</h6>
+                                                <c:out value="${organ.state}"/>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <!--=============== Inicio de los botones del Modal de Actualizar ===============-->
                                     <div class="row  pt-1 justify-content-center">
                                         <button type="button" class="btn btn-warning col-lg-6" data-bs-toggle="modal"
@@ -300,18 +316,19 @@
                                                                 data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form id="organ-form" class="needs-validation" novalidate
+                                                        <form class="needs-validation" id="organ-form" novalidate
                                                               action="/organ/update" method="post">
                                                             <input hidden value="${organ.id}" name="id">
+
                                                             <div class="row ">
                                                                 <!-- Muestra el id del organizacion-->
-                                                                <!-- <div class="col-md-6 mb-4">
+                                                                <div class="col-md-6 mb-4">
                                                                       <div class="form-floating">
-                                                                          <input type="text" name="id" id="id" class="form-control" value="" placeholder="name" disabled>
+                                                                          <input type="text" name="id" id="id" class="form-control" value="${organ.id}" placeholder="name" disabled>
 
                                                                           <label for="id">Id</label>
                                                                       </div>
-                                                                  </div>-->
+                                                                  </div>
                                                                 <div class="col-md-6 mb-4">
                                                                     <div class="form-floating">
                                                                         <input type="text" name="bussines_name"
@@ -347,17 +364,29 @@
                                                                 </div>
                                                                 <div class="col-md-6 mb-4">
                                                                     <div class="form-floating">
+                                                                        <input type="text" name="state"
+                                                                               id="state"
+                                                                               value="${organ.state}"
+                                                                               class="form-control"
+                                                                               placeholder="state"
+                                                                               required>
+                                                                        <label for="state">Estado</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6 mb-4">
+                                                                    <div class="form-floating">
                                                                         <input type="text" name="postal_code"
                                                                                id="postal_code"
                                                                                value="${organ.postal_code}"
+                                                                               pattern="[0-9]{5}"
                                                                                class="form-control"
                                                                                placeholder="latanme"
                                                                                required>
                                                                         <label for="postal_code">Código postal</label>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="row">
                                                                 <div class="col-md-6 mb-4">
                                                                     <div class="form-floating">
                                                                         <input type="text" name="cologne" id="cologne"
@@ -367,6 +396,8 @@
                                                                         <label for="cologne">Colonia</label>
                                                                     </div>
                                                                 </div>
+                                                            </div>
+                                                            <div class="row">
                                                                 <div class="col-md-6 mb-4">
                                                                     <div class="form-floating">
                                                                         <input type="text" name="street" id="street"
@@ -377,16 +408,17 @@
                                                                         <label for="street">Calle</label>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="row">
                                                                 <div class="col-md-6 mb-4">
                                                                     <div class="form-floating">
                                                                         <input type="text" name="phone" id="phone"
                                                                                value="${organ.phone}"
+                                                                               pattern="[0-9]{10}"
                                                                                class="form-control" required>
                                                                         <label for="phone">Teléfono</label>
                                                                     </div>
                                                                 </div>
+                                                            </div>
+                                                            <div class="row">
                                                                 <div class="col-md-0 mb-4">
                                                                     <div class="form-floating">
                                                                         <input type="email" name="email" id="email"
@@ -395,8 +427,6 @@
                                                                         <label for="email">Email</label>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="row">
                                                                 <div class="col-md-0 mb-4">
                                                                     <div class="form-floating form-control-icon">
                                                                         <input type="password" name="password"
@@ -417,7 +447,8 @@
                                                                         data-bs-dismiss="modal" aria-label="Close">
                                                                     Cancelar
                                                                 </button>
-                                                                <button type="submit" class="btn btn-warning btn-sm">
+                                                                <button type="button" class="btn btn-warning btn-sm"
+                                                                        onclick="mostrarConfirmacion()">
                                                                     Actualizar
                                                                 </button>
                                                             </div>
@@ -439,13 +470,99 @@
     </div>
 </div>
 <!-- JS -->
-<script src="../../assets/js/jquery.min.js"></script>
-<script src="../../assets/js/bootstrap.bundle.min.js"></script>
-<script src="../../assets/js/sidebarmenu.js"></script>
-<script src="../../assets/js/app.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/bootstrap.bundle.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/sidebarmenu.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/app.min.js"></script>
 <!-- Estadisticas Library -->
-<script src="../../assets/js/apexcharts.min.js"></script>
-<script src="../../assets/js/dashboard.js"></script>
+<script>
+    (function () {
+        'use strict'
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })();
+</script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<!-- Sweet Alert JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.0.2/dist/sweetalert2.all.min.js"></script>
+<script>
+    // Función para mostrar la confirmación de SweetAlert
+    function mostrarConfirmacion() {
+        if (document.getElementById("organ-form").checkValidity()) {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: 'Se realizarán los cambios. ¿Estás seguro de continuar?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Sí',
+                cancelButtonText: 'Cancelar',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Si el usuario hace clic en "Sí", procedemos a enviar el formulario manualmente.
+                    enviarFormulario();
+                }
+            });
+        } else {
+            document.getElementById("organ-form").classList.add('was-validated');
+        }
+    }
+
+    // Función para enviar el formulario usando XMLHttpRequest
+    function enviarFormulario() {
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "/organ/update", true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                // La solicitud se ha completado correctamente.
+                // Aquí manejamos la respuesta del servidor y mostramos la alerta de éxito o error.
+                if (xhr.responseText.includes("success")) {
+                    mostrarAlerta('¡Éxito! Organización actualizada correctamente.', 'success', true);
+                } else {
+                    mostrarAlerta('¡Error! Acción no realizada correctamente.', 'error', false);
+                }
+            } else {
+                // Ha ocurrido un error al realizar la solicitud.
+                mostrarAlerta('Error al enviar el formulario', 'error', false);
+            }
+        };
+        xhr.onerror = function () {
+            // Ha ocurrido un error al realizar la solicitud.
+            mostrarAlerta('Error al enviar el formulario', 'error', false);
+        };
+        xhr.send(new URLSearchParams(new FormData(document.getElementById("organ-form"))));
+    }
+
+    // Función para mostrar la alerta de SweetAlert y redireccionar después del tiempo de auto-cierre
+    function mostrarAlerta(mensaje, tipo, redireccionar) {
+        Swal.fire({
+            title: mensaje,
+            icon: tipo,
+            timer: redireccionar ? 5000 : undefined, // Tiempo en milisegundos (5 segundos) si es éxito, undefined si es error
+            text: 'Se te redireccionara al Inicio de Sesion!',
+            timerProgressBar: true, // Muestra una barra de progreso durante el tiempo de espera
+            showConfirmButton: false, // No muestra el botón de confirmación en la alerta
+        }).then(() => {
+            if (redireccionar) {
+                window.location.href = "/user/login"; // Cambia la URL por la página a la que deseas redireccionar después del tiempo de auto-cierre.
+            }
+        });
+    }
+</script>
+
+
 </body>
 
 </html>

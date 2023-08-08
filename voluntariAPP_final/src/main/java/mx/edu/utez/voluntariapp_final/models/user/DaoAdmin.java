@@ -75,7 +75,6 @@ public class DaoAdmin implements DaoRepository<Admin> {
     public boolean save(Admin admin)  {
         try{
             conn = new MYSQLConnection().connect();
-
             String query = "INSERT INTO users (email, password, enable, role_id) VALUES (?, ?, ?,?);";
             pstm = conn.prepareStatement(query);
             System.out.println(admin.getEmail());
