@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: pccom
-  Date: 01/08/2023
-  Time: 02:10 p. m.
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -37,6 +31,27 @@
                 <!-- Register -->
                 <form class="needs-validation" id="event-form" novalidate action="/event/save" method="post">
                     <div class="row ">
+                        <!--  <div class="form-floating">
+                              <input type="text" name="user_id" id="id_user" class="form-control" value=""  disabled>
+
+                              <label for="id_user">User Id</label>
+                          </div>-->
+                        <div class="form-floating">
+                            <div class="form-floating">
+                                <input type="text" id="organ_id" name="organ_id" value="1" class="form-control">
+
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" id="user_id" name="user_id" value="2" class="form-control">
+
+                            </div>
+
+
+
+                        </div>
+                        <div class="col-md-6 mb-4">
+                        </div>
+
                         <div class="col-md-0 mb-4">
                             <div class="form-floating">
                                 <input type="text" id="name" name="name" class="form-control"
@@ -114,7 +129,7 @@
                         <div class="col-md-6 mb-4">
                             <div class="form-floating">
                                 <label for="validationCustom04" class="form-label"></label>
-                                <select class="form-select" id="validationCustom04" required>
+                                <select class="form-select" name="category" id="validationCustom04" required>
                                     <option selected disabled value="">Selecciona la Categoria...</option>
                                     <option value="Benefico">Benefico</option>
                                     <option value="Caridad">Caridad</option>

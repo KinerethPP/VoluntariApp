@@ -5,22 +5,25 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import mx.edu.utez.voluntariapp_final.models.organization.*;
+import mx.edu.utez.voluntariapp_final.models.organization.DaoEvent;
+import mx.edu.utez.voluntariapp_final.models.organization.Event;
+import mx.edu.utez.voluntariapp_final.models.organization.Organ;
 import mx.edu.utez.voluntariapp_final.models.user.User;
 
-
 import java.io.IOException;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
+
 
 @WebServlet(name = "events", urlPatterns = {
 //        "/organ/create_event",
         "/event/save",
-        "/event/all"
+        "/event/all",
+        "/event/porfile",
+        //"/event/events"
+
 })
 public class ServletEvent extends HttpServlet {
     private String action;
-    private String redirect = "/organ/main";
+    private String redirect = "/event/main";
     private String id;
     private String name;
     private String event_date;
@@ -30,7 +33,7 @@ public class ServletEvent extends HttpServlet {
     private String postal_code;
     private String municipality,state,user_id,category,organ_id;
     private String event_time;
-
+     private Event event;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,8 +42,13 @@ public class ServletEvent extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html");
         switch (action) {
-           case "/event/all":
-               break;
+         /*  case "/event/events":
+               List<Event> users = new DaoEvent().findAll();
+               request.setAttribute("users", users);
+               redirect="/pages/organizations/organizations_event.jsp";
+
+               break;*/
+
             default:
                 System.out.println(action);
         }
@@ -75,13 +83,18 @@ public class ServletEvent extends HttpServlet {
                 postal_code = request.getParameter("postal_code");
                 municipality = request.getParameter("municipality");
                 state=request.getParameter("state");
+                category=request.getParameter("category");
+                //System.out.println(category);
                 user_id=request.getParameter("user_id");
                 organ_id=request.getParameter("organ_id");
-                category=request.getParameter("category");
+                //System.out.println(organ_id);
+                System.out.println(name+"|"+event_date+"|"+event_time+"|"+description+"|"+street+"|"+cologne+
+                        "|"+postal_code+"|"+municipality+"|"+state+"|"+category+"|"+user_id+"|"+organ_id+"|");
+
 
                 // Crear y configurar el objeto "Organ"
                 Event event = new Event();
-                event.setId(0L);
+               // event.setId(0L);
                 event.setName(name);
                 event.setEvent_date(event_date);
                 event.setEvent_time(event_time);
@@ -92,10 +105,18 @@ public class ServletEvent extends HttpServlet {
                 event.setMunicipality(municipality);
                 event.setState(state);
                 event.setCategory(category);
+
                 User user  =new User();
+                user.setId_user(Long.valueOf(user_id));
                 event.setUser(user);
+                System.out.println(event.getUser().getId_user());
+
                 Organ organ =new Organ();
+                organ.setId(Long.valueOf(organ_id));
                 event.setOrgan(organ);
+                System.out.println(event.getOrgan().getId());
+
+
 
                 // Configurar el rol (asumiendo que 2 es el ID del rol para organizaciones)
                 try {
@@ -104,13 +125,16 @@ public class ServletEvent extends HttpServlet {
                         // Redirigir con mensaje de éxito
                         response.sendRedirect("/index.jsp?result=true&message=Evento%20guardado%20correctamente");
                     } else {
-                        throw new Exception("Error");
+
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                     // Redirigir con mensaje de error
-                    response.sendRedirect("/organ/create_event-event?result=false&message=No%20se%20pudo%20guardar%20el%20evento");
+                    response.sendRedirect("/organ/main?result=false&message=No%20se%20pudo%20guardar%20el%20evento");
                 }
+                break;
+            case "/event/update":
+
                 break;
 
         }

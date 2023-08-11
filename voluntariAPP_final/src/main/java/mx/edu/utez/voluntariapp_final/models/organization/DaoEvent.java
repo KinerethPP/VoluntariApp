@@ -18,20 +18,36 @@ public class DaoEvent {
 
     public List<Event> findAll() {
         List<Event> events = new ArrayList<>();
+        System.out.println(events);
         try {
             conn = new MYSQLConnection().connect(); //Establecer la conexion
             String query = "SELECT * FROM events;"; //Preparamos la sentencia
             pstm = conn.prepareStatement(query);   //Ejecutamos la sentencia en la base de datos
             rs = pstm.executeQuery();
+
             while (rs.next()) {
                 Event event = new Event();
                 event.setId(rs.getLong("id"));
                 event.setName(rs.getString("name"));
+                event.setEvent_date(rs.getString("event_date"));
+                event.setEvent_time(rs.getString("event_time"));
+                event.setDescription(rs.getString("description"));
+                event.setStreet(rs.getString("street"));
+                event.setCologne(rs.getString("cologne"));
+                event.setPostal_code(rs.getString("postal_code"));
+                event.setMunicipality(rs.getString("municypaly"));
+                event.setState(rs.getString("state"));
+                event.setCategory(rs.getString("category"));
+                User user = new User();
+                user.setId_user(rs.getLong("user_id"));
+                Organ organ =new Organ();
+                organ.setId(rs.getLong("organization_id"));
                 events.add(event);
             }
+            System.out.println("Que pedo si llegas aqui?");
         } catch (SQLException e) {
-            Logger.getLogger(DaoOrgan.class.getName())
-                    .log(Level.SEVERE, "Error findAll"
+            Logger.getLogger(DaoEvent.class.getName())
+                    .log(Level.SEVERE, "Error  del Listado"
                             + e.getMessage());
         } finally {
             close();
@@ -61,7 +77,7 @@ public class DaoEvent {
                 event.setEvent_time(rs.getString("event_time"));
                 event.setCategory(rs.getString("category"));
 
-               // category.setId(rs.getLong("id"));
+                // category.setId(rs.getLong("id"));
                 //event.setCategory(category);
                 User user =new User();
                 event.setUser(user);
@@ -86,15 +102,6 @@ public class DaoEvent {
             conn = new MYSQLConnection().connect();
             String query = "CALL  CreateEvent(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?);";
             cs = conn.prepareCall(query);
-            /*System.out.println(event.getName());
-            System.out.println(event.getEvent_date());
-            System.out.println(event.getDescription());
-            System.out.println(event.getStreet());
-            System.out.println(event.getCologne());
-            System.out.println(event.getPostal_code());
-            System.out.println(event.getMunicipality());
-            System.out.println(event.getEvent_time());*/
-
             cs.setString(1, event.getName());
             cs.setString(2, event.getEvent_date());
             cs.setString(3, event.getEvent_time());
@@ -104,34 +111,23 @@ public class DaoEvent {
             cs.setString(7, event.getPostal_code());
             cs.setString(8, event.getMunicipality());
             cs.setString(9, event.getState());
-            cs.setString(10,event.getCategory());
-            cs.setLong(11,event.getUser().getId_user());
-            cs.setLong(12,event.getOrgan().getId());
-
-
-            /*System.out.println(event.getName());
-            System.out.println(event.getEvent_date());
-            System.out.println(event.getDescription());
-            System.out.println(event.getStreet());
-            System.out.println(event.getCologne());
-            System.out.println(event.getPostal_code());
-            System.out.println(event.getMunicipality());
-            System.out.println(event.getEvent_time());
-            System.out.println(event.getCategory());
-            System.out.println(event.getState());
-            System.out.println(event.getId());
-            System.out.println(event.getOrgan().getId());
-            System.out.println(event.getUser().getId_user());*/
+            cs.setLong(10,event.getUser().getId_user());
+            cs.setLong(11,event.getOrgan().getId());
+            cs.setString(12,event.getCategory());
+            System.out.println(event.getOrgan().getId()+" Daooooo");
+            System.out.println(event.getUser().getId_user()+ " id de Usuario");
             cs .executeQuery();
 
             return true;
         } catch (SQLException e) {
+            System.out.println(e.getMessage());
             Logger.getLogger(DaoEvent.class.getName()).log(Level.SEVERE, "Error save " + e.getMessage());
         } finally {
             close();
         }
         return false;
     }
+
 
 
     public void close() {

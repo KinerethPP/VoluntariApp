@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="col d-none d-lg-block col-md-5 col-lg-5 col-xl-7 rounded">
-                <img src="${pageContext.request.contextPath}/assets/images/logos_voluntariapp/logo_VOLUNTARIAPP.png"
+                <img src="${pageContext.request.contextPath}/assets/images/imagenes/voluntariapp_icon.png"
                      class="d-block w-100" alt="Imagen 1">
             </div>
 

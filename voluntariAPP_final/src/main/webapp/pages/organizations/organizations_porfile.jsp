@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/styles.min.css"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/css/style_dashboard.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/css/sweetalert2.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/css/register.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-    <!-- Sweet Alert CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.0.2/dist/sweetalert2.min.css">
+
 </head>
 
 <body>
@@ -185,7 +185,6 @@
         <!--  Header End -->
 
 
-
         <!--        ======================                Inicio Contenedor (Principal)              ========================         -->
         <div class="container-fluid">
             <div class="row">
@@ -225,36 +224,6 @@
                                         </div>
                                         <div class="col-md-6 mb-4">
                                             <div class="form-floating">
-                                                <h6>Calle</h6>
-                                                <c:out value="${organ.street}"/>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row pt-1">
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-floating">
-                                                <h6>Colonia</h6>
-                                                <c:out value="${organ.cologne}"/>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-4">
-                                            <div class="form-floating">
-                                                <h6>Código postal</h6>
-                                                <c:out value="${organ.postal_code}"/>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row pt-1">
-                                        <div class="col-md-6 mb-4">
-                                            <div class="form-floating">
-                                                <h6>Municipio</h6>
-                                                <c:out value="${organ.municipality}"/>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-4">
-                                            <div class="form-floating">
                                                 <h6>RFC</h6>
                                                 <c:out value="${organ.rfc}"></c:out>
                                             </div>
@@ -262,30 +231,60 @@
                                     </div>
 
                                     <div class="row pt-1">
+                                        <div class="col-6 mb-4">
+                                            <div class="form-floating">
+                                                <h6>Estado</h6>
+                                                <c:out value="${organ.state}"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-floating">
+                                                <h6>Municipio</h6>
+                                                <c:out value="${organ.municipality}"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row pt-1">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-floating">
+                                                <h6>Código postal</h6>
+                                                <c:out value="${organ.postal_code}"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-floating">
+                                                <h6>Calle</h6>
+                                                <c:out value="${organ.street}"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row pt-1">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-floating">
+                                                <h6>Colonia</h6>
+                                                <c:out value="${organ.cologne}"/>
+                                            </div>
+                                        </div>
                                         <div class="col-md-6 mb-4">
                                             <div class="form-floating">
                                                 <h6>Telefono</h6>
                                                 <c:out value="${organ.phone}"/>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="row pt-1">
                                         <div class="col-md-6 mb-4">
                                             <div class="form-floating">
                                                 <h6>Email</h6>
                                                 <c:out value="${user.email}"/>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row pt-1">
-                                        <div class="col-6 mb-3">
+                                        <div class="col-6 mb-4">
                                             <div class="form-floating">
                                                 <h6>Password</h6>
                                                 <c:out value="${user.password}"/>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 mb-3">
-                                            <div class="form-floating">
-                                                <h6>Estado</h6>
-                                                <c:out value="${organ.state}"/>
                                             </div>
                                         </div>
                                     </div>
@@ -321,14 +320,15 @@
                                                             <input hidden value="${organ.id}" name="id">
 
                                                             <div class="row ">
-                                                                <!-- Muestra el id del organizacion-->
+                                                                <!-- Muestra el id del organizacion
                                                                 <div class="col-md-6 mb-4">
-                                                                      <div class="form-floating">
-                                                                          <input type="text" name="id" id="id" class="form-control" value="${organ.id}" placeholder="name" disabled>
-
-                                                                          <label for="id">Id</label>
-                                                                      </div>
-                                                                  </div>
+                                                                    <div class="form-floating">
+                                                                        <input type="text" name="id" id="id"
+                                                                               class="form-control" value="${organ.id}"
+                                                                               placeholder="name" disabled>
+                                                                        <label for="id">Id</label>
+                                                                    </div>
+                                                                </div>-->
                                                                 <div class="col-md-6 mb-4">
                                                                     <div class="form-floating">
                                                                         <input type="text" name="bussines_name"
@@ -429,16 +429,16 @@
                                                                 </div>
                                                                 <div class="col-md-0 mb-4">
                                                                     <div class="form-floating form-control-icon">
-                                                                        <input type="password" name="password"
+                                                                        <input name="password" type="password"
                                                                                id="password" value="${user.password}"
                                                                                class="form-control"
-                                                                               required>
-                                                                        <label for="password">Contraseña</label>
-                                                                        <div class="password-toggle"
-                                                                             onclick="togglePasswordVisibility('password')">
+                                                                               placeholder="Contraseña" required/>
+                                                                        <span class="password-toggle"
+                                                                              onclick="togglePasswordVisibility('password')">
                                                                             <i id="password-toggle-icon"
                                                                                class="bi bi-eye-slash"></i>
-                                                                        </div>
+                                                                        </span>
+                                                                        <label for="password">Contraseña</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -475,6 +475,23 @@
 <script src="${pageContext.request.contextPath}/assets/js/sidebarmenu.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/app.min.js"></script>
 <!-- Estadisticas Library -->
+<script>
+    function togglePasswordVisibility(inputId) {
+        var passwordInput = document.getElementById(inputId);
+        var passwordToggleIcon = document.getElementById(inputId + '-toggle-icon');
+
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            passwordToggleIcon.classList.remove('bi-eye-slash');
+            passwordToggleIcon.classList.add('bi-eye');
+        } else {
+            passwordInput.type = "password";
+            passwordToggleIcon.classList.remove('bi-eye');
+            passwordToggleIcon.classList.add('bi-eye-slash');
+        }
+    }
+
+</script>
 <script>
     (function () {
         'use strict'
@@ -561,8 +578,6 @@
         });
     }
 </script>
-
-
 </body>
 
 </html>

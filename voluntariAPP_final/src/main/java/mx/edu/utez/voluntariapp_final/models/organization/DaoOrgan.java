@@ -1,7 +1,6 @@
 package mx.edu.utez.voluntariapp_final.models.organization;
 
 import mx.edu.utez.voluntariapp_final.models.Role.Role;
-import mx.edu.utez.voluntariapp_final.models.user.DaoAdmin;
 import mx.edu.utez.voluntariapp_final.models.user.User;
 import mx.edu.utez.voluntariapp_final.models.volunteer.DaoVolunteer;
 import mx.edu.utez.voluntariapp_final.utils.MYSQLConnection;
@@ -143,7 +142,7 @@ public class DaoOrgan {
             conn = new MYSQLConnection().connect();
             String query = "CALL actualizar_organizacion(?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
             cs = conn.prepareCall(query);
-            cs.setLong(  1, organ.getId());
+            cs.setLong(1, organ.getId());
             cs.setString(2, organ.getBussines_name());
             cs.setString(3, organ.getMunicipality());
             cs.setString(4,organ.getState());
@@ -153,7 +152,7 @@ public class DaoOrgan {
             cs.setString(8, organ.getPhone());
             cs.setString(9, organ.getUser().getEmail());
             cs.setString(10, organ.getUser().getPassword());
-            System.out.println("Ayuddddddddddddddaaaaaaaaaaaaaaa");
+           // System.out.println("Ayuddddddddddddddaaaaaaaaaaaaaaa");
             return cs.executeUpdate() > 0; // ==1
         } catch (SQLException e) {
             Logger.getLogger(DaoOrgan.class.getName())
@@ -165,7 +164,7 @@ public class DaoOrgan {
         return false;
     }
 
-    public boolean delete(Long id) {
+    /*public boolean delete(Long id) {
         try {
             conn = new MYSQLConnection().connect();
             String query = "DELETE from users WHERE id_user = ?;";
@@ -180,7 +179,7 @@ public class DaoOrgan {
             close();
         }
         return false;
-    }
+    }*/
 
 
     public List<Role> searchRole() {
@@ -191,7 +190,6 @@ public class DaoOrgan {
         try {
             if (conn != null) conn.close();
             if (pstm != null) pstm.close();
-            if (cs != null) cs.close();
             if (rs != null) rs.close();
         } catch (SQLException e) {
             e.printStackTrace();

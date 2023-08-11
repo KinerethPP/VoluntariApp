@@ -32,6 +32,13 @@
                     <div class="row">
                         <div class="col-md-0 mb-4">
                             <div class="form-floating">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Nombre Completo"
+                                       required>
+                                <label for="email">Nombre Completo</label>
+                            </div>
+                        </div>
+                        <div class="col-md-0 mb-4">
+                            <div class="form-floating">
                                 <input type="email" id="email" name="email" class="form-control" placeholder="Correo"
                                        required>
                                 <label for="email">Email</label>

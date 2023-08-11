@@ -52,31 +52,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/Jassiel/VoluntariApp/VoluntariApp-9d5beb2a9d0b35ec693c6524e7c4b30e0c54cda2/voluntariAPP_final",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Jassiel/VoluntariApp/volunjas/voluntariAPP_final&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Jassiel\VoluntariApp\voluntariAPP_final\src\main\java\mx\edu\utez\voluntariapp_final\models" />
+      <recent name="D:\Jassiel\VoluntariApp\voluntariAPP_final\src\main\java\mx\edu\utez\voluntariapp_final\controllers" />
       <recent name="C:\IntelliJ IDEA 2023.1.1\documents\voluntariAPP_final\src\main\webapp\pages\accounts" />
       <recent name="C:\IntelliJ IDEA 2023.1.1\documents\voluntariAPP_final\src\main\webapp" />
     </key>
@@ -212,7 +217,12 @@
       <workItem from="1691429692463" duration="1238000" />
       <workItem from="1691430945449" duration="32315000" />
       <workItem from="1691512762221" duration="6160000" />
-      <workItem from="1691521685988" duration="5827000" />
+      <workItem from="1691521685988" duration="8607000" />
+      <workItem from="1691555140887" duration="2695000" />
+      <workItem from="1691605156131" duration="13767000" />
+      <workItem from="1691696550715" duration="15327000" />
+      <workItem from="1691732729247" duration="11141000" />
+      <workItem from="1691765737596" duration="2444000" />
     </task>
     <servers />
   </component>

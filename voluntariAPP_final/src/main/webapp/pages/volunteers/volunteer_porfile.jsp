@@ -7,11 +7,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VoluntariApp</title>
+    <title>Perfil</title>
     <!-- Se inserta la foto del logo de la empresa -->
-    <link rel="shortcut icon" type="image/png" href="../../assets/images/logos_voluntariapp/logo_VOLUNTARIAPP.png"/>
-    <link rel="stylesheet" href="../../assets/css/styles.min.css"/>
-    <link rel="stylesheet" href="../../assets/css/css/style_dashboard.css">
+    <link rel="shortcut icon" type="image/png"
+          href="${pageContext.request.contextPath}/assets/images/logos_voluntariapp/logo_VOLUNTARIAPP.png"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/styles.min.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/css/style_dashboard.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/css/sweetalert2.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/css/register.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 </head>
@@ -152,7 +155,8 @@
         </header>
         <!--  Header End -->
         <!-- Inicio Contenedor (Principal) -->
-        <div class="container-fluid" class="ayuda">
+        <div class="container-fluid">
+
             <div class="row">
                 <div class="row">
                     <div class="col-md-12">
@@ -166,75 +170,92 @@
                 <hr>
             </div>
 
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col col-lg-6 mb-4 mb-lg-0">
+            <div class="row d-flex justify-content-center align-items-center w-100 h-100">
+                <div class="col col-lg-0 mb-4 mb-lg-0">
                     <div class="card mb-3" style="border-radius: .5rem;">
                         <div class="row g-0">
                             <div class="col-md-4 gradient-custom text-center text-white"
                                  style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem; position: relative;">
                                 <img src="../../assets/images/user-1.jpg" alt="Imagen" class="img-fluid my-5"
                                      style="width: 130px; border-radius: 50%;"/>
-
                                 <i class="ti ti-user"></i>
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body p-4">
                                     <h6>Información</h6>
                                     <hr class="mt-0 mb-4">
+
                                     <div class="row pt-1">
-                                        <div class="col-6 mb-3">
-                                            <h6>Nombre</h6>
-                                            <c:out value="${volunteer.name}"/>
-                                            <c:out value="${volunteer.surname}"/>
+                                        <div class="col-6 mb-4">
+                                            <div class="form-floating">
+                                                <h5>Nombre</h5>
+                                                <c:out value="${volunteer.name}"/>
+                                                <c:out value="${volunteer.surname}"/>
+                                            </div>
                                         </div>
                                         <div class="col-6 mb-3">
-                                            <h6>Apellido</h6>
-                                            <c:out value="${volunteer.lastanme}"/>
+                                            <div class="form-floating">
+                                                <h5>Apellido</h5>
+                                                <c:out value="${volunteer.lastanme}"/>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row pt-1">
                                         <div class="col-6 mb-3">
-                                            <h6>Dirección</h6>
-                                            <c:out value="${volunteer.address}"/>
+                                            <div class="form-floating">
+                                                <h5>Año de nacimiento</h5>
+                                                <c:out value="${volunteer.birthday}"/>
+                                            </div>
                                         </div>
                                         <div class="col-6 mb-3">
-                                            <h6>Año de nacimiento</h6>
-                                            <c:out value="${volunteer.birthday}"/>
+                                            <div class="form-floating">
+                                                <h5>Dirección</h5>
+                                                <c:out value="${volunteer.address}"/>
+                                            </div>
                                         </div>
-                                    </div>
-
-                                    <div class="row pt-1">
-                                        <div class="col-6 mb-3">
-                                            <h6>Telefono</h6>
-                                            <c:out value="${volunteer.phone}"/>
-                                        </div>
-
-                                        <div class="col-6 mb-3">
-                                            <h6>Curp</h6>
-                                            <c:out value="${volunteer.curp}"/>
-                                        </div>
-
                                     </div>
                                     <div class="row pt-1">
                                         <div class="col-6 mb-3">
-                                            <h6>Correo</h6>
-                                            <c:out value="${user.email}"/>
+                                            <div class="form-floating">
+                                                <h5>Curp</h5>
+                                                <c:out value="${volunteer.curp}"/>
+                                            </div>
                                         </div>
                                         <div class="col-6 mb-3">
-                                            <h6>Contraseña</h6>
-                                            <c:out value="${user.password}"/>
+                                            <div class="form-floating">
+                                                <h5>Telefono</h5>
+                                                <c:out value="${volunteer.phone}"/>
+                                            </div>
                                         </div>
                                     </div>
-
-                                    <!-- Boton Modal -->
-                                    <div class="row pt-8">
-                                        <button type="button" class="btn btn-warning " data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">
+                                    <div class="row pt-1">
+                                        <div class="col-6 mb-3">
+                                            <div class="form-floating">
+                                                <h5>Email</h5>
+                                                <c:out value="${user.email}"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <div class="form-floating">
+                                                <h5>Contraseña</h5>
+                                                <c:out value="${user.password}"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--=============== Inicio de los botones del Modal de Actualizar ===============-->
+                                    <div class="row  pt-1 justify-content-center">
+                                        <button type="button" class="btn btn-warning col-lg-6" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal"
+                                                data-bs-whatever="@getbootstrap">
                                             Editar
                                         </button>
-                                        <hr>
-                                        <button type="button" class="btn btn-danger ">Eliminar cuenta</button>
-                                        <!-- Modal -->
+                                        <hr style="color: white">
+                                        <button type="button" class="btn btn-danger col-lg-6">Eliminar cuenta</button>
+                                    </div>
+                                    <!--===============  Fin de los botones del Modal de Actualizar   ===============-->
+
+                                    <!--  ===============      Inicio del Modal de Actualizar      ===============  -->
+                                    <div class="row pt-8">
                                         <div class="modal fade" id="exampleModal" tabindex="-1"
                                              aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
@@ -246,22 +267,23 @@
                                                         <button type="button" class="btn-close"
                                                                 data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
+
                                                     <div class="modal-body">
-                                                        <form id="volunteer-form" class="needs-validation" novalidate
+                                                        <form  class="needs-validation" id="volunteer-form" novalidate
                                                               action="/volunteer/update" method="post">
                                                             <input hidden value="${volunteer.id}" name="id">
+
                                                             <div class="row ">
-                                                                <!-- Muestra el id del voluntario-->
-                                                                <!-- <div class="col-md-6 mb-4">
+                                                                <!-- Muestra el id del voluntario
+                                                                <div class="col-md-6 mb-4">
                                                                       <div class="form-floating">
                                                                           <input type="text" name="id" id="id" class="form-control" value="" placeholder="name" disabled>
 
                                                                           <label for="id">Id</label>
                                                                       </div>
-                                                                  </div>-->
+                                                                 </div>-->
                                                                 <div class="col-md-6 mb-4">
                                                                     <div class="form-floating">
-
                                                                         <input type="text" name="name" id="name"
                                                                                class="form-control"
                                                                                value="${volunteer.name}"
@@ -281,7 +303,6 @@
                                                                 </div>
                                                             </div>
                                                             <div class="row">
-
                                                                 <div class="col-md-6 mb-4">
                                                                     <div class="form-floating">
                                                                         <input type="text" name="latanme" id="latanme"
@@ -302,7 +323,6 @@
                                                                             Nacimiento</label>
                                                                     </div>
                                                                 </div>
-
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-md-6 mb-4">
@@ -319,6 +339,7 @@
                                                                     <div class="form-floating">
                                                                         <input type="text" name="curp" id="curp"
                                                                                value="${volunteer.curp}"
+                                                                               pattern="[0-9]{18}"
                                                                                class="form-control" disabled>
                                                                         <label for="curp">Curp</label>
                                                                     </div>
@@ -344,20 +365,18 @@
                                                                         <label for="email">Email</label>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="row">
                                                                 <div class="col-md-0 mb-4">
                                                                     <div class="form-floating form-control-icon">
-                                                                        <input type="password" name="password"
+                                                                        <input name="password" type="password"
                                                                                id="password" value="${user.password}"
                                                                                class="form-control"
-                                                                               required>
-                                                                        <label for="password">Contraseña</label>
-                                                                        <div class="password-toggle"
-                                                                             onclick="togglePasswordVisibility('password')">
+                                                                               placeholder="Contraseña" required/>
+                                                                        <span class="password-toggle"
+                                                                              onclick="togglePasswordVisibility('password')">
                                                                             <i id="password-toggle-icon"
                                                                                class="bi bi-eye-slash"></i>
-                                                                        </div>
+                                                                        </span>
+                                                                        <label for="password">Contraseña</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -366,59 +385,136 @@
                                                                         data-bs-dismiss="modal" aria-label="Close">
                                                                     Cancelar
                                                                 </button>
-                                                                <button type="submit" class="btn btn-warning btn-sm">
+                                                                <button type="button" class="btn btn-warning btn-sm"
+                                                                        onclick="mostrarConfirmacion()">
                                                                     Actualizar
                                                                 </button>
-
                                                             </div>
                                                         </form>
                                                     </div>
-
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!--  -->
                                 </div>
-
-
                             </div>
-
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
         <!-- Fin Contenedor (Principal) -->
     </div>
 </div>
 
 <!-- JS -->
-<script src="../../assets/js/jquery.min.js"></script>
-<script src="../../assets/js/bootstrap.bundle.min.js"></script>
-<script src="../../assets/js/sidebarmenu.js"></script>
-<script src="../../assets/js/app.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/bootstrap.bundle.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/sidebarmenu.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/app.min.js"></script>
 <!-- Estadisticas Library -->
-<script src="../../assets/js/apexcharts.min.js"></script>
-<script src="../../assets/js/dashboard.js"></script>
+<script>
+    function togglePasswordVisibility(inputId) {
+        var passwordInput = document.getElementById(inputId);
+        var passwordToggleIcon = document.getElementById(inputId + '-toggle-icon');
+
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            passwordToggleIcon.classList.remove('bi-eye-slash');
+            passwordToggleIcon.classList.add('bi-eye');
+        } else {
+            passwordInput.type = "password";
+            passwordToggleIcon.classList.remove('bi-eye');
+            passwordToggleIcon.classList.add('bi-eye-slash');
+        }
+    }
+</script>
 <script>
     (function () {
-        const form = document.getElementById("volunteer-form");
-        form.addEventListener("submit", function (event) {
-            if (!form.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
-            }
-            form.classList.add("was-validated");
-        }, false);
+        'use strict'
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
     })();
 </script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<!-- Sweet Alert JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.0.2/dist/sweetalert2.all.min.js"></script>
+<script>
+    // Función para mostrar la confirmación de SweetAlert
+    function mostrarConfirmacion() {
+        if (document.getElementById("volunteer-form").checkValidity()) {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: 'Se realizarán los cambios. ¿Estás seguro de continuar?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Sí',
+                cancelButtonText: 'Cancelar',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Si el usuario hace clic en "Sí", procedemos a enviar el formulario manualmente.
+                    enviarFormulario();
+                }
+            });
+        } else {
+            document.getElementById("volunteer-form").classList.add('was-validated');
+        }
+    }
 
+    // Función para enviar el formulario usando XMLHttpRequest
+    function enviarFormulario() {
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "/volunteer/update", true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                // La solicitud se ha completado correctamente.
+                // Aquí manejamos la respuesta del servidor y mostramos la alerta de éxito o error.
+                if (xhr.responseText.includes("success")) {
+                    mostrarAlerta('¡Éxito! Voluntario actualizado correctamente.', 'success', true);
+                } else {
+                    mostrarAlerta('¡Error! Acción no realizada correctamente.', 'error', false);
+                }
+            } else {
+                // Ha ocurrido un error al realizar la solicitud.
+                mostrarAlerta('Error al enviar el formulario', 'error', false);
+            }
+        };
+        xhr.onerror = function () {
+            // Ha ocurrido un error al realizar la solicitud.
+            mostrarAlerta('Error al enviar el formulario', 'error', false);
+        };
+        xhr.send(new URLSearchParams(new FormData(document.getElementById("volunteer-form"))));
+    }
 
+    // Función para mostrar la alerta de SweetAlert y redireccionar después del tiempo de auto-cierre
+    function mostrarAlerta(mensaje, tipo, redireccionar) {
+        Swal.fire({
+            title: mensaje,
+            icon: tipo,
+            timer: redireccionar ? 5000 : undefined, // Tiempo en milisegundos (5 segundos) si es éxito, undefined si es error
+            text: 'Se te redireccionara al Inicio de Sesion!',
+            timerProgressBar: true, // Muestra una barra de progreso durante el tiempo de espera
+            showConfirmButton: false, // No muestra el botón de confirmación en la alerta
+        }).then(() => {
+            if (redireccionar) {
+                window.location.href = "/user/login"; // Cambia la URL por la página a la que deseas redireccionar después del tiempo de auto-cierre.
+            }
+        });
+    }
+</script>
 </body>
 
 </html>

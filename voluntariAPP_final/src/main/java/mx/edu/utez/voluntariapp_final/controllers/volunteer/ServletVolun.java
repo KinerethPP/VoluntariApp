@@ -154,7 +154,7 @@ public class ServletVolun extends HttpServlet {
                 }
                 break;
             case "/volunteer/update":
-                try {
+
                     // Obtener los valores de los parámetros del formulario
                     id = req.getParameter("id");
                     address = req.getParameter("address");
@@ -172,17 +172,15 @@ public class ServletVolun extends HttpServlet {
                     user.setEmail(email);
                     user.setPassword(password);
                     volunteer.setUser(user);
-
+                try {
                     if (new DaoVolunteer().update(volunteer))
                         redirect = "/volunteer/main?result=false&message=" + URLEncoder.encode("¡Error! Acción no realizada correctamente.", StandardCharsets.UTF_8);
-                    else
-                        redirect = "/volunteer/porfile?result=true&message=" + URLEncoder.encode("¡Éxito! Voluntario actualizado correctamente.", StandardCharsets.UTF_8);
-                } catch (Exception e) {
-                    try {
-                        throw new Exception("Error");
-                    } catch (Exception ex) {
-                        throw new RuntimeException(ex);
+                    else{
+
                     }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    redirect = "/volunteer/porfile?result=false&message=" + URLEncoder.encode("No se pudo guardar la organización", StandardCharsets.UTF_8);
                 }
                 break;
 
