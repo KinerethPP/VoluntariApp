@@ -1,0 +1,13 @@
+Ahi se encuentra hasta el momento la base de datos de la aplicacion.
+
+	[voluntariapp.sql] = se puede importar desde MYSQL
+
+
+	== [ PROCEDIMIENTOS ] ==
+ 	actualizar_administrador 
+	actualizar_organizacion
+	actualizar_voluntario
+	CreateEvent
+	div_volunteer
+	dividir_admin
+	dividir_info
