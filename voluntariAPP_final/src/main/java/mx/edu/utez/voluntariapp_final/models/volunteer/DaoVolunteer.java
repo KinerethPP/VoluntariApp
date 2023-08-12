@@ -17,29 +17,34 @@ public class DaoVolunteer {
     private ResultSet rs;
 
 
-    public List<Volunteer> findAll(Long id) {
+    public List<Volunteer> findAll() {
         List<Volunteer> volunteers = new ArrayList<>();
         try {
             conn = new MYSQLConnection().connect();
-            String query = "SELECT * FROM volunteers;";
+            String query = "SELECT * FROM VolunteerInfo;";
             pstm = conn.prepareStatement(query);
             rs = pstm.executeQuery();
 
             while (rs.next()) {
                 Volunteer volunteer = new Volunteer();
-                volunteer.setId(rs.getLong("id"));
-                volunteer.setName(rs.getString("name"));
+                volunteer.setId(rs.getLong("id_volun"));
+                volunteer.setName(rs.getString("v_name"));
                 volunteer.setSurname(rs.getString("surname"));
                 volunteer.setLastanme(rs.getString("lastanme"));
                 volunteer.setBirthday(rs.getString("birthday"));
                 volunteer.setAddress(rs.getString("address"));
                 volunteer.setPhone(rs.getString("phone"));
                 volunteer.setCurp(rs.getString("curp"));
+                volunteer.setUser_id(rs.getString("user_id"));
                 User user = new User();
+                user.setId_user(rs.getLong("id_user"));
+                user.setEmail(rs.getString("email"));
+                user.setStatus(rs.getBoolean("enable"));
                 volunteer.setUser(user);
-                volunteers.add(volunteer);
-                Role role = new Role();
+                Role role =new Role();
+                role.setId(rs.getInt("role_id"));
                 volunteer.setRole(role);
+                volunteers.add(volunteer);
             }
         } catch (SQLException e) {
             Logger.getLogger(DaoVolunteer.class.getName())
@@ -48,6 +53,45 @@ public class DaoVolunteer {
             close();
         }
         return volunteers;
+    }
+
+    //Listado para mostarar los voluntarios que seran activados
+    public List<Volunteer> findAllActive() {
+        List<Volunteer> volunteer = new ArrayList<>();
+        try {
+            conn = new MYSQLConnection().connect();
+            String query = "SELECT * FROM volunteer_desactive;";
+            pstm = conn.prepareStatement(query);
+            rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                Volunteer volunteer1 = new Volunteer();
+                volunteer1.setId(rs.getLong("id_volun"));
+                volunteer1.setName(rs.getString("v_name"));
+                volunteer1.setSurname(rs.getString("surname"));
+                volunteer1.setLastanme(rs.getString("lastname"));
+                volunteer1.setBirthday(rs.getString("birthday"));
+                volunteer1.setAddress(rs.getString("address"));
+                volunteer1.setPhone(rs.getString("phone"));
+                volunteer1.setCurp(rs.getString("curp"));
+                volunteer1.setUser_id(rs.getString("user_id"));
+                User user = new User();
+                user.setId_user(rs.getLong("id_user"));
+                user.setEmail(rs.getString("email"));
+                user.setStatus(rs.getBoolean("enable"));
+                volunteer1.setUser(user);
+                Role role =new Role();
+                role.setId(rs.getInt("role_id"));
+                volunteer1.setRole(role);
+                volunteer.add(volunteer1);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(DaoVolunteer.class.getName())
+                    .log(Level.SEVERE, "Error findAll " + e.getMessage());
+        } finally {
+            close();
+        }
+        return volunteer;
     }
 
 

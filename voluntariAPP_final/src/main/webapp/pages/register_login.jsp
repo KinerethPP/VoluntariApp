@@ -38,15 +38,15 @@
                         <div class="row">
                             <div class="text-center">
                                 <div class="d-grid">
-                                    <a href="../pages/accounts/admin.jsp"
+                                    <a href="${pageContext.request.contextPath}/pages/accounts/admin.jsp"
                                        class="btn fw-bold btn_colorcito_azulito d-flex justify-content-between align-items-center">
                                         <span class="fs-4">Administrador</span> <i class="bi bi-caret-right-fill"></i>
                                     </a><br>
-                                    <a href="../pages/accounts/organization.jsp"
+                                    <a href="${pageContext.request.contextPath}/pages/accounts/organization.jsp"
                                        class="btn fw-bold btn_colorcito_azulito d-flex justify-content-between align-items-center">
                                         <span class="fs-4">Organización</span> <i class="bi bi-caret-right-fill"></i>
                                     </a><br>
-                                    <a href="../pages/accounts/volunteer.jsp"
+                                    <a href="${pageContext.request.contextPath}/pages/accounts/volunteer.jsp"
                                        class="btn fw-bold btn_colorcito_azulito d-flex justify-content-between align-items-center">
                                         <span class="fs-4">Voluntario</span> <i class="bi bi-caret-right-fill"></i>
                                     </a><br>
@@ -54,7 +54,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <span>¿Ya tienes una cuenta? <a href="../index.jsp">Inicia sesión</a></span>
+                            <span>¿Ya tienes una cuenta? <a href="/user/login">Inicia sesión</a></span>
                         </div>
                     </form>
                 </div>

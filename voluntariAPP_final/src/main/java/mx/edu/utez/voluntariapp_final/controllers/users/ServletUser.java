@@ -8,6 +8,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import mx.edu.utez.voluntariapp_final.models.Role.Role;
+import mx.edu.utez.voluntariapp_final.models.administrators.Admin;
+import mx.edu.utez.voluntariapp_final.models.administrators.DaoAdmin;
 import mx.edu.utez.voluntariapp_final.models.user.DaoUser;
 import mx.edu.utez.voluntariapp_final.models.user.User;
 
@@ -15,6 +17,7 @@ import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
+import java.util.List;
 
 import static java.lang.Long.parseLong;
 
@@ -54,6 +57,7 @@ public class ServletUser extends HttpServlet {
     private String email,password;
 
 
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
@@ -61,7 +65,7 @@ public class ServletUser extends HttpServlet {
         switch (action){
             /*      =====       Redirecciones de la pagina      =======          */
             case "/user/main": //redirigir al inicio
-                redirect = "/pages/administrators/index_admin.jsp";
+                redirect = "/index.jsp";
                 break;
             case "/user/main-admin":
                 redirect = "/pages/administrators/administrators_admin.jsp";

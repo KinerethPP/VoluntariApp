@@ -205,12 +205,8 @@
                             <div class="event-info">
                                 <h5 class="card-title">Nombre del Evento</h5>
                             </div>
-
-
                             <%--            Botones del Crud de Eventos                --%>
                             <div class="event-actions">
-
-
                                 <!-- Boton vista -->
                                 <a class="event-action" href="#" aria-expanded="false" data-bs-toggle="modal"
                                    data-bs-target="#viewModal">

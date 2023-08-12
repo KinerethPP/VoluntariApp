@@ -1,0 +1,18 @@
+.btn-icon {
+    font-size: 30px;
+    color: black;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.btn-icon:hover {
+    color: #343a40;
+}
+
+.btn-icons {
+    margin-right: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 100%;
+}

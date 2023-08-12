@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -43,12 +42,10 @@
                             </div>
                             <div class="form-floating">
                                 <input type="text" id="user_id" name="user_id" value="2" class="form-control">
-
                             </div>
-
-
-
                         </div>
+
+
                         <div class="col-md-6 mb-4">
                         </div>
 
@@ -73,7 +70,7 @@
                         <div class="col-md-6 mb-4">
                             <div class="form-floating">
                                 <input type="date" id="event_day" name="event_day" class="form-control"
-                                       placeholder="Fecha del Evento" required>
+                                       placeholder="Fecha del Evento" required min="2023-08-11">
                                 <label for="event_day">Fecha del Evento</label>
                             </div>
                         </div>
@@ -150,8 +147,9 @@
         </div>
     </div>
 </div>
-<script src="../assets/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/js/register_login.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/bootstrap.bundle.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/register_login.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/css/sweetalert2.min.css">
 <script>
     (function () {
         'use strict'
@@ -170,6 +168,26 @@
             })
     })();
 </script>
+<script>
+    var todayDate = new Date();
+    var year = todayDate.getFullYear();
+    var month = todayDate.getMonth();
+    var day = todayDate.getDate();
+    var hour = todayDate.getHours();
+    var minute = todayDate.getMinutes();
+
+    if (month < 10) {
+        month = "0" + (month + 1);
+    }
+    if (day < 10) {
+        day = "0" + day;
+    }
+
+    var minDate = year + "-" + month + "-" + day;
+
+    document.getElementById("event_day").setAttribute("min", minDate);
+</script>
+
 </body>
 
 </html>

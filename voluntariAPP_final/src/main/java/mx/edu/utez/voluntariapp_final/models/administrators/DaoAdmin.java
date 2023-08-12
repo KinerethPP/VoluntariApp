@@ -5,6 +5,8 @@ import mx.edu.utez.voluntariapp_final.models.user.User;
 import mx.edu.utez.voluntariapp_final.utils.MYSQLConnection;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -14,41 +16,38 @@ public class DaoAdmin {
     private CallableStatement cs;
     private ResultSet rs;
 
-    /*public List<Volunteer> findAll(Long id) {
-        List<Volunteer> volunteers = new ArrayList<>();
+    public List<Admin> findAll() {
+        List<Admin> admins = new ArrayList();
+        System.out.println("Llegas?"+admins);
         try {
             conn = new MYSQLConnection().connect();
-            String query = "SELECT * FROM volunteers;";
+            String query = " SELECT * FROM admin_user_info;";
             pstm = conn.prepareStatement(query);
             rs = pstm.executeQuery();
 
             while (rs.next()) {
-                Volunteer volunteer = new Volunteer();
-                volunteer.setId(rs.getLong("id"));
-                volunteer.setName(rs.getString("name"));
-                volunteer.setSurname(rs.getString("surname"));
-                volunteer.setLastanme(rs.getString("lastanme"));
-                volunteer.setBirthday(rs.getString("birthday"));
-                volunteer.setAddress(rs.getString("address"));
-                volunteer.setPhone(rs.getString("phone"));
-                volunteer.setCurp(rs.getString("curp"));
-
-                User user = new User();
-                volunteer.setUser(user);
-                volunteers.add(volunteer);
-                Role role = new Role();
-                volunteer.setRole(role);
+                Admin admin =new Admin();
+                admin.setId_admin(rs.getLong("admin_id"));
+                admin.setName(rs.getString("admin_name"));
+                admin.setUser_id(rs.getString("user_id"));
+                User user =new User();
+                user.setId_user(rs.getLong("id_user"));
+                user.setEmail(rs.getString("email"));
+                user.setStatus(rs.getBoolean("enable"));
+                admin.setUser(user);
+                Role role =new Role();
+                role.setId(rs.getInt("role_id"));
+                admin.setRole(role);
+                admins.add(admin);
             }
         } catch (SQLException e) {
-            Logger.getLogger(DaoVolunteer.class.getName())
-                    .log(Level.SEVERE, "Error findAll " + e.getMessage());
+            Logger.getLogger(DaoAdmin.class.getName())
+                    .log(Level.SEVERE, "Error del Listado " + e.getMessage());
         } finally {
             close();
         }
-        return volunteers;
-    }*/
-
-
+        return admins;
+    }
     /*public Volunteer findOne(Long id) {
         System.out.println(id);
         try {

@@ -1,4 +1,7 @@
+
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
 <html lang="en">
 
@@ -26,7 +29,7 @@
         <div>
             <!-- Imagen del logo de la app -->
             <div class="brand-logo d-flex align-items-center justify-content-between">
-                <a href="/user/main" class="text-nowrap logo-img">
+                <a href="/admin/main" class="text-nowrap logo-img">
                     <!-- Logo parte superior izquierda -->
                     <img src="../../assets/images/logos_voluntariapp/logo_extend.png" style="width:180px" alt="" /><!-- Logo de la barra lateral -->
                 </a>
@@ -44,7 +47,7 @@
                         <span class="hide-menu">Home</span>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="/user/main" aria-expanded="false">
+                        <a class="sidebar-link" href="/admin/main" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
@@ -245,9 +248,7 @@
                                         <th class="border-bottom-0">
                                             <h6 class="fw-semibold mb-0">Telefono</h6>
                                         </th>
-                                        <th class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0">RFC</h6>
-                                        </th>
+
                                         <th class="border-bottom-0">
                                             <h6 class="fw-semibold mb-0">Email</h6>
                                         </th>
@@ -263,35 +264,44 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    <c:forEach var="volun" items="${volunteers}">
+
                                     <tr>
                                         <td class="border-bottom-0">
                                             <h6 class="fw-semibold mb-0"></h6>
                                         </td>
                                         <td class="border-bottom-0">
                                             <h6 class="fw-semibold mb-0"></h6>
+                                            <c:out value="${volun.name}"/>
+                                            <c:out value="${volun.surname}"/>
+                                            <c:out value="${volun.lastanme}"/>
+
                                         </td>
                                         <td class="border-bottom-0">
                                             <h6 class="fw-semibold mb-0"></h6>
+                                            <c:out value="${volun.birthday}"/>
                                         </td>
                                         <td class="border-bottom-0">
                                             <h6 class="fw-semibold mb-0"></h6>
+                                            <c:out value="${volun.curp}"/>
                                         </td>
                                         <td class="border-bottom-0">
                                             <h6 class="fw-semibold mb-0"></h6>
+                                            <c:out value="${volun.address}"/>
                                         </td>
                                         <td class="border-bottom-0">
                                             <h6 class="fw-semibold mb-1"></h6>
+                                            <c:out value="${volun.phone}"/>
                                         </td>
+
                                         <td class="border-bottom-0">
                                             <p class="mb-0 fw-normal"></p>
-                                        </td>
-                                        <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal"></p>
+                                            <c:out value="${volun.user.email}"/>
                                         </td>
                                         <td class="border-bottom-0">
                                             <div class="d-flex align-items-center gap-2">
-                                                        <span
-                                                                class="badge bg-danger rounded-3 fw-semibold">Inactivo</span>
+                                                <span class="badge bg-danger rounded-3 fw-semibold"><c:out value="${volun.user.status}"/></span>
+
                                             </div>
                                         </td>
                                         <td class="border-bottom-0">
@@ -301,6 +311,8 @@
                                             <h6 class="fw-semibold mb-0"></h6>
                                         </td>
                                     </tr>
+                                    </c:forEach>
+
                                     </tbody>
                                 </table>
                             </div>

@@ -1,4 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!doctype html>
 <html lang="en">
 
@@ -27,7 +30,7 @@
         <div>
             <!-- Imagen del logo de la app -->
             <div class="brand-logo d-flex align-items-center justify-content-between">
-                <a href="/user/main" class="text-nowrap logo-img">
+                <a href="/admin/main" class="text-nowrap logo-img">
                     <!-- Logo parte superior izquierda -->
                     <img src="../../assets/images/logos_voluntariapp/logo_extend.png" style="width:180px" alt="" /><!-- Logo de la barra lateral -->
                 </a>
@@ -45,7 +48,7 @@
                         <span class="hide-menu">Home</span>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="/user/main" aria-expanded="false">
+                        <a class="sidebar-link" href="/admin/main" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
@@ -70,7 +73,7 @@
                     <!--Organizaciones -->
 
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href=""/admin/main-organ" aria-expanded="false">
+                        <a class="sidebar-link" href="/admin/main-organ" aria-expanded="false">
                 <span>
                   <i class="ti ti-building"></i>
                 </span>
@@ -229,16 +232,31 @@
                                     <thead class="text-dark fs-4">
                                     <tr>
                                         <th class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0">Logo</h6>
+                                            <h6 class="fw-semibold mb-0">Foto</h6>
                                         </th>
                                         <th class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0">Razon Social</h6>
+                                            <h6 class="fw-semibold mb-0">Nombre de Empresa</h6>
                                         </th>
                                         <th class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0">Direccion</h6>
+                                            <h6 class="fw-semibold mb-0">Calle</h6>
                                         </th>
                                         <th class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0">Phone</h6>
+                                            <h6 class="fw-semibold mb-0">Colonia</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Codigo Postal</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Municipio</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Estado</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">RFC</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Telefono</h6>
                                         </th>
                                         <th class="border-bottom-0">
                                             <h6 class="fw-semibold mb-0">Email</h6>
@@ -255,35 +273,83 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    <c:forEach var="organ" items="${organs}">
                                     <tr>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0"> </h6>
+                                            <h6 class="fw-semibold mb-0">
+
+                                            </h6>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-1"> </h6>
+                                            <h6 class="fw-semibold mb-0">
+                                                <c:out value="${organ.bussines_name}"/>
+
+                                            </h6>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal"> </p>
+                                            <h6 class="fw-semibold mb-1">
+                                                <c:out value="${organ.street}"/>
+                                            </h6>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal"> </p>
+                                            <p class="mb-0 fw-normal">
+                                                <c:out value="${organ.cologne}"/>
+
+                                            </p>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal"> </p>
+                                            <p class="mb-0 fw-normal">
+                                                <c:out value="${organ.postal_code}"/>
+                                            </p>
+                                        </td>
+                                        <td class="border-bottom-0">
+                                            <p class="mb-0 fw-normal">
+                                                <c:out value="${organ.municipality}"/>
+                                            </p>
+                                        </td>
+                                        <td class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">
+                                                <c:out value="${organ.state}"/>
+
+                                            </h6>
+                                        </td>
+                                        <td class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">
+                                                <c:out value="${organ.rfc}"/>
+
+                                            </h6>
+                                        </td>
+                                        <td class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">
+                                                <c:out value="${organ.phone}"/>
+
+                                            </h6>
+                                        </td>
+                                        <td class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">
+                                                <c:out value="${organ.user.email}"/>
+
+                                            </h6>
                                         </td>
                                         <td class="border-bottom-0">
                                             <div class="d-flex align-items-center gap-2">
                                                         <span
-                                                                class="badge bg-danger rounded-3 fw-semibold">Inactivo</span>
+                                                                class="badge bg-danger rounded-3 fw-semibold"> <c:out value="${organ.user.status}"/>
+                                                        </span>
                                             </div>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal"> </p>
+                                            <p class="mb-0 fw-normal">
+
+                                            </p>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal"> </p>
+                                            <p class="mb-0 fw-normal">
+
+                                            </p>
                                         </td>
                                     </tr>
+                                    </c:forEach>
                                     </tbody>
                                 </table>
                             </div>

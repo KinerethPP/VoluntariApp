@@ -186,36 +186,7 @@
             <div class="row">
                 <h1>Bienvenido</h1>
                 <h4>Nosotros</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum illo, aspernatur exercitationem
-                    cumque
-                    eaque magni numquam vitae itaque officiis ab quas eveniet dicta voluptatem. Repellat doloribus
-                    officiis
-                    veniam? Sapiente, praesentium!
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente cumque voluptates illo at magnam
-                    cum
-                    vitae blanditiis quas, consectetur exercitationem porro nam, officiis quis commodi minima illum,
-                    nisi
-                    excepturi et.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae fugiat temporibus perferendis
-                    veritatis
-                    quisquam consectetur corporis tenetur voluptates provident ab commodi, magnam numquam ratione
-                    perspiciatis.
-                    Dolores explicabo expedita recusandae voluptatem.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, est vero aperiam optio
-                    reprehenderit
-                    obcaecati deleniti suscipit repellat doloribus? Exercitationem quaerat id provident quae facere,
-                    molestiae
-                    numquam libero ad quidem?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis explicabo quidem neque, voluptatum
-                    libero
-                    ipsum autem officia ex ullam repellendus consequatur sequi illum asperiores. Iure laudantium ipsa
-                    numquam
-                    exercitationem temporibus.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt pariatur deleniti magni quae
-                    accusamus,
-                    architecto iusto rerum laboriosam nihil facilis fuga perferendis, molestiae neque vero repellat
-                    provident!
-                    Sed, ipsum possimus.
+                <p class="text-break">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum illo, aspernatur exercitationem cumque eaque magni numquam vitae itaque officiis ab quas eveniet dicta voluptatem. Repellat doloribus officiis veniam? Sapiente, praesentium! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente cumque voluptates illo at magnam cum vitae blanditiis quas, consectetur exercitationem porro nam, officiis quis commodi minima illum, nisi excepturi et.Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae fugiat temporibus perferendis veritatis quisquam consectetur corporis tenetur voluptates provident ab commodi, magnam numquam ratione perspiciatis. Dolores explicabo expedita recusandae voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, est vero aperiam optio reprehenderit obcaecati deleniti suscipit repellat doloribus? Exercitationem quaerat id provident quae facere, molestiae numquam libero ad quidem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis explicabo quidem neque, voluptatum libero ipsum autem officia ex ullam repellendus consequatur sequi illum asperiores. Iure laudantium ipsa numquam exercitationem temporibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt pariatur deleniti magni quae accusamus, architecto iusto rerum laboriosam nihil facilis fuga perferendis, molestiae neque vero repellat provident! Sed, ipsum possimus.
                 </p>
             </div>
             <!-- Inicio Contenedor (Central) -->

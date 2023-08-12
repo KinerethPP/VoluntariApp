@@ -10,17 +10,19 @@ import mx.edu.utez.voluntariapp_final.models.Role.Role;
 import mx.edu.utez.voluntariapp_final.models.administrators.Admin;
 import mx.edu.utez.voluntariapp_final.models.administrators.DaoAdmin;
 import mx.edu.utez.voluntariapp_final.models.organization.DaoOrgan;
+import mx.edu.utez.voluntariapp_final.models.organization.Organ;
 import mx.edu.utez.voluntariapp_final.models.user.User;
+import mx.edu.utez.voluntariapp_final.models.volunteer.DaoVolunteer;
+import mx.edu.utez.voluntariapp_final.models.volunteer.Volunteer;
 
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 @WebServlet(name = "admins", urlPatterns = {
         "/admin/main",
         "/admin/porfile",
-
-        "/admin/register",
         "/admin/admin-view",
         "/admin/save",
         "/admin/admin-view-update",
@@ -35,7 +37,6 @@ import java.nio.charset.StandardCharsets;
         "/admin/surveys",
         "/admin/stadist",
         "/admin/aprobe"
-
 
 })
 
@@ -61,7 +62,7 @@ public class ServletAdmin extends HttpServlet {
             case "/admin/admin-view":
                 redirect = "/pages/accounts/admin.jsp";
                 break;
-           /* case "/admin/admin-view-update":
+           /*case "/admin/admin-view-update":
                 id = req.getParameter("id");
                 admin = new DaoAdmin().findOne(id != null ? Long.parseLong(id) : 0);
                 if (admin != null) {
@@ -72,13 +73,24 @@ public class ServletAdmin extends HttpServlet {
                 }
                 break;*/
             case "/admin/administrators":
+                List<Admin> admins = new DaoAdmin().findAll();
+                req.setAttribute("admins", admins);
+                System.out.println("Datos de la Vista"+admins);
+
+
                 redirect = "/pages/administrators/administrators_admin.jsp";
                 break;
             case "/admin/main-organ":
+                List<Organ> organs = new DaoOrgan().findAll();
+                req.setAttribute("organs", organs);
+                System.out.println("Datos de la Vista"+organs);
                 redirect = "/pages/administrators/administrators_organization.jsp";
                 break;
-
             case "/admin/main-volunt":
+                List<Volunteer> volunteers = new DaoVolunteer().findAll();
+                req.setAttribute("volunteers", volunteers);
+                System.out.println("Datos de la Vista"+volunteers);
+
                 redirect = "/pages/administrators/administrators_volun.jsp";
                 break;
             case   "/admin/surveys":
@@ -88,6 +100,9 @@ public class ServletAdmin extends HttpServlet {
                 redirect = "/pages/administrators/administrators_stadist.jsp";
                 break;
             case   "/admin/aprobe":
+                List<Volunteer> volunteer = new DaoVolunteer().findAllActive();
+                req.setAttribute("volunteer", volunteer);
+                System.out.println("Datos de la Vista"+volunteer);
                 redirect = "/pages/administrators/administrators_aprob.jsp";
                 break;
 

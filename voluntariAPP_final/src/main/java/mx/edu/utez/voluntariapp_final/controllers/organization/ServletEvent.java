@@ -123,14 +123,14 @@ public class ServletEvent extends HttpServlet {
                     // Guardar el objeto "Evento" en la base de datos
                     if (new DaoEvent().save(event)) {
                         // Redirigir con mensaje de éxito
-                        response.sendRedirect("/index.jsp?result=true&message=Evento%20guardado%20correctamente");
+                        response.sendRedirect("/organ/main?result=true&message=Evento%20guardado%20correctamente");
                     } else {
 
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                     // Redirigir con mensaje de error
-                    response.sendRedirect("/organ/main?result=false&message=No%20se%20pudo%20guardar%20el%20evento");
+                    response.sendRedirect("/event/events?result=false&message=No%20se%20pudo%20guardar%20el%20evento");
                 }
                 break;
             case "/event/update":

@@ -128,7 +128,7 @@ public class ServletVolun extends HttpServlet {
                 user1.setEmail(email);
                 user1.setPassword(password);
                 user1.setStatus(false);
-                // Crear y configurar el objeto "Voluntario"
+                // Crear y configurar el objeto "Voluntario"S
                 Volunteer volunteer1 = new Volunteer();
                 volunteer1.setId(0L);
                 volunteer1.setName(name);

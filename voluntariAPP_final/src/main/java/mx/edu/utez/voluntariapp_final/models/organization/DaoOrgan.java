@@ -23,13 +23,29 @@ public class DaoOrgan {
         List<Organ> organs = new ArrayList<>();
         try {
             conn = new MYSQLConnection().connect(); //Establecer la conexion
-            String query = "SELECT * FROM organizations;"; //Preparamos la sentencia
+            String query = "SELECT * FROM organization_user_info;"; //Preparamos la sentencia
             pstm = conn.prepareStatement(query);   //Ejecutamos la sentencia en la base de datos
             rs = pstm.executeQuery();
             while (rs.next()) {
                 Organ organ = new Organ();
-                organ.setId(rs.getLong("id"));
+                organ.setId(rs.getLong("id_organ"));
                 organ.setBussines_name(rs.getString("bussines_name"));
+                organ.setStreet(rs.getString("street"));
+                organ.setCologne(rs.getString("cologne"));
+                organ.setPostal_code(rs.getString("postal_code"));
+                organ.setMunicipality(rs.getString("municipality"));
+                organ.setState(rs.getString("state"));
+                organ.setPhone(rs.getString("phone"));
+                organ.setRfc(rs.getString("rfc"));
+                organ.setUser_id(rs.getString("user_id"));
+                User user =new User();
+                user.setId_user(rs.getLong("id_user"));
+                user.setEmail(rs.getString("email"));
+                user.setStatus(rs.getBoolean("enable"));
+                organ.setUser(user);
+                Role role = new Role();
+                role.setId(rs.getInt("role_id"));
+                organ.setRole(role);
                 organs.add(organ);
             }
         } catch (SQLException e) {
