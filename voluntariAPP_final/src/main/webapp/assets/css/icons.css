@@ -16,3 +16,14 @@
     align-items: center;
     height: 100%;
 }
+
+
+.bg-custom-success {
+    background-color: #28a745; /* Color verde personalizado */
+    color: white; /* Color de texto */
+}
+
+.bg-custom-danger {
+    background-color: #dc3545; /* Color rojo personalizado */
+    color: white; /* Color de texto */
+}

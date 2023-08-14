@@ -155,38 +155,41 @@
         <div class="container-fluid">
             <!-- Inicio Contenedor (Central) -->
             <div class="row">
-                <h1>Bienvenido</h1>
-                <h4>Nosotros</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum illo, aspernatur exercitationem
-                    cumque
-                    eaque magni numquam vitae itaque officiis ab quas eveniet dicta voluptatem. Repellat doloribus
-                    officiis
-                    veniam? Sapiente, praesentium!
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente cumque voluptates illo at magnam
-                    cum
-                    vitae blanditiis quas, consectetur exercitationem porro nam, officiis quis commodi minima illum,
-                    nisi
-                    excepturi et.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae fugiat temporibus perferendis
-                    veritatis
-                    quisquam consectetur corporis tenetur voluptates provident ab commodi, magnam numquam ratione
-                    perspiciatis.
-                    Dolores explicabo expedita recusandae voluptatem.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, est vero aperiam optio
-                    reprehenderit
-                    obcaecati deleniti suscipit repellat doloribus? Exercitationem quaerat id provident quae facere,
-                    molestiae
-                    numquam libero ad quidem?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis explicabo quidem neque, voluptatum
-                    libero
-                    ipsum autem officia ex ullam repellendus consequatur sequi illum asperiores. Iure laudantium ipsa
-                    numquam
-                    exercitationem temporibus.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt pariatur deleniti magni quae
-                    accusamus,
-                    architecto iusto rerum laboriosam nihil facilis fuga perferendis, molestiae neque vero repellat
-                    provident!
-                    Sed, ipsum possimus.
+                <h1>Bienvenid@ Voluntario</h1>
+                <br>
+                <br>
+                <br>
+
+
+                <h4>Te explico brevemente que puedes hacer con nosotros y quienes somo....</h4>
+                <br>
+                <br>
+                <p class = "text-break">Somos una aplicación que te brindrá el apoyo para que puedas ver eventos y
+                    postularte a aquellos que te parezcan interesantes o esten cerca de ti<br>
+
+
+
+                    Esta aplicación está pensada para darte la oprtunidad de contribuir en eventos de CARIDAD
+                    O BENEFICOS.<br><br>
+                    Las Organizaciones que tengamos en la App, creaaran sus eventos,en donde tu podras verlos resumidos, te postularas
+                    y esperarás a que la Organización acepte que estes dentro.
+                    <br>
+                    <br>
+
+                    Usted como Voluntario tiene la libertad de poder postularse a los evetos que desee, tenemos nuestro apartado de eventos
+                    donde podra mirarlos,también mencionar que habrá eventos donde deba responder una encuesta,eso lo decidirá la
+                    organización.<br>
+                    <br>
+                    <br>
+                <h4>¿A qué me refiero con esto?</h4>
+                <br>
+                <br>
+
+                Cuando te postules al evento deseado, te redirigira a tu encuenta que debes responder.
+                La organización rrevisará tus respuestas y así decidirá si serás aceptado o lamentablemente No.
+                Esto sin duda es para garantizar la seguridad del evento.
+                <br>
+                <br>
                 </p>
             </div>
             <!-- Fin Contenedor (Central) -->

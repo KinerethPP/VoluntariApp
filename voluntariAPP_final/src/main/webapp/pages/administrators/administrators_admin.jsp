@@ -10,10 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VoluntariApp Administradores</title>
     <!-- Se inserta la foto del logo de la empresa -->
-    <link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath}/assets/images/logos_voluntariapp/logo_VOLUNTARIAPP.png"/>
+    <link rel="shortcut icon" type="image/png"
+          href="${pageContext.request.contextPath}/assets/images/logos_voluntariapp/logo_VOLUNTARIAPP.png"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/styles.min.css"/>
     <link rel="stylesheet" href="../../assets/css/css/style_dashboard.css">
-    <link rel="stylesheet" href="../../assets/css/icons.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
     <link rel="stylesheet" href="../../assets/css/css/sweetalert2.min.css">
@@ -63,7 +64,6 @@
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                         <span class="hide-menu">Usuarios</span>
                     </li>
-                    <!--Administradores -->
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="/admin/administrators" aria-expanded="false">
                 <span>
@@ -72,10 +72,6 @@
                             <span class="hide-menu">Administradores</span>
                         </a>
                     </li>
-                    <!--Administradores -->
-
-                    <!--Organizaciones -->
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="/admin/main-organ" aria-expanded="false">
                 <span>
@@ -84,10 +80,6 @@
                             <span class="hide-menu">Organizaciones</span>
                         </a>
                     </li>
-                    <!--Organizaciones -->
-
-                    <!--Voluntarios -->
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="/admin/main-volunt" aria-expanded="false">
                 <span>
@@ -96,28 +88,9 @@
                             <span class="hide-menu">Voluntarios</span>
                         </a>
                     </li>
-                    <!--Voluntarios -->
-
-
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                         <span class="hide-menu">Otros</span>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="/admin/surveys" aria-expanded="false">
-                <span>
-                  <i class="ti ti-clipboard-text"></i>
-                </span>
-                            <span class="hide-menu">Encuestas</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="/admin/stadist" aria-expanded="false">
-                <span>
-                  <i class="ti ti-chart-pie-3"></i>
-                </span>
-                            <span class="hide-menu">Estadisticas</span>
-                        </a>
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="/admin/aprobe" aria-expanded="false">
@@ -159,21 +132,12 @@
                 <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
                     <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
                         <!-- Etiqueta para meter cosas -->
+
                         <li class="nav-item d-none d-lg-block">
                             <a class="nav-link nav-icon-hover" href="javascript:void(0)" data-bs-toggle="modal"
                                data-bs-target="#exampleModal">
+                                <input type="text" name="textBuscar" class="form-control">
                                 <i class="ti ti-search"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-icon-hover" href="javascript:void(0)">
-                                <i class="ti ti-bell-ringing"></i>
-                                <div class="notification bg-primary rounded-circle"></div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-icon-hover">
-                                <i class="ti ti-question-mark"></i>
                             </a>
                         </li>
                         <!-- Foto de perfil -->
@@ -184,7 +148,6 @@
                                 <img src="../../assets/images/user-1.jpg" alt="" style="width:35px; height:35px"
                                      class="rounded-circle">
                             </a>
-
                             <!-- Menu desplegable del la Foto fe perfil -->
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
                                  aria-labelledby="drop2">
@@ -193,14 +156,6 @@
                                     <a href="/admin/porfile" class="d-flex align-items-center gap-2 dropdown-item">
                                         <i class="ti ti-user fs-6"></i>
                                         <p class="mb-0 fs-3">Mi perfil</p>
-                                    </a>
-                                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                                        <i class="ti ti-tools fs-6"></i>
-                                        <p class="mb-0 fs-3">Perzonalizar</p>
-                                    </a>
-                                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                                        <i class="ti ti-list-check fs-6"></i>
-                                        <p class="mb-0 fs-3">Otros</p>
                                     </a>
                                     <a href="/user/login" class="btn btn-outline-primary mx-3 mt-2 d-block">Cerrar
                                         Sesion</a>
@@ -248,10 +203,10 @@
                                         <h6 class="fw-semibold mb-0">Status</h6>
                                     </th>
                                     <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Editar</h6>
+                                        <h6 class="fw-semibold mb-0">Activar</h6>
                                     </th>
                                     <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Eliminar</h6>
+                                        <h6 class="fw-semibold mb-0">Desactivar</h6>
                                     </th>
                                 </tr>
                                 </thead>
@@ -268,7 +223,7 @@
                                         <td class="border-bottom-0">
                                             <h6 class="fw-normal">
                                                 <c:out value="${admin.name}"/>
-                                                xxx
+
                                             </h6>
                                         </td>
                                             <%--          Muestra nombre del admin        --%>
@@ -280,12 +235,31 @@
                                         </td>
                                         <td class="border-bottom-0">
                                             <p class="mb-0 fw-normal"></p>
-                                            <c:out value="${admin.user.status}"/>
+                                            <span class="badge rounded-3 fw-semibold
+                                                <c:if test="${admin.user.status == true}">bg-custom-success
+                                                </c:if>
+                                                <c:if test="${admin.user.status == false}">bg-custom-danger
+                                                </c:if>">
+                                                <c:out value="${admin.user.status ? 'Activo' : 'Inactivo'}"/>
+                                            </span>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <div class="d-flex align-items-center gap-2">
-                                                <span class="badge bg-danger rounded-3 fw-semibold">Inactivo</span>
+                                            <div class="col">
+                                                <form method="post" action="/admin/active-status">
+                                                    <input hidden value="${admin.user.id_user}" name="id"/>
+                                                    <button type="submit" class="btn btn-outline-success btn-sm">
+                                                        ACTIVAR
+                                                    </button>
+                                                </form>
                                             </div>
+                                        </td>
+                                        <td class="border-bottom-0">
+                                            <form method="post" action="/admin/inactive-status">
+                                                <input hidden value="${admin.user.id_user}" name="id"/>
+                                                <button type="submit" class="btn btn-outline-success btn-sm">
+                                                    DESACTIVAR
+                                                </button>
+                                            </form>
                                         </td>
                                         <td class="border-bottom-0">
                                             <p class="mb-0 fw-normal"></p>
@@ -304,7 +278,6 @@
                     </div>
                 </div>
             </div>
-
 
 
         </div>

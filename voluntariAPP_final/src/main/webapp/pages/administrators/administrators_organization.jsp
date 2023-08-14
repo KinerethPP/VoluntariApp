@@ -32,7 +32,8 @@
             <div class="brand-logo d-flex align-items-center justify-content-between">
                 <a href="/admin/main" class="text-nowrap logo-img">
                     <!-- Logo parte superior izquierda -->
-                    <img src="../../assets/images/logos_voluntariapp/logo_extend.png" style="width:180px" alt="" /><!-- Logo de la barra lateral -->
+                    <img src="../../assets/images/logos_voluntariapp/logo_extend.png" style="width:180px" alt=""/>
+                    <!-- Logo de la barra lateral -->
                 </a>
                 <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
                     <i class="ti ti-x fs-8"></i>
@@ -59,7 +60,6 @@
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                         <span class="hide-menu">Usuarios</span>
                     </li>
-                    <!--Administradores -->
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="/admin/administrators" aria-expanded="false">
                 <span>
@@ -68,10 +68,6 @@
                             <span class="hide-menu">Administradores</span>
                         </a>
                     </li>
-                    <!--Administradores -->
-
-                    <!--Organizaciones -->
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="/admin/main-organ" aria-expanded="false">
                 <span>
@@ -80,40 +76,17 @@
                             <span class="hide-menu">Organizaciones</span>
                         </a>
                     </li>
-                    <!--Organizaciones -->
-
-                    <!--Voluntarios -->
-
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href= "/admin/main-volunt" aria-expanded="false">
+                        <a class="sidebar-link" href="/admin/main-volunt" aria-expanded="false">
                 <span>
                   <i class="ti ti-fall"></i>
                 </span>
                             <span class="hide-menu">Voluntarios</span>
                         </a>
                     </li>
-                    <!--Voluntarios -->
-
-
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                         <span class="hide-menu">Otros</span>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="/admin/surveys" aria-expanded="false">
-                <span>
-                  <i class="ti ti-clipboard-text"></i>
-                </span>
-                            <span class="hide-menu">Encuestas</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="/admin/stadist" aria-expanded="false">
-                <span>
-                  <i class="ti ti-chart-pie-3"></i>
-                </span>
-                            <span class="hide-menu">Estadisticas</span>
-                        </a>
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="/admin/aprobe" aria-expanded="false">
@@ -155,45 +128,30 @@
                 <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
                     <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
                         <!-- Etiqueta para meter cosas -->
+
                         <li class="nav-item d-none d-lg-block">
                             <a class="nav-link nav-icon-hover" href="javascript:void(0)" data-bs-toggle="modal"
                                data-bs-target="#exampleModal">
+                                <input type="text" name="textBuscar" class="form-control">
                                 <i class="ti ti-search"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-icon-hover" href="javascript:void(0)">
-                                <i class="ti ti-bell-ringing"></i>
-                                <div class="notification bg-primary rounded-circle"></div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-icon-hover">
-                                <i class="ti ti-question-mark"></i>
                             </a>
                         </li>
                         <!-- Foto de perfil -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
+                            <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2"
+                               data-bs-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="../../assets/images/user-1.jpg" alt="" style="width:35px; height:35px" class="rounded-circle">
+                                <img src="../../assets/images/user-1.jpg" alt="" style="width:35px; height:35px"
+                                     class="rounded-circle">
                             </a>
-
                             <!-- Menu desplegable del la Foto fe perfil -->
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
+                                 aria-labelledby="drop2">
                                 <!-- COLOR == | Fondo Desplegable Foto Perfil | ==    (Codigo de arriba)  -->
                                 <div class="message-body">
                                     <a href="/admin/porfile" class="d-flex align-items-center gap-2 dropdown-item">
                                         <i class="ti ti-user fs-6"></i>
                                         <p class="mb-0 fs-3">Mi perfil</p>
-                                    </a>
-                                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                                        <i class="ti ti-tools fs-6"></i>
-                                        <p class="mb-0 fs-3">Perzonalizar</p>
-                                    </a>
-                                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                                        <i class="ti ti-list-check fs-6"></i>
-                                        <p class="mb-0 fs-3">Otros</p>
                                     </a>
                                     <a href="/user/login" class="btn btn-outline-primary mx-3 mt-2 d-block">Cerrar
                                         Sesion</a>
@@ -349,6 +307,178 @@
                                             </p>
                                         </td>
                                     </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="d-flex align-items-center gap-2 dropdown-item">
+                        <i class="ti ti-building fs-6"></i>
+                        <p class="mb-0 fs-3">Listado de Eventos</p>
+                    </div>
+                </div>
+
+            </div>
+            <hr>
+            <br><br>
+
+            <!-- Inicia la tabla para los usarios -->
+            <div class="row">
+                <!-- Aqui inicia el codigo 242 -->
+                <div class="col-lg- d-flex align-items-stretch">
+                    <div class="card w-100">
+                        <div class="card-body p-3">
+                            <div class="table-responsive">
+                                <table class="table text-nowrap mb-0 align-middle">
+                                    <!--  -->
+                                    <thead class="text-dark fs-4">
+                                    <tr>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Foto</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Nombre de la Organizacion</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Nombre del evento</h6>
+                                        </th>
+
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Descripcion</h6>
+                                        </th>
+
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Fecha del evento</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Hora del evento</h6>
+                                        </th>
+
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Calle</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Colonia</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Codigo Postal</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Municipio</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Estado</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Tipo de evento</h6>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach var="eventito" items="${events}">
+                                        <tr>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">
+                                                    <%--Foto--%>
+
+                                                </h6>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">
+                                                        <%--Organizacion--%>
+                                                    <c:out value="${eventito.organ.bussines_name}"/>
+
+
+                                                </h6>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-1">
+                                                        <%--Nombre del evento --%>
+
+                                                    <c:out value="${eventito.name}"/>
+
+                                                </h6>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <p class="mb-0 fw-normal">
+                                                        <%--Descripcion  del evento --%>
+                                                    <c:out value="${eventito.description}"/>
+
+                                                </p>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <p class="mb-0 fw-normal">
+                                                        <%--Fecha   del evento --%>
+                                                    <c:out value="${eventito.event_date}"/>
+
+                                                </p>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <p class="mb-0 fw-normal">
+                                                        <%--Hora    del evento --%>
+                                                    <c:out value="${eventito.event_time}"/>
+
+                                                </p>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">
+                                                        <%--Calle    del evento --%>
+                                                            <c:out value="${eventito.street}"/>
+
+
+                                                </h6>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">
+                                                        <%--Colonia    del evento --%>
+                                                    <c:out value="${eventito.cologne}"/>
+
+                                                </h6>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">
+                                                        <%--Codigo Postal   del evento --%>
+                                                    <c:out value="${eventito.postal_code}"/>
+
+                                                </h6>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">
+                                                        <%--Municipio  del evento --%>
+
+                                                    <c:out value="${eventito.municipality}"/>
+
+                                                </h6>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">
+                                                        <%-- Estado del evento --%>
+                                                    <c:out value="${eventito.state}"/>
+
+
+                                                </h6>
+                                            </td>
+
+                                                <%--                     Aqui esta el STATUS                       --%>
+                                                <%--                                            <td class="border-bottom-0">--%>
+                                                <%--                                                <div class="d-flex align-items-center gap-2">--%>
+                                                <%--                                                        <span--%>
+                                                <%--                                                                class="badge bg-danger rounded-3 fw-semibold"> <c:out value="${orga.user.status}"/>--%>
+                                                <%--                                                        </span>--%>
+                                                <%--                                                </div>--%>
+                                                <%--                                            </td>--%>
+                                            <td class="border-bottom-0">
+                                                <p class="mb-0 fw-normal">
+                                                    <c:out value="${eventito.category}"/>
+                                                </p>
+                                            </td>
+                                        </tr>
                                     </c:forEach>
                                     </tbody>
                                 </table>

@@ -1,6 +1,8 @@
 package mx.edu.utez.voluntariapp_final.models.volunteer;
 import mx.edu.utez.voluntariapp_final.models.Role.Role;
 
+import mx.edu.utez.voluntariapp_final.models.administrators.DaoAdmin;
+import mx.edu.utez.voluntariapp_final.models.organization.Organ;
 import mx.edu.utez.voluntariapp_final.models.user.User;
 import mx.edu.utez.voluntariapp_final.utils.MYSQLConnection;
 import java.sql.*;
@@ -54,6 +56,40 @@ public class DaoVolunteer {
         }
         return volunteers;
     }
+
+    public List<Volunteer> Volunteer_activo() {
+        List<Volunteer> volunteer2 = new ArrayList();
+        try {
+            conn = new MYSQLConnection().connect();
+            String query = "   select*from volunteer_activos;";
+            pstm = conn.prepareStatement(query);
+            rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                Volunteer volunteer1 =new Volunteer();
+                volunteer1.setId(rs.getLong("id_volun"));
+                volunteer1.setName(rs.getString("v_name"));
+                volunteer1.setUser_id(rs.getString("user_id"));
+                User user =new User();
+                user.setId_user(rs.getLong("id_user"));
+                user.setEmail(rs.getString("email"));
+                user.setStatus(rs.getBoolean("enable"));
+                volunteer1.setUser(user);
+                Role role =new Role();
+                role.setId(rs.getInt("role_id"));
+                volunteer1.setRole(role);
+                volunteer2.add(volunteer1);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(DaoAdmin.class.getName())
+                    .log(Level.SEVERE, "Error del Listado " + e.getMessage());
+        } finally {
+            close();
+        }
+        return volunteer2;
+    }
+
+
 
     //Listado para mostarar los voluntarios que seran activados
     public List<Volunteer> findAllActive() {

@@ -37,13 +37,14 @@
                           </div>-->
                         <div class="form-floating">
                             <div class="form-floating">
-                                <input type="text" id="organ_id" name="organ_id" value="1" class="form-control">
+                                <input type="hidden" id="organ_id" name="organ_id" value="<%= session.getAttribute("organId")%>"class="form-control">
 
                             </div>
                             <div class="form-floating">
-                                <input type="text" id="user_id" name="user_id" value="2" class="form-control">
+                                <input type="hidden" id="user_id" name="user_id" value="<%= session.getAttribute("userId")%>" class="form-control">
+
                             </div>
-                        </div>
+
 
 
                         <div class="col-md-6 mb-4">
@@ -141,6 +142,8 @@
                     <br>
                     <div class="text-center">
                         <span><a href="/organ/main">Cancelar</a></span>
+                    </div>
+
                     </div>
                 </form>
             </div>

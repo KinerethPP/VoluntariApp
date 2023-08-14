@@ -39,8 +39,9 @@ import java.util.List;
         /*======================================*/
         /*Redirecciones del Formulario y Eventos*/
         "/organ/create_event",                   /*Campos Temporales*/
-        "/organ/create_forms"
+        "/organ/create_forms",
         /*======================================*/
+        "/forms/save"
 
 
 })
@@ -80,6 +81,10 @@ public class ServletOrgan extends HttpServlet {
                 break;
             /*Redirecciones del Organizador*/
            case "/organ/events":
+               List<Event> events2 = new DaoEvent().relacion_Organ();
+               request.setAttribute("events2", events2);
+               System.out.println("Listado de eventos"+events2);
+
                 redirect = "/pages/organizations/organizations_events.jsp";
                 break;
             case "/organ/surveys":
@@ -191,13 +196,13 @@ public class ServletOrgan extends HttpServlet {
                 try {
                     // Guardar el objeto "Organ" en la base de datos
                     if (new DaoOrgan().save(organ1)) {
-                        redirect = "/organ/main?result=true&message=" + URLEncoder.encode("Organizacion guardada correctamente", StandardCharsets.UTF_8);
+                        redirect = "/user/login?result=true&message=" + URLEncoder.encode("Organizacion guardada correctamente", StandardCharsets.UTF_8);
                     } else {
                         throw new Exception("Error");
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    redirect = "/organ/porfile?result=false&message=" + URLEncoder.encode("No se pudo guardar la organización", StandardCharsets.UTF_8);
+                    redirect = "/user/login?result=false&message=" + URLEncoder.encode("No se pudo guardar la organización", StandardCharsets.UTF_8);
                 }
                 break;
             case "/organ/update":
@@ -234,13 +239,15 @@ public class ServletOrgan extends HttpServlet {
                         if (new DaoOrgan().update(organ)) {
                             redirect = "/organ/main?result=true&message=" + URLEncoder.encode("Organizacion guardada correctamente", StandardCharsets.UTF_8);
                         } else {
-
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
                         redirect = "/organ/porfile?result=false&message=" + URLEncoder.encode("No se pudo guardar la organización", StandardCharsets.UTF_8);
                     }
                     break;
+                    case  "/forms/save":
+
+                        break;
            /* case "/organ/delete":
                 id = request.getParameter("id");
                 if (new DaoAdmin().delete(Long.parseLong(id))) {

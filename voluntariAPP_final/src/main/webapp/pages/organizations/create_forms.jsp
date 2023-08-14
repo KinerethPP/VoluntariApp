@@ -12,7 +12,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Formulario</title>
-    <!-- Se inserta la foto del logo de la empresa -->
     <link rel="shortcut icon" type="image/png" href="../../assets/images/logos_voluntariapp/logo_VOLUNTARIAPP.png" />
     <link rel="stylesheet" href="../../assets/css/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/css/css/register.css">
@@ -27,11 +26,10 @@
     <div class="container bg-white rounded shadow">
         <div class="row align-items-stretch">
             <div class="col bg-white p-5 rounded-end">
-                <h3 class="fw-bold text-center ">Crear Formulario</h3>
+                <h3 class="fw-bold text-center">Crear Formulario</h3>
                 <br>
-                <!-- Register -->
                 <form action="#" onsubmit="return validateForm()">
-                    <div class="row ">
+                    <div class="row">
                         <div class="col-md-0 mb-4">
                             <div class="form-floating">
                                 <input type="text" id="name" class="form-control" placeholder="#" required>
@@ -42,7 +40,8 @@
                     <div class="row">
                         <div class="col-md-0 mb-0">
                             <div class="form-floating">
-                                <input type="text" id="description" class="form-control" placeholder="#" required>
+                                <input type="text" id="description" class="form-control" placeholder="#"
+                                       required>
                                 <label for="description">Descripción</label>
                             </div>
                         </div>
@@ -58,7 +57,8 @@
 
                     <div class="row">
                         <div class="col-md-12 mb-5 d-grid">
-                            <button type="button" class="btn btn-outline-primary" onclick="addQuestion()"><i class="bi bi-plus"></i></button>
+                            <button type="button" class="btn btn-outline-primary"
+                                    onclick="addQuestion()"><i class="bi bi-plus"></i> Agregar Pregunta</button>
                         </div>
                     </div>
 
@@ -76,7 +76,6 @@
     </div>
 </div>
 
-<!-- Agregamos las referencias a las bibliotecas de Bootstrap y Popper.js -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -96,6 +95,7 @@
         questionHeader.classList.add("d-flex", "align-items-center", "mb-2");
 
         const questionInput = document.createElement("input");
+        questionInput.name.add("question")
         questionInput.classList.add("form-control", "mb-2");
         questionInput.placeholder = "Pregunta " + questionNumber;
 
@@ -104,7 +104,7 @@
         removeQuestionBtn.innerHTML = '<i class="bi bi-x-lg"></i>';
         removeQuestionBtn.addEventListener("click", () => {
             questionContainer.remove();
-            questions = questions.filter((q) => q !== questionContainer);
+            questions.splice(questionNumber - 1, 1);
             resetQuestionNumbers();
         });
 
@@ -112,58 +112,47 @@
         questionHeader.appendChild(removeQuestionBtn);
 
         const answersContainer = document.createElement("div");
-        const answerCountMap = new Map(); // Map to keep track of answer counts per question
 
-        function createAnswerInput(questionNumber) {
-            const answerNumber = (answerCountMap.get(questionNumber) || 1);
-
-            const answerInput = document.createElement("input");
-            answerInput.classList.add("form-control", "mb-2");
-            answerInput.placeholder = `Respuesta ${answerNumber}`;
-
-            const removeAnswerBtn = document.createElement("button");
-            removeAnswerBtn.type = "button";
-            removeAnswerBtn.classList.add("btn","ms-2");
-            removeAnswerBtn.innerHTML = '<i class="bi bi-x-lg"></i>';
-            removeAnswerBtn.addEventListener("click", () => {
-                answerContainer.remove();
-                answerCountMap.set(questionNumber, (answerCountMap.get(questionNumber) || 1) - 1);
-                resetAnswerNumbers(questionNumber);
-            });
-
-            const answerContainer = document.createElement("div");
-            answerContainer.classList.add("d-flex", "align-items-center");
-            answerContainer.appendChild(answerInput);
-            answerContainer.appendChild(removeAnswerBtn);
-
-            answerCountMap.set(questionNumber, (answerCountMap.get(questionNumber) || 1) + 1);
-
-            return answerContainer;
-        }
-
-        const addAnswerBtn = document.createElement("button");
-        addAnswerBtn.type = "button";
-        addAnswerBtn.classList.add("btn", "btn-outline-black", "mt-2");
-        addAnswerBtn.innerHTML = 'Añadir otra opcion <i class="bi bi-plus"></i>';
-        addAnswerBtn.addEventListener("click", () => {
-            const answerInput = createAnswerInput(questionNumber);
+        // Automatically create three answer inputs when adding a question
+        for (let i = 1; i <= 3; i++) {
+            const answerInput = createAnswerInput(questionNumber, i);
             answersContainer.appendChild(answerInput);
-        });
+        }
 
         questionContainer.appendChild(questionHeader);
         questionContainer.appendChild(answersContainer);
-        questionContainer.appendChild(addAnswerBtn);
 
         questions.push(questionContainer);
         questionsContainer.appendChild(questionContainer);
+        resetQuestionNumbers();
     }
 
-    function resetAnswerNumbers(questionNumber) {
+    function createAnswerInput(questionNumber, answerNumber) {
+        const answerContainer = document.createElement("div");
+        answerContainer.classList.add("d-flex", "align-items-center", "mb-2");
+
+        const radioInput = document.createElement("input");
+        radioInput.type = "radio";
+        radioInput.name = `correct-answer`;
+        radioInput.value = answerNumber;
+
+        const answerInput = document.createElement("input");
+        answerInput.classList.add("form-control", "ms-2");
+        answerInput.name.add("anwer")
+        answerInput.placeholder = `Respuesta`;
+
+        answerContainer.appendChild(radioInput);
+        answerContainer.appendChild(answerInput);
+
+        return answerContainer;
+    }
+
+    function resetAnswerNumbers() {
         const answerInputs = document.querySelectorAll(`#questions-container div[placeholder^='Respuesta'] input`);
-        const answers = Array.from(answerInputs).filter((input) => input.placeholder.includes(questionNumber));
-        answers.forEach((answer, index) => {
-            const newAnswerNumber = index + 1;
-            answer.placeholder = `Respuesta ${newAnswerNumber}`;
+        answerInputs.forEach((input, index) => {
+            const questionNumber = Math.floor(index / 3) + 1;
+            const answerNumber = index % 3 + 1;
+            input.placeholder = `Respuesta ${answerNumber} (Pregunta ${questionNumber})`;
         });
     }
 
@@ -172,8 +161,12 @@
             const questionInput = q.querySelector("input[placeholder^='Pregunta']");
             questionInput.placeholder = `Pregunta ${index + 1}`;
         });
+
+        resetAnswerNumbers();
     }
+
 </script>
+
 </body>
 
 </html>

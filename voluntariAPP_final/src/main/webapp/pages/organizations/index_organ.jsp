@@ -184,10 +184,52 @@
 
             <!-- Inicio Contenedor (Central) -->
             <div class="row">
-                <h1>Bienvenido</h1>
-                <h4>Nosotros</h4>
-                <p class="text-break">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum illo, aspernatur exercitationem cumque eaque magni numquam vitae itaque officiis ab quas eveniet dicta voluptatem. Repellat doloribus officiis veniam? Sapiente, praesentium! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente cumque voluptates illo at magnam cum vitae blanditiis quas, consectetur exercitationem porro nam, officiis quis commodi minima illum, nisi excepturi et.Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae fugiat temporibus perferendis veritatis quisquam consectetur corporis tenetur voluptates provident ab commodi, magnam numquam ratione perspiciatis. Dolores explicabo expedita recusandae voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, est vero aperiam optio reprehenderit obcaecati deleniti suscipit repellat doloribus? Exercitationem quaerat id provident quae facere, molestiae numquam libero ad quidem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis explicabo quidem neque, voluptatum libero ipsum autem officia ex ullam repellendus consequatur sequi illum asperiores. Iure laudantium ipsa numquam exercitationem temporibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt pariatur deleniti magni quae accusamus, architecto iusto rerum laboriosam nihil facilis fuga perferendis, molestiae neque vero repellat provident! Sed, ipsum possimus.
-                </p>
+                <div class="row">
+                    <h1>Bienvenida organización</h1>
+                    <br>
+                    <br>
+                    <br>
+
+
+                    <h4>Te explico brevemente que puedes hacer con nosotros y quienes somo....</h4>
+                    <br>
+                    <br>
+
+                    <p>Somos una aplicación que te brindrá el apoyo para que puedas crear Eventos y estos
+                        tengan con ellos voluntarios.<br>
+
+
+
+                        Esta aplicación está pensada para apoyar a ustedes, las organizaciónes
+                        a tener un control y acceso a crear dichos <br>eventos y con ellos poder manipular la información
+                        de quien aceptan como apoyo.
+                        <br>
+                        <br>
+
+                        Usted como organización tiene la libertad de poder crear los eventos que necesite, tenemos nuestro apartado de <br>eventos
+                        donde podra crearlos,y con ellos, tendra la posibilidad de por cada evento, poder realizar una encuenta <br>que filtrara con ella
+                        los voluntarios, <br>
+                        <br>
+                        <br>
+                    <h4>¿A qué me refiero con esto?</h4>
+                    <br>
+                    <br>
+
+                    Cuando creas tu evento, tendras la oportuinidad de crear una encuenta al evento para los voluntarios, y al ser publicados, los voluntarios que
+                    decidan <br>postularse tendran que responder dicha encuesta, la cual valida a traves de los parametros que tu escojas, cuales son los candidatos a postularse mas capacitados o con mejores caracteristicas para tu evento y si no cumplen con los criterios adecuados, entonces no serán aceptados, y así
+                    tendran la tranquilidad <br>de tener un filtro que les otorge tener los mejores candidatos a postularse.
+
+                    <br>
+                    <br>
+
+                    No se mostrará la información completa de los eventos a los voluntarios hasta ser aceptados, por temas de seguridad.
+                    <br>
+                    <br>
+                    <br>
+                    Sin más que decir, BIENVENIDO NUEVAMENTE.
+                    <br>
+                    <br>
+                </div>
             </div>
             <!-- Inicio Contenedor (Central) -->
 

@@ -15,14 +15,17 @@ public class Event {
     private String state ;
     private String event_time;
     private String category;
+    private String user_id;
+    private String organization_id;
 
     private User user;
     private Organ organ;
+    private Post post;
 
     public Event() {
     }
 
-    public Event(Long id, String name, String event_date, String description, String street, String cologne, String postal_code, String municipality, String state, String event_time, String category, User user, Organ organ) {
+    public Event(Long id, String name, String event_date, String description, String street, String cologne, String postal_code, String municipality, String state, String event_time, String category, String user_id, String organization_id, User user, Organ organ, Post post) {
         this.id = id;
         this.name = name;
         this.event_date = event_date;
@@ -34,8 +37,11 @@ public class Event {
         this.state = state;
         this.event_time = event_time;
         this.category = category;
+        this.user_id = user_id;
+        this.organization_id = organization_id;
         this.user = user;
         this.organ = organ;
+        this.post = post;
     }
 
     public Long getId() {
@@ -126,6 +132,22 @@ public class Event {
         this.category = category;
     }
 
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
+    public String getOrganization_id() {
+        return organization_id;
+    }
+
+    public void setOrganization_id(String organization_id) {
+        this.organization_id = organization_id;
+    }
+
     public User getUser() {
         return user;
     }
@@ -142,6 +164,14 @@ public class Event {
         this.organ = organ;
     }
 
+    public Post getPost() {
+        return post;
+    }
+
+    public void setPost(Post post) {
+        this.post = post;
+    }
+
     @Override
     public String toString() {
         return "Event{" +
@@ -156,8 +186,11 @@ public class Event {
                 ", state='" + state + '\'' +
                 ", event_time='" + event_time + '\'' +
                 ", category='" + category + '\'' +
+                ", user_id='" + user_id + '\'' +
+                ", organization_id='" + organization_id + '\'' +
                 ", user=" + user +
                 ", organ=" + organ +
+                ", post=" + post +
                 '}';
     }
 }

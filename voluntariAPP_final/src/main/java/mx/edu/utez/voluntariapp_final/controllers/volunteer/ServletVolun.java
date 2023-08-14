@@ -5,6 +5,10 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import mx.edu.utez.voluntariapp_final.models.Role.Role;
 
+import mx.edu.utez.voluntariapp_final.models.administrators.Admin;
+import mx.edu.utez.voluntariapp_final.models.administrators.DaoAdmin;
+import mx.edu.utez.voluntariapp_final.models.organization.DaoEvent;
+import mx.edu.utez.voluntariapp_final.models.organization.Event;
 import mx.edu.utez.voluntariapp_final.models.user.User;
 import mx.edu.utez.voluntariapp_final.models.volunteer.DaoVolunteer;
 import mx.edu.utez.voluntariapp_final.models.volunteer.Volunteer;
@@ -14,6 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 import java.util.UUID;
 
 @WebServlet(name = "volunteers ", urlPatterns = {
@@ -49,6 +54,10 @@ public class ServletVolun extends HttpServlet {
                 break;
             /*Redirecciones de Voluntarios*/
             case "/volunteer/events":
+               /* List<Event> event1 = new DaoEvent().Volunteer_accept();
+                req.setAttribute("event1", event1);
+                System.out.println("Listado eventos"+event1);*/
+
                 redirect = "/pages/volunteers/volunteer_events.jsp";
                 break;
             case "/volunteer/forms":

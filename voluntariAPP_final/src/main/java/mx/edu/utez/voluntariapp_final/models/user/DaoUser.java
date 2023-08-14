@@ -3,7 +3,10 @@ package mx.edu.utez.voluntariapp_final.models.user;
 
 import mx.edu.utez.voluntariapp_final.models.CRUD.DaoRepository;
 import mx.edu.utez.voluntariapp_final.models.Role.Role;
+import mx.edu.utez.voluntariapp_final.models.administrators.Admin;
+import mx.edu.utez.voluntariapp_final.models.administrators.DaoAdmin;
 import mx.edu.utez.voluntariapp_final.models.organization.Organ;
+import mx.edu.utez.voluntariapp_final.models.volunteer.Volunteer;
 import mx.edu.utez.voluntariapp_final.utils.MYSQLConnection;
 
 import java.sql.Connection;
@@ -180,3 +183,5 @@ public class DaoUser implements DaoRepository<User> {
 
     }
 }
+
+

@@ -9,17 +9,20 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import mx.edu.utez.voluntariapp_final.models.Role.Role;
 import mx.edu.utez.voluntariapp_final.models.administrators.Admin;
-import mx.edu.utez.voluntariapp_final.models.administrators.DaoAdmin;
+
+import mx.edu.utez.voluntariapp_final.models.organization.DaoOrgan;
+import mx.edu.utez.voluntariapp_final.models.organization.Organ;
 import mx.edu.utez.voluntariapp_final.models.user.DaoUser;
 import mx.edu.utez.voluntariapp_final.models.user.User;
+import mx.edu.utez.voluntariapp_final.models.volunteer.Volunteer;
 
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
-import java.util.List;
 
-import static java.lang.Long.parseLong;
+
+
 
 @WebServlet(name = "users",urlPatterns = {
         "/user/login",
@@ -55,6 +58,9 @@ public class ServletUser extends HttpServlet {
     HttpSession session;
     private String id_role;
     private String email,password;
+    private Organ organ;
+    private Volunteer volunteer;
+    private  Admin admin;
 
 
 
@@ -131,6 +137,11 @@ public class ServletUser extends HttpServlet {
                                 redirect = "/admin/main";
                                 break;
                             case "ORGANIZATION":
+                                organ = new DaoOrgan().findOneByUser(user.getId_user());
+                                System.out.println("id de organizacion: "+organ.getId()+".");
+                                System.out.println(user.getId_user()+ " id de use");
+                                session.setAttribute("userId", user.getId_user());
+                                session.setAttribute("organId", +organ.getId());
                                 redirect = "/organ/main";
                                 break;
                             case "VOLUNTEER":

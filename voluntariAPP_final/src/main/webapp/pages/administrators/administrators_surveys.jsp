@@ -28,7 +28,8 @@
             <div class="brand-logo d-flex align-items-center justify-content-between">
                 <a href="/admin/main" class="text-nowrap logo-img">
                     <!-- Logo parte superior izquierda -->
-                    <img src="../../assets/images/logos_voluntariapp/logo_extend.png" style="width:180px" alt="" /><!-- Logo de la barra lateral -->
+                    <img src="../../assets/images/logos_voluntariapp/logo_extend.png" style="width:180px" alt=""/>
+                    <!-- Logo de la barra lateral -->
                 </a>
                 <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
                     <i class="ti ti-x fs-8"></i>
@@ -55,7 +56,6 @@
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                         <span class="hide-menu">Usuarios</span>
                     </li>
-                    <!--Administradores -->
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="/admin/administrators" aria-expanded="false">
                 <span>
@@ -64,10 +64,6 @@
                             <span class="hide-menu">Administradores</span>
                         </a>
                     </li>
-                    <!--Administradores -->
-
-                    <!--Organizaciones -->
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="/admin/main-organ" aria-expanded="false">
                 <span>
@@ -76,10 +72,6 @@
                             <span class="hide-menu">Organizaciones</span>
                         </a>
                     </li>
-                    <!--Organizaciones -->
-
-                    <!--Voluntarios -->
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="/admin/main-volunt" aria-expanded="false">
                 <span>
@@ -88,28 +80,9 @@
                             <span class="hide-menu">Voluntarios</span>
                         </a>
                     </li>
-                    <!--Voluntarios -->
-
-
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                         <span class="hide-menu">Otros</span>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="/admin/surveys" aria-expanded="false">
-                <span>
-                  <i class="ti ti-clipboard-text"></i>
-                </span>
-                            <span class="hide-menu">Encuestas</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="/admin/stadist" aria-expanded="false">
-                <span>
-                  <i class="ti ti-chart-pie-3"></i>
-                </span>
-                            <span class="hide-menu">Estadisticas</span>
-                        </a>
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="/admin/aprobe" aria-expanded="false">
@@ -151,45 +124,30 @@
                 <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
                     <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
                         <!-- Etiqueta para meter cosas -->
+
                         <li class="nav-item d-none d-lg-block">
                             <a class="nav-link nav-icon-hover" href="javascript:void(0)" data-bs-toggle="modal"
                                data-bs-target="#exampleModal">
+                                <input type="text" name="textBuscar" class="form-control">
                                 <i class="ti ti-search"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-icon-hover" href="javascript:void(0)">
-                                <i class="ti ti-bell-ringing"></i>
-                                <div class="notification bg-primary rounded-circle"></div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-icon-hover">
-                                <i class="ti ti-question-mark"></i>
                             </a>
                         </li>
                         <!-- Foto de perfil -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
+                            <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2"
+                               data-bs-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="../../assets/images/user-1.jpg" alt="" style="width:35px; height:35px" class="rounded-circle">
+                                <img src="../../assets/images/user-1.jpg" alt="" style="width:35px; height:35px"
+                                     class="rounded-circle">
                             </a>
-
                             <!-- Menu desplegable del la Foto fe perfil -->
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
+                                 aria-labelledby="drop2">
                                 <!-- COLOR == | Fondo Desplegable Foto Perfil | ==    (Codigo de arriba)  -->
                                 <div class="message-body">
                                     <a href="/admin/porfile" class="d-flex align-items-center gap-2 dropdown-item">
                                         <i class="ti ti-user fs-6"></i>
                                         <p class="mb-0 fs-3">Mi perfil</p>
-                                    </a>
-                                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                                        <i class="ti ti-tools fs-6"></i>
-                                        <p class="mb-0 fs-3">Perzonalizar</p>
-                                    </a>
-                                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                                        <i class="ti ti-list-check fs-6"></i>
-                                        <p class="mb-0 fs-3">Otros</p>
                                     </a>
                                     <a href="/user/login" class="btn btn-outline-primary mx-3 mt-2 d-block">Cerrar
                                         Sesion</a>
@@ -202,7 +160,7 @@
                 </div>
             </nav>
         </header>
-        <!--  Header End -->
+
         <div class="container-fluid">
             <!--  Row 1 -->
             <div class="row">

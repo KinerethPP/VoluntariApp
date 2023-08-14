@@ -168,41 +168,150 @@
             <hr>
 
             <div class="row">
-                <!-- Inicio de barras de eventos -->
-                <div class="container barra-pading">
-                    <div class="event-card card">
-                        <div class="event-details">
-                            <img src="https://lacensura.com/wp-content/uploads/2021/06/utez_14-01-21.jpg"
-                                 alt="Imagen del evento">
-                            <div class="event-info ">
-                                <h5 class="card-title">Nombre del Evento</h5>
-                                <span>Evento creado para el DIF</span>
+                <div class="col-md-12">
+                    <div class="d-flex align-items-center gap-2 dropdown-item">
+                        <i class="ti ti-building fs-6"></i>
+                        <p class="mb-0 fs-3">Listado de Eventos</p>
+                    </div>
+                </div>
 
-                                <!-- <h6>Nombre del Formulario</h6> -->
-                                <br>
-                                <br>
-                                <tr>
-                                    <td class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-1">DIF</h6>
-                                        <p class="fw-normal">Nombre de la Encuesta</p>
-                                    </td>
-                                </tr>
-                            </div>
+            </div>
+            <hr><br><br>
 
-                            <div class="align-middle">
-                                <a class="event-action" href="#">
-                                    <th class="align-middle">
-                                        <h6 class="btn btn-primary">Postularse</h6>
-                                        <!-- <h6 class="fw-semibold mb-0">Postularse</h6> -->
-                                    </th>
-                                </a>
+            <!-- Inicia la tabla para los usarios -->
+            <div class="row">
+                <!-- Aqui inicia el codigo 242 -->
+                <div class="col-lg- d-flex align-items-stretch">
+                    <div class="card w-100">
+                        <div class="card-body p-3">
+                            <div class="table-responsive">
+                                <table class="table text-nowrap mb-0 align-middle">
+                                    <!--  -->
+                                    <thead class="text-dark fs-4">
+                                    <tr>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Foto</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Nombre del evento</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Descricpión</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Fecha del evento</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Hora del evento</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Estado</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Calle</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Colonia</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Tipo de evento</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Editar</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Eliminar</h6>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach var="eventito" items="${event1}">
+                                        <tr>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">
 
+                                                </h6>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">
+                                                    <c:out value="${eventito.name}"/>
+
+                                                </h6>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-1">
+                                                    <c:out value="${eventito.description}"/>
+                                                </h6>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <p class="mb-0 fw-normal">
+                                                    <c:out value="${eventito.event_day}"/>
+                                                </p>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <p class="mb-0 fw-normal">
+                                                    <c:out value="${eventito.event_time}"/>
+                                                </p>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <p class="mb-0 fw-normal">
+                                                    <c:out value="${eventito.state}"/>
+                                                </p>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">
+                                                    <c:out value="${eventito.municipality}"/>
+                                                </h6>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">
+                                                    <c:out value="${eventito.postal_code}"/>
+                                                </h6>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">
+                                                    <c:out value="${eventito.street}"/>
+                                                </h6>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">
+                                                    <c:out value="${eventito.cologne}"/>
+                                                </h6>
+                                            </td>
+
+                                                <%--                     Aqui esta el STATUS                       --%>
+                                                <%--                                            <td class="border-bottom-0">--%>
+                                                <%--                                                <div class="d-flex align-items-center gap-2">--%>
+                                                <%--                                                        <span--%>
+                                                <%--                                                                class="badge bg-danger rounded-3 fw-semibold"> <c:out value="${orga.user.status}"/>--%>
+                                                <%--                                                        </span>--%>
+                                                <%--                                                </div>--%>
+                                                <%--                                            </td>--%>
+                                            <td class="border-bottom-0">
+                                                <p class="mb-0 fw-normal">
+                                                    <c:out value="${eventito.category}"/>
+                                                </p>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <p class="mb-0 fw-normal">
+
+                                                </p>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <p class="mb-0 fw-normal">
+
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Fin de barras de eventos -->
             </div>
+
         </div>
     </div>
 </div>

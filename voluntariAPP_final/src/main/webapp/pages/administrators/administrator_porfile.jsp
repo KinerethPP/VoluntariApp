@@ -62,7 +62,6 @@
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                         <span class="hide-menu">Usuarios</span>
                     </li>
-                    <!--Administradores -->
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="/admin/administrators" aria-expanded="false">
                 <span>
@@ -71,10 +70,6 @@
                             <span class="hide-menu">Administradores</span>
                         </a>
                     </li>
-                    <!--Administradores -->
-
-                    <!--Organizaciones -->
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="/admin/main-organ" aria-expanded="false">
                 <span>
@@ -83,10 +78,6 @@
                             <span class="hide-menu">Organizaciones</span>
                         </a>
                     </li>
-                    <!--Organizaciones -->
-
-                    <!--Voluntarios -->
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="/admin/main-volunt" aria-expanded="false">
                 <span>
@@ -95,19 +86,10 @@
                             <span class="hide-menu">Voluntarios</span>
                         </a>
                     </li>
-                    <!--Voluntarios -->
-
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="/admin/surveys" aria-expanded="false">
-                <span>
-                  <i class="ti ti-clipboard-text"></i>
-                </span>
-                            <span class="hide-menu">Encuestas</span>
-                        </a>
+                    <li class="nav-small-cap">
+                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                        <span class="hide-menu">Otros</span>
                     </li>
-
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="/admin/aprobe" aria-expanded="false">
                 <span>
@@ -116,8 +98,6 @@
                             <span class="hide-menu">Aprobar</span>
                         </a>
                     </li>
-
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="/admin/porfile" aria-expanded="false">
                 <span>
@@ -128,7 +108,6 @@
                     </li>
                 </ul>
             </nav>
-
             <!-- End Sidebar navigation -->
         </div>
         <!-- End Sidebar scroll-->
@@ -151,21 +130,12 @@
                 <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
                     <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
                         <!-- Etiqueta para meter cosas -->
+
                         <li class="nav-item d-none d-lg-block">
                             <a class="nav-link nav-icon-hover" href="javascript:void(0)" data-bs-toggle="modal"
                                data-bs-target="#exampleModal">
+                                <input type="text" name="textBuscar" class="form-control">
                                 <i class="ti ti-search"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-icon-hover" href="javascript:void(0)">
-                                <i class="ti ti-bell-ringing"></i>
-                                <div class="notification bg-primary rounded-circle"></div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-icon-hover">
-                                <i class="ti ti-question-mark"></i>
                             </a>
                         </li>
                         <!-- Foto de perfil -->
@@ -176,7 +146,6 @@
                                 <img src="../../assets/images/user-1.jpg" alt="" style="width:35px; height:35px"
                                      class="rounded-circle">
                             </a>
-
                             <!-- Menu desplegable del la Foto fe perfil -->
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
                                  aria-labelledby="drop2">
@@ -197,7 +166,6 @@
                 </div>
             </nav>
         </header>
-        <!--  Header End -->
         <!-- Inicio Contenedor (Principal) -->
         <div class="container-fluid">
 
@@ -260,8 +228,11 @@
                                                 Editar
                                             </button>
                                             <hr style="color: white">
-                                            <button type="button" class="btn btn-danger col-lg-6">Eliminar cuenta</button>
+                                            <!--=============== <form method="post" action="/admin/delete">===============-->
+                                            <button type="submit" formaction="/admin/delete" class="btn btn-danger col-lg-6">Eliminar cuenta</button>
+                                            <!--=============== </form>===============-->
                                         </div>
+
                                         <!--===============  Fin de los botones del Modal de Actualizar   ===============-->
 
                                         <!-- Modal -->

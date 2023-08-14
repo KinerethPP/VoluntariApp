@@ -1,4 +1,7 @@
+
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
 <html lang="en">
 
@@ -193,274 +196,137 @@
             <hr>
             <!-- Fin Contenedor (Central) -->
 
+            <!-- Inicia la tabla para los eventos -->
             <div class="row">
-                <!-- Inicio de barras de eventos -->
-                <div class="container barra-pading">
-                    <div class="event-card card">
-                        <div class="event-details">
-                            <div>
-                                <img src="https://lacensura.com/wp-content/uploads/2021/06/utez_14-01-21.jpg"
-                                     alt="Imagen del evento">
-                            </div>
-                            <div class="event-info">
-                                <h5 class="card-title">Nombre del Evento</h5>
-                            </div>
-                            <%--            Botones del Crud de Eventos                --%>
-                            <div class="event-actions">
-                                <!-- Boton vista -->
-                                <a class="event-action" href="#" aria-expanded="false" data-bs-toggle="modal"
-                                   data-bs-target="#viewModal">
-                                    <span>
-                                        <i class="ti ti-eye"></i>
-                                    </span>
-                                </a>
-                                <!-- Boton actualizar -->
-                                <a class="event-action" href="#" aria-expanded="false" data-bs-toggle="modal"
-                                   data-bs-target="#editModal">
-                                    <span>
-                                        <i class="ti ti-edit"></i>
-                                    </span>
-                                </a>
-                                <!-- Boton Eliminar  -->
-                                <a class="event-action" href="#" aria-expanded="false"
-                                   onclick="mostrarConfirmacionEliminar()">
-                                    <span>
-                                        <i class="ti ti-trash-x"></i>
-                                    </span>
-                                </a>
-                            </div>
+                <!-- Aqui inicia el codigo 242 -->
+                <div class="col-lg- d-flex align-items-stretch">
+                    <div class="card w-100">
+                        <div class="card-body p-3">
+                            <div class="table-responsive">
+                                <table class="table text-nowrap mb-0 align-middle">
+                                    <!--  -->
+                                    <thead class="text-dark fs-4">
+                                    <tr>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Foto</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Nombre del evento</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Descricpión</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Fecha del evento</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Hora del evento</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Estado</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Calle</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Colonia</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Tipo de evento</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Editar</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Eliminar</h6>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach var="eventito" items="${events2}">
+                                        <tr>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">
 
+                                                </h6>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">
+                                                    <c:out value="${eventito.name}"/>
+                                                </h6>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-1">
+                                                    <c:out value="${eventito.description}"/>
+                                                </h6>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <p class="mb-0 fw-normal">
+                                                    <c:out value="${eventito.event_date}"/>
+                                                </p>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <p class="mb-0 fw-normal">
+                                                    <c:out value="${eventito.event_time}"/>
+                                                </p>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <p class="mb-0 fw-normal">
+                                                    <c:out value="${eventito.state}"/>
+                                                </p>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">
+                                                    <c:out value="${eventito.municipality}"/>
+                                                </h6>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">
+                                                    <c:out value="${eventito.postal_code}"/>
+                                                </h6>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">
+                                                    <c:out value="${eventito.street}"/>
+                                                </h6>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">
+                                                    <c:out value="${eventito.cologne}"/>
+                                                </h6>
+                                            </td>
+                                        <%--                     Aqui esta el STATUS                       --%>
+                                        <%-- <td class="border-bottom-0">--%>
+                                        <%--   <div class="d-flex align-items-center gap-2">--%>
+                                        <%--    <span--%>
+                                        <%--        class="badge bg-danger rounded-3 fw-semibold"> <c:out value="${orga.user.status}"/>--%>
+                                        <%--    </span>--%>
+                                        <%--   </div>--%>
+                                        <%-- </td>--%>
+                                            <td class="border-bottom-0">
+                                                <p class="mb-0 fw-normal">
+                                                    <c:out value="${eventito.category}"/>
+                                                </p>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <p class="mb-0 fw-normal">
 
-                            <!-- Modal de Vista -->
-                            <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel"
-                                 aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="viewModalLabel">Detalles del Evento</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Cerrar"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="container">
-                                                <div class="text-center">
-                                                    <img src="https://lacensura.com/wp-content/uploads/2021/06/utez_14-01-21.jpg"
-                                                         class="img-fluid" alt="Imagen del Evento"
-                                                         style="width: 100%; max-height: 500px; object-fit: cover;">
-                                                </div>
+                                                </p>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <p class="mb-0 fw-normal">
 
-                                                <div class="row">
-                                                    <br><br>
-                                                    <hr>
-                                                    <div class="col-md-6 mb-4">
-                                                        <h6>Nombre del Evento</h6>
-                                                        <c:out value="${evento.name}"/>
-                                                    </div>
-                                                    <div class="col-md-6 mb-4">
-                                                        <h6>Fecha y Hora</h6>
-                                                        <c:out value="${evento.event_day} ${evento.event_time}"/>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-md-6 mb-4">
-                                                        <h6>Descripción</h6>
-                                                        <c:out value="${evento.description}"/>
-                                                    </div>
-                                                    <div class="col-md-6 mb-4">
-                                                        <h6>Categoría</h6>
-                                                        <c:out value="${evento.category}"/>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-md-6 mb-4">
-                                                        <h6>Estado</h6>
-                                                        <c:out value="${evento.state}"/>
-                                                    </div>
-                                                    <div class="col-md-6 mb-4">
-                                                        <h6>Municipio</h6>
-                                                        <c:out value="${evento.municipality}"/>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-md-6 mb-4">
-                                                        <h6>Código Postal</h6>
-                                                        <c:out value="${evento.postal_code}"/>
-                                                    </div>
-                                                    <div class="col-md-6 mb-4">
-                                                        <h6>Calle</h6>
-                                                        <c:out value="${evento.street}"/>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-md-6 mb-4">
-                                                        <h6>Colonia</h6>
-                                                        <c:out value="${evento.cologne}"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Modal de Actualización -->
-                        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel"
-                             aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="editModalLabel">Editar Evento</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Cerrar"></button>
-                                    </div>
-
-                                    <div class="modal-body">
-                                        <form class="needs-validation" id="event-form" novalidate
-                                              action="<%--/event/update--%>" method="post">
-                                            <div class="row ">
-                                                <!--  <div class="form-floating">
-                                                      <input type="text" name="user_id" id="id_user" class="form-control" value=""  disabled>
-
-                                                      <label for="id_user">User Id</label>
-                                                  </div>-->
-                                                <div class="form-floating">
-                                                    <div class="form-floating">
-                                                        <input type="text" id="organ_id" name="organ_id" value="1"
-                                                               class="form-control">
-
-                                                    </div>
-                                                    <div class="form-floating">
-                                                        <input type="text" id="user_id" name="user_id" value="2"
-                                                               class="form-control">
-                                                    </div>
-
-                                                </div>
-                                                <div class="col-md-6 mb-4">
-                                                </div>
-
-                                                <div class="col-md-0 mb-4">
-                                                    <div class="form-floating">
-                                                        <input type="text" id="name" name="name" class="form-control"
-                                                               placeholder="Nombre del evento" required>
-                                                        <label for="name">Nombre del Evento</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-0 mb-4">
-                                                    <div class="form-floating">
-                                                        <input type="text" id="description" name="description"
-                                                               class="form-control"
-                                                               placeholder="Descripcion" required>
-                                                        <label for="description">Descripcion</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6 mb-4">
-                                                    <div class="form-floating">
-                                                        <input type="date" id="event_day" name="event_day"
-                                                               class="form-control"
-                                                               placeholder="Fecha del Evento" required>
-                                                        <label for="event_day">Fecha del Evento</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 mb-4">
-                                                    <div class="form-floating">
-                                                        <input type="time" id="event_time" name="event_time"
-                                                               class="form-control"
-                                                               placeholder="Hora del Evento" required>
-                                                        <label for="event_time">Hora del Evento</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6 mb-4">
-                                                    <div class="form-floating">
-                                                        <input type="text" id="state" name="state" class="form-control"
-                                                               placeholder="Estado"
-                                                               required>
-                                                        <label for="state">Estado</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 mb-4">
-                                                    <div class="form-floating">
-                                                        <input type="text" id="municipality" name="municipality"
-                                                               class="form-control"
-                                                               placeholder="Municipio" required>
-                                                        <label for="municipality">Municipio</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6 mb-4">
-                                                    <div class="form-floating">
-                                                        <input type="text" id="postal_code" name="postal_code"
-                                                               class="form-control"
-                                                               placeholder="Codigo Postal" pattern="[0-9]{5}"
-                                                               required>
-                                                        <label for="postal_code">Codigo Postal</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 mb-4">
-                                                    <div class="form-floating">
-                                                        <input type="text" id="street" name="street"
-                                                               class="form-control" placeholder="Calle"
-                                                               required>
-                                                        <label for="street">Calle</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6 mb-4">
-                                                    <div class="form-floating">
-                                                        <input type="text" id="cologne" name="cologne"
-                                                               class="form-control"
-                                                               placeholder="Colonia" required>
-                                                        <label for="cologne">Colonia</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 mb-4">
-                                                    <div class="form-floating">
-                                                        <label for="validationCustom04" class="form-label"></label>
-                                                        <select class="form-select" name="category"
-                                                                id="validationCustom04" required>
-                                                            <option selected disabled value="">Selecciona la
-                                                                Categoria...
-                                                            </option>
-                                                            <option value="Benefico">Benefico</option>
-                                                            <option value="Caridad">Caridad</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-danger btn-sm"
-                                                        data-bs-dismiss="modal" aria-label="Close">
-                                                    Cancelar
-                                                </button>
-                                                <button type="button" class="btn btn-warning btn-sm"
-                                                        onclick="mostrarAlertaActualizacion()">
-                                                    Actualizar
-                                                </button>
-                                            </div>
-
-                                        </form>
-                                    </div>
-                                </div>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Fin de barras de eventos -->
         </div>
 
         <div class="row">

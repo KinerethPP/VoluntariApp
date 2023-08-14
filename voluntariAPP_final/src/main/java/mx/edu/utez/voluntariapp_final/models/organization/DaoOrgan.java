@@ -1,6 +1,8 @@
 package mx.edu.utez.voluntariapp_final.models.organization;
 
 import mx.edu.utez.voluntariapp_final.models.Role.Role;
+import mx.edu.utez.voluntariapp_final.models.administrators.Admin;
+import mx.edu.utez.voluntariapp_final.models.administrators.DaoAdmin;
 import mx.edu.utez.voluntariapp_final.models.user.User;
 import mx.edu.utez.voluntariapp_final.models.volunteer.DaoVolunteer;
 import mx.edu.utez.voluntariapp_final.utils.MYSQLConnection;
@@ -57,6 +59,79 @@ public class DaoOrgan {
         }
 
         return organs;
+    }
+
+    public List<Organ> Organ_activo() {
+        List<Organ> organ2 = new ArrayList();
+        try {
+            conn = new MYSQLConnection().connect();
+            String query = "   select*from organizacion_activos;";
+            pstm = conn.prepareStatement(query);
+            rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                Organ organ1 =new Organ();
+                organ1.setId(rs.getLong("id_organ"));
+                organ1.setBussines_name(rs.getString("bussines_name"));
+                organ1.setUser_id(rs.getString("user_id"));
+                User user =new User();
+                user.setId_user(rs.getLong("id_user"));
+                user.setEmail(rs.getString("email"));
+                user.setStatus(rs.getBoolean("enable"));
+                organ1.setUser(user);
+                Role role =new Role();
+                role.setId(rs.getInt("role_id"));
+                organ1.setRole(role);
+                organ2.add(organ1);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(DaoAdmin.class.getName())
+                    .log(Level.SEVERE, "Error del Listado " + e.getMessage());
+        } finally {
+            close();
+        }
+        return organ2;
+    }
+
+    //Listado para mostrar las organizaciones que aun no etan activadas
+    public List<Organ> findAllActive() {
+        List<Organ> organ = new ArrayList<>();
+        try {
+            conn = new MYSQLConnection().connect(); //Establecer la conexion
+            String query = "Select*from organizacion_active;"; //Preparamos la sentencia
+            pstm = conn.prepareStatement(query);   //Ejecutamos la sentencia en la base de datos
+            rs = pstm.executeQuery();
+            while (rs.next()) {
+                Organ organ1 = new Organ();
+                organ1.setId(rs.getLong("id_organ"));
+                organ1.setBussines_name(rs.getString("bussines_name"));
+                organ1.setStreet(rs.getString("street"));
+                organ1.setCologne(rs.getString("cologne"));
+                organ1.setPostal_code(rs.getString("postal_code"));
+                organ1.setMunicipality(rs.getString("municipality"));
+                organ1.setState(rs.getString("state"));
+                organ1.setPhone(rs.getString("phone"));
+                organ1.setRfc(rs.getString("rfc"));
+                organ1.setUser_id(rs.getString("user_id"));
+                User user =new User();
+                user.setId_user(rs.getLong("id_user"));
+                user.setEmail(rs.getString("email"));
+                user.setStatus(rs.getBoolean("enable"));
+                organ1.setUser(user);
+                Role role = new Role();
+                role.setId(rs.getInt("role_id"));
+                organ1.setRole(role);
+                organ.add(organ1);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(DaoOrgan.class.getName())
+                    .log(Level.SEVERE, "Error findAll"
+                            + e.getMessage());
+        } finally {
+            close();
+        }
+
+        return organ;
     }
 
 
@@ -180,27 +255,8 @@ public class DaoOrgan {
         return false;
     }
 
-    /*public boolean delete(Long id) {
-        try {
-            conn = new MYSQLConnection().connect();
-            String query = "DELETE from users WHERE id_user = ?;";
-            pstm = conn.prepareStatement(query);
-            pstm.setLong(1, id);
-            return pstm.executeUpdate() == 1;
-        } catch (SQLException e) {
-            Logger.getLogger(DaoAdmin.class.getName())
-                    .log(Level.SEVERE, "Error findAll"
-                            + e.getMessage());
-        } finally {
-            close();
-        }
-        return false;
-    }*/
 
 
-    public List<Role> searchRole() {
-        return null;
-    }
 
     public void close() {
         try {
