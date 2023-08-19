@@ -10,6 +10,8 @@ public class Admin {
     private String user_id;
     private  User user;
     private Role role;
+    private String Filename;
+    private byte[] imageUser;
 
     public Admin() {
     }
@@ -20,6 +22,22 @@ public class Admin {
         this.user_id = user_id;
         this.user = user;
         this.role = role;
+    }
+
+    public String getFilename() {
+        return Filename;
+    }
+
+    public void setFilename(String filename) {
+        Filename = filename;
+    }
+
+    public byte[] getImageUser() {
+        return imageUser;
+    }
+
+    public void setImageUser(byte[] imageUser) {
+        this.imageUser = imageUser;
     }
 
     public Long getId_admin() {

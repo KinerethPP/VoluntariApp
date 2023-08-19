@@ -17,15 +17,16 @@ public class Event {
     private String category;
     private String user_id;
     private String organization_id;
+    private Boolean status ;
 
     private User user;
     private Organ organ;
-    private Post post;
+
 
     public Event() {
     }
 
-    public Event(Long id, String name, String event_date, String description, String street, String cologne, String postal_code, String municipality, String state, String event_time, String category, String user_id, String organization_id, User user, Organ organ, Post post) {
+    public Event(Long id, String name, String event_date, String description, String street, String cologne, String postal_code, String municipality, String state, String event_time, String category, String user_id, String organization_id, Boolean status, User user, Organ organ) {
         this.id = id;
         this.name = name;
         this.event_date = event_date;
@@ -39,9 +40,10 @@ public class Event {
         this.category = category;
         this.user_id = user_id;
         this.organization_id = organization_id;
+        this.status = status;
         this.user = user;
         this.organ = organ;
-        this.post = post;
+
     }
 
     public Long getId() {
@@ -148,6 +150,14 @@ public class Event {
         this.organization_id = organization_id;
     }
 
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
     public User getUser() {
         return user;
     }
@@ -164,13 +174,6 @@ public class Event {
         this.organ = organ;
     }
 
-    public Post getPost() {
-        return post;
-    }
-
-    public void setPost(Post post) {
-        this.post = post;
-    }
 
     @Override
     public String toString() {
@@ -190,7 +193,7 @@ public class Event {
                 ", organization_id='" + organization_id + '\'' +
                 ", user=" + user +
                 ", organ=" + organ +
-                ", post=" + post +
+
                 '}';
     }
 }

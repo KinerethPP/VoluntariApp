@@ -235,12 +235,7 @@
                                                 <c:out value="${user.email}"/>
                                             </div>
                                         </div>
-                                        <div class="col-6 mb-3">
-                                            <div class="form-floating">
-                                                <h5>Contraseña</h5>
-                                                <c:out value="${user.password}"/>
-                                            </div>
-                                        </div>
+
                                     </div>
                                     <!--=============== Inicio de los botones del Modal de Actualizar ===============-->
                                     <div class="row  pt-1 justify-content-center">

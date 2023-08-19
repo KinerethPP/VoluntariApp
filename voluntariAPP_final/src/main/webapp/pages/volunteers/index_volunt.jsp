@@ -139,7 +139,7 @@
                                         <p class="mb-0 fs-3">Mi perfil</p>
                                     </a>
 
-                                    <a href="/user/login" class="btn btn-outline-primary mx-3 mt-2 d-block">Cerrar
+                                    <a href="/api/auth/logout" class="btn btn-outline-primary mx-3 mt-2 d-block">Cerrar
                                         Sesion</a>
                                 </div>
                             </div>

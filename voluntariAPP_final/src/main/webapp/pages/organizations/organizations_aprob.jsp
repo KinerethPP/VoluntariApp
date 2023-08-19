@@ -7,11 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VoluntariApp Aprobar</title>
     <!-- Se inserta la foto del logo de la empresa -->
-    <link rel="shortcut icon" type="image/png" href="../../assets/images/logos_voluntariapp/logo_VOLUNTARIAPP.png" />
-    <link rel="stylesheet" href="../../assets/css/styles.min.css" />
+    <link rel="shortcut icon" type="image/png" href="../../assets/images/logos_voluntariapp/logo_VOLUNTARIAPP.png"/>
+    <link rel="stylesheet" href="../../assets/css/styles.min.css"/>
     <link rel="stylesheet" href="../../assets/css/css/style_dashboard.css">
-    <link rel="stylesheet" href="{pageContext.request.contextPath}https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="{pageContext.request.contextPath}https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link rel="stylesheet"
+          href="{pageContext.request.contextPath}https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+          href="{pageContext.request.contextPath}https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link rel="stylesheet"
+          href="{pageContext.request.contextPath}https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
 </head>
 
 <body>
@@ -30,7 +34,7 @@
                 <a href="/organ/main" class="text-nowrap logo-img">
                     <!-- Logo parte superior izquierda -->
                     <img src="../../assets/images/logos_voluntariapp/logo_extend.png" style="width:180px"
-                         alt="" /><!-- Logo de la barra lateral -->
+                         alt=""/><!-- Logo de la barra lateral -->
                 </a>
                 <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
                     <i class="ti ti-x fs-8"></i>
@@ -140,13 +144,16 @@
                         </li>
                         <!-- Foto de perfil -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
+                            <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2"
+                               data-bs-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="../../assets/images/user-1.jpg" alt="" style="width:35px; height:35px"  class="rounded-circle">
+                                <img src="../../assets/images/user-1.jpg" alt="" style="width:35px; height:35px"
+                                     class="rounded-circle">
                             </a>
 
                             <!-- Menu desplegable del la Foto fe perfil -->
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
+                                 aria-labelledby="drop2">
                                 <!-- COLOR == | Fondo Desplegable Foto Perfil | ==    (Codigo de arriba)  -->
                                 <div class="message-body">
                                     <a href="/organ/porfile" class="d-flex align-items-center gap-2 dropdown-item">
@@ -189,15 +196,15 @@
 
             <div class="row">
                 <h4>Nombre del Evento</h4>
-            </div><br>
+            </div>
+            <br>
             <!-- Inicia la tabla para los usarios -->
             <div class="row">
-                <div class="col-lg- d-flex align-items-stretch">
+                <div class="col-lg-12 d-flex align-items-stretch">
                     <div class="card w-100">
                         <div class="card-body p-3">
                             <div class="table-responsive">
-                                <table class="table text-nowrap mb-0 align-middle">
-                                    <!--  -->
+                                <table id="example" class="table text-nowrap mb-0 align-middle">
                                     <thead class="text-dark fs-4">
                                     <tr>
                                         <th class="border-bottom-0">
@@ -244,34 +251,34 @@
                                     <tbody>
                                     <tr>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0"> </h6>
+                                            <h6 class="fw-semibold mb-0"></h6>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0"> </h6>
+                                            <h6 class="fw-semibold mb-0"></h6>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0"> </h6>
+                                            <h6 class="fw-semibold mb-0"></h6>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0"> </h6>
+                                            <h6 class="fw-semibold mb-0"></h6>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0"> </h6>
+                                            <h6 class="fw-semibold mb-0"></h6>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-1"> </h6>
+                                            <h6 class="fw-semibold mb-1"></h6>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal"> </p>
+                                            <p class="mb-0 fw-normal"></p>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal"> </p>
+                                            <p class="mb-0 fw-normal"></p>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal"> </p>
+                                            <p class="mb-0 fw-normal"></p>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0"> </h6>
+                                            <h6 class="fw-semibold mb-0"></h6>
                                         </td>
                                         <td class="border-bottom-0">
                                             <div class="d-flex align-items-center gap-2">
@@ -280,13 +287,13 @@
                                             </div>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal"> </p>
+                                            <p class="mb-0 fw-normal"></p>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal"> </p>
+                                            <p class="mb-0 fw-normal"></p>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0 fs-4"> </h6>
+                                            <h6 class="fw-semibold mb-0 fs-4"></h6>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -303,12 +310,11 @@
             </div>
             <!-- Inicia la tabla para los usarios -->
             <div class="row">
-                <div class="col-lg- d-flex align-items-stretch">
+                <div class="col-lg-12 d-flex align-items-stretch">
                     <div class="card w-100">
                         <div class="card-body p-3">
                             <div class="table-responsive">
-                                <table class="table text-nowrap mb-0 align-middle">
-                                    <!--  -->
+                                <table id="" class="table text-nowrap mb-0 align-middle">
                                     <thead class="text-dark fs-4">
                                     <tr>
                                         <th class="border-bottom-0">
@@ -355,34 +361,34 @@
                                     <tbody>
                                     <tr>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0"> </h6>
+                                            <h6 class="fw-semibold mb-0"></h6>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0"> </h6>
+                                            <h6 class="fw-semibold mb-0"></h6>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0"> </h6>
+                                            <h6 class="fw-semibold mb-0"></h6>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0"> </h6>
+                                            <h6 class="fw-semibold mb-0"></h6>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0"> </h6>
+                                            <h6 class="fw-semibold mb-0"></h6>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-1"> </h6>
+                                            <h6 class="fw-semibold mb-1"></h6>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal"> </p>
+                                            <p class="mb-0 fw-normal"></p>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal"> </p>
+                                            <p class="mb-0 fw-normal"></p>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal"> </p>
+                                            <p class="mb-0 fw-normal"></p>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0"> </h6>
+                                            <h6 class="fw-semibold mb-0"></h6>
                                         </td>
                                         <td class="border-bottom-0">
                                             <div class="d-flex align-items-center gap-2">
@@ -391,13 +397,13 @@
                                             </div>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal"> </p>
+                                            <p class="mb-0 fw-normal"></p>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal"> </p>
+                                            <p class="mb-0 fw-normal"></p>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0 fs-4"> </h6>
+                                            <h6 class="fw-semibold mb-0 fs-4"></h6>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -420,5 +426,21 @@
 <!-- Estadisticas Library -->
 <script src="../../assets/js/apexcharts.min.js"></script>
 <script src="../../assets/js/dashboard.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+<script src="{pageContext.request.contextPath}https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="{pageContext.request.contextPath}https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable(
+            {
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json',
+                },
+            }
+        );
+    });
+</script>
 </body>
 </html>

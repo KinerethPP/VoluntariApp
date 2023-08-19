@@ -20,20 +20,22 @@ public class DaoAdmin {
 
     public List<Admin> findAll() {
         List<Admin> admins = new ArrayList();
+        Admin admin = null;
         System.out.println("Llegas?"+admins);
         try {
             conn = new MYSQLConnection().connect();
-            String query = " SELECT * FROM admin_user_info;";
-            pstm = conn.prepareStatement(query);
-            rs = pstm.executeQuery();
-
+            String query = "{call GetAdminUsers()}";
+            cs = conn.prepareCall(query);
+            boolean result = cs.execute();
+            if (result)
+            rs = cs.getResultSet();
             while (rs.next()) {
-                Admin admin =new Admin();
-                admin.setId_admin(rs.getLong("admin_id"));
-                admin.setName(rs.getString("admin_name"));
+                admin = new Admin();
+                admin.setId_admin(rs.getLong("id"));
+                admin.setName(rs.getString("name"));
                 admin.setUser_id(rs.getString("user_id"));
                 User user =new User();
-                user.setId_user(rs.getLong("id_user"));
+                user.setId_user(rs.getLong("id"));
                 user.setEmail(rs.getString("email"));
                 user.setStatus(rs.getBoolean("enable"));
                 admin.setUser(user);
@@ -84,22 +86,92 @@ public class DaoAdmin {
         return false;
     }
 
+    public boolean activeOrg(Long id) {
+        try{
+            conn = new MYSQLConnection().connect();
+            String query = "UPDATE users SET enable = true WHERE id = ?;";
+            pstm = conn.prepareStatement(query);
+            pstm.setLong(1, Long.parseLong(String.valueOf(id)));
+            return pstm.executeUpdate() > 0; // ==1
+        }catch(SQLException e){
+            Logger.getLogger(DaoAdmin.class.getName())
+                    .log(Level.SEVERE, "Error findAll"
+                            + e.getMessage());
+        }finally{
+            close();
+        }
+        return false;
+    }
+
+    public boolean inactiveOrg(Long id) {
+        try{
+            conn = new MYSQLConnection().connect();
+            String query = "UPDATE users SET enable = false WHERE id = ?;";
+            pstm = conn.prepareStatement(query);
+            pstm.setLong(1, Long.parseLong(String.valueOf(id)));
+            return pstm.executeUpdate() > 0; // ==1
+        }catch(SQLException e){
+            Logger.getLogger(DaoAdmin.class.getName())
+                    .log(Level.SEVERE, "Error findAll"
+                            + e.getMessage());
+        }finally{
+            close();
+        }
+        return false;
+    }
+
+    public boolean activeVol(Long id) {
+        try{
+            conn = new MYSQLConnection().connect();
+            String query = "UPDATE users SET enable = true WHERE id = ?;";
+            pstm = conn.prepareStatement(query);
+            pstm.setLong(1, Long.parseLong(String.valueOf(id)));
+            return pstm.executeUpdate() > 0; // ==1
+        }catch(SQLException e){
+            Logger.getLogger(DaoAdmin.class.getName())
+                    .log(Level.SEVERE, "Error findAll"
+                            + e.getMessage());
+        }finally{
+            close();
+        }
+        return false;
+    }
+
+    public boolean inactiveVol(Long id) {
+        try{
+            conn = new MYSQLConnection().connect();
+            String query = "UPDATE users SET enable = false WHERE id = ?;";
+            pstm = conn.prepareStatement(query);
+            pstm.setLong(1, Long.parseLong(String.valueOf(id)));
+            return pstm.executeUpdate() > 0; // ==1
+        }catch(SQLException e){
+            Logger.getLogger(DaoAdmin.class.getName())
+                    .log(Level.SEVERE, "Error findAll"
+                            + e.getMessage());
+        }finally{
+            close();
+        }
+        return false;
+    }
+
     //Listado de los administradores que deberan ser aceptados
-    public List<Admin> findAllActive() {
+    public List<Admin> findAllInactive() {
         List<Admin> admin3 = new ArrayList();
+        Admin admin1 = null;
         try {
             conn = new MYSQLConnection().connect();
-            String query = " SELECT * FROM admin_user_info;";
-            pstm = conn.prepareStatement(query);
-            rs = pstm.executeQuery();
-
+            String query = "{call GetAdminsInactive()}";
+            cs = conn.prepareCall(query);
+            boolean result = cs.execute();
+            if(result)
+                rs = cs.getResultSet();
             while (rs.next()) {
-                Admin admin1 =new Admin();
-                admin1.setId_admin(rs.getLong("admin_id"));
-                admin1.setName(rs.getString("admin_name"));
+                admin1 =new Admin();
+                admin1.setId_admin(rs.getLong("id"));
+                admin1.setName(rs.getString("name"));
                 admin1.setUser_id(rs.getString("user_id"));
                 User user =new User();
-                user.setId_user(rs.getLong("id_user"));
+                user.setId_user(rs.getLong("id"));
                 user.setEmail(rs.getString("email"));
                 user.setStatus(rs.getBoolean("enable"));
                 admin1.setUser(user);
@@ -117,21 +189,23 @@ public class DaoAdmin {
         return admin3;
     }
   //Lista de Administradores activados
-  public List<Admin> admActivo() {
+  public List<Admin> findAllActive() {
       List<Admin> admin2 = new ArrayList();
+      Admin admin1 = null;
       try {
           conn = new MYSQLConnection().connect();
-          String query = "   select*from admin_activos;";
-          pstm = conn.prepareStatement(query);
-          rs = pstm.executeQuery();
-
+          String query = "{call GetAdminsActive()}";
+          cs = conn.prepareCall(query);
+          boolean result = cs.execute();
+          if(result)
+              rs = cs.getResultSet();
           while (rs.next()) {
-              Admin admin1 =new Admin();
-              admin1.setId_admin(rs.getLong("admin_id"));
-              admin1.setName(rs.getString("admin_name"));
+              admin1 =new Admin();
+              admin1.setId_admin(rs.getLong("id"));
+              admin1.setName(rs.getString("name"));
               admin1.setUser_id(rs.getString("user_id"));
               User user =new User();
-              user.setId_user(rs.getLong("id_user"));
+              user.setId_user(rs.getLong("id"));
               user.setEmail(rs.getString("email"));
               user.setStatus(rs.getBoolean("enable"));
               admin1.setUser(user);

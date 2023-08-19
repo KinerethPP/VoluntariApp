@@ -4,16 +4,20 @@ public class Forms {
     private Long id_forms;
     private String instructions;
     private String name_form;
-
+    private String event_id;
+    private Boolean status;
+    private Organ organ ;
     private Event event;
-
     public Forms() {
     }
 
-    public Forms(Long id_forms, String instructions, String name_form, Event event) {
+    public Forms(Long id_forms, String instructions, String name_form, String event_id, Boolean status, Organ organ, Event event) {
         this.id_forms = id_forms;
         this.instructions = instructions;
         this.name_form = name_form;
+        this.event_id = event_id;
+        this.status = status;
+        this.organ = organ;
         this.event = event;
     }
 
@@ -41,6 +45,30 @@ public class Forms {
         this.name_form = name_form;
     }
 
+    public String getEvent_id() {
+        return event_id;
+    }
+
+    public void setEvent_id(String event_id) {
+        this.event_id = event_id;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
+    public Organ getOrgan() {
+        return organ;
+    }
+
+    public void setOrgan(Organ organ) {
+        this.organ = organ;
+    }
+
     public Event getEvent() {
         return event;
     }
@@ -55,6 +83,9 @@ public class Forms {
                 "id_forms=" + id_forms +
                 ", instructions='" + instructions + '\'' +
                 ", name_form='" + name_form + '\'' +
+                ", event_id='" + event_id + '\'' +
+                ", status=" + status +
+                ", organ=" + organ +
                 ", event=" + event +
                 '}';
     }

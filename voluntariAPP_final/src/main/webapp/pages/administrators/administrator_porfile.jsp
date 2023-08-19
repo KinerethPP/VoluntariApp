@@ -212,6 +212,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <!--
                                         <div class="row pt-1">
                                             <div class="col-6 mb-3">
                                                 <div class="form-floating">
@@ -220,6 +221,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        -->
                                         <!--=============== Inicio de los botones del Modal de Actualizar ===============-->
                                         <div class="row  pt-1 justify-content-center">
                                             <button type="button" class="btn btn-warning col-lg-6" data-bs-toggle="modal"
@@ -251,7 +253,7 @@
 
                                                         <div class="modal-body">
                                                         <form class="needs-validation" id="admin-form"
-                                                              novalidate action="/admin/update" method="post">
+                                                              novalidate action="/admin/update" method="post" enctype="multipart/form-data">
                                                             <input hidden value="${admin.id_admin}" name="id_admin">
                                                             <div class="row">
                                                                 <!-- Muestra el id del voluntario
@@ -298,6 +300,15 @@
                                                                                class="bi bi-eye-slash"></i>
                                                                         </span>
                                                                         <label for="password">Contraseña</label>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-0 mb-4">
+                                                                    <div class="form-floating form-control-icon">
+                                                                        <input name="profilePic" type="file"
+                                                                               id="profilePicupload" value="${user.password}"
+                                                                               class="form-control"/>
+                                                                        <label for=profilePicupload>Cambiar foto</label>
                                                                     </div>
                                                                 </div>
                                                             </div>

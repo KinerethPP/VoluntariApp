@@ -1,27 +1,29 @@
 package mx.edu.utez.voluntariapp_final.models.organization;
 
 public class Question {
-    private String id_question;
+    private Long id_question;
     private String question;
-    private String id_form;
+    private String form_id;
 
     private Forms forms;
+    private Answer answer;
 
     public Question() {
     }
 
-    public Question(String id_question, String question, String id_form, Forms forms) {
+    public Question(Long id_question, String question, String form_id, Forms forms, Answer answer) {
         this.id_question = id_question;
         this.question = question;
-        this.id_form = id_form;
+        this.form_id = form_id;
         this.forms = forms;
+        this.answer = answer;
     }
 
-    public String getId_question() {
+    public Long getId_question() {
         return id_question;
     }
 
-    public void setId_question(String id_question) {
+    public void setId_question(Long id_question) {
         this.id_question = id_question;
     }
 
@@ -33,12 +35,12 @@ public class Question {
         this.question = question;
     }
 
-    public String getId_form() {
-        return id_form;
+    public String getForm_id() {
+        return form_id;
     }
 
-    public void setId_form(String id_form) {
-        this.id_form = id_form;
+    public void setForm_id(String form_id) {
+        this.form_id = form_id;
     }
 
     public Forms getForms() {
@@ -49,13 +51,22 @@ public class Question {
         this.forms = forms;
     }
 
+    public Answer getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(Answer answer) {
+        this.answer = answer;
+    }
+
     @Override
     public String toString() {
         return "Question{" +
-                "id_question='" + id_question + '\'' +
+                "id_question=" + id_question +
                 ", question='" + question + '\'' +
-                ", id_form='" + id_form + '\'' +
+                ", form_id='" + form_id + '\'' +
                 ", forms=" + forms +
+                ", answer=" + answer +
                 '}';
     }
 }

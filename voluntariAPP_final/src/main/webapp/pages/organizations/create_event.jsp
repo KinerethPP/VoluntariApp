@@ -86,7 +86,8 @@
                     <div class="row">
                         <div class="col-md-6 mb-4">
                             <div class="form-floating">
-                                <input type="text" id="state" name="state" class="form-control" placeholder="Estado"
+                                <input type="text" id="state" name="state" class="form-control"
+                                       placeholder="Estado"
                                        required>
                                 <label for="state">Estado</label>
                             </div>
@@ -105,7 +106,7 @@
                                 <input type="text" id="postal_code" name="postal_code" class="form-control"
                                        placeholder="Codigo Postal" pattern="[0-9]{5}"
                                        required>
-                                <label for="postal_code">Codigo Postal</label>
+                                <label for="postal_code">Código Postal</label>
                             </div>
                         </div>
                         <div class="col-md-6 mb-4">

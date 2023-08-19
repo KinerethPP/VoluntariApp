@@ -20,15 +20,27 @@
       <list>
         <option value="Interface" />
         <option value="package-info" />
-        <option value="Jsp File" />
         <option value="CSS File" />
         <option value="Enum" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="de7d39aa-0d3b-4364-9f82-0b34ea28e997" />
+        <option name="url" value="https://github.com/KinerethPP/VoluntariApp.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -44,43 +56,47 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHome" value="Use Maven wrapper" />
-        <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;000000ff&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2SdPyl3x7r1cNBLhCCjxLo1fgfg" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/VoluntariApp/voluntariAPP_final (1)/voluntariAPP_final&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Jassiel/DESCARGAS/voluntariAPP_final",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Jassiel\VoluntariApp\voluntariAPP_final\src\main\webapp\pages\administrators" />
@@ -94,7 +110,7 @@
       <recent name="mx.edu.utez.voluntariapp_final.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.10">
+  <component name="RunManager" selected="Tomcat Server.Tomcat-10">
     <configuration name="MYSQLConnection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="mx.edu.utez.voluntariapp_final.utils.MYSQLConnection" />
       <module name="voluntariAPP_final" />
@@ -108,7 +124,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 10.1.10" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.10" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="11" nameIsGenerated="true">
+    <configuration name="create_answer.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/pages/organizations/create_answer.jsp">
+      <method v="2" />
+    </configuration>
+    <configuration name="create_forms.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/pages/organizations/create_forms.jsp">
+      <method v="2" />
+    </configuration>
+    <configuration name="create_question.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/pages/organizations/create_question.jsp">
+      <method v="2" />
+    </configuration>
+    <configuration name="organizations_aprob.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/pages/organizations/organizations_aprob.jsp">
+      <method v="2" />
+    </configuration>
+    <configuration name="Tomcat-10" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat-10" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="corretto-11" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="voluntariAPP_final:war exploded">
@@ -118,7 +146,9 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="76b1ed16-27c3-4116-828e-593cf7303327" />
+        <option name="BASE_DIRECTORY_NAME" value="37f9a132-9a1c-4e7e-b154-2877c0f840cf" />
+        <option name="HTTP_PORT" value="8082" />
+        <option name="JNDI_PORT" value="1101" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -126,7 +156,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="51910" />
+        <option name="DEBUG_PORT" value="51011" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -197,10 +227,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.MYSQLConnection" />
-      <item itemvalue="Tomcat Server.Tomcat 10.1.10" />
+      <item itemvalue="JavaScript Debug.organizations_aprob.jsp" />
+      <item itemvalue="JavaScript Debug.create_answer.jsp" />
+      <item itemvalue="JavaScript Debug.create_forms.jsp" />
+      <item itemvalue="JavaScript Debug.create_question.jsp" />
+      <item itemvalue="Tomcat Server.Tomcat-10" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.organizations_aprob.jsp" />
+        <item itemvalue="JavaScript Debug.create_forms.jsp" />
+        <item itemvalue="JavaScript Debug.create_question.jsp" />
+        <item itemvalue="JavaScript Debug.create_answer.jsp" />
         <item itemvalue="Application.MYSQLConnection" />
       </list>
     </recent_temporary>
@@ -255,6 +293,14 @@
       <workItem from="1691855765434" duration="36977000" />
       <workItem from="1691906137612" duration="12196000" />
       <workItem from="1691952451404" duration="21043000" />
+      <workItem from="1691994694681" duration="2008000" />
+      <workItem from="1691997558396" duration="6880000" />
+      <workItem from="1692022293853" duration="4921000" />
+      <workItem from="1692041604044" duration="8964000" />
+      <workItem from="1692112166542" duration="76599000" />
+      <workItem from="1692282053657" duration="32957000" />
+      <workItem from="1692375953714" duration="8914000" />
+      <workItem from="1692416854445" duration="686000" />
     </task>
     <servers />
   </component>
@@ -278,10 +324,11 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.Exception" package="java.lang" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/pages/organizations/organizations_events.jsp</url>
+          <line>378</line>
           <option name="timeStamp" value="1" />
-        </breakpoint>
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

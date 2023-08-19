@@ -33,7 +33,8 @@ public class ServletEvent extends HttpServlet {
     private String postal_code;
     private String municipality,state,user_id,category,organ_id;
     private String event_time;
-     private Event event;
+
+    private Event event;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -42,18 +43,10 @@ public class ServletEvent extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html");
         switch (action) {
-         /*  case "/event/events":
-               List<Event> users = new DaoEvent().findAll();
-               request.setAttribute("users", users);
-               redirect="/pages/organizations/organizations_event.jsp";
-
-               break;*/
-
             default:
                 System.out.println(action);
         }
         request.getRequestDispatcher(redirect).forward(request, response);
-
     }
 
     @Override
@@ -62,6 +55,7 @@ public class ServletEvent extends HttpServlet {
         response.setContentType("text/html");
         action = request.getServletPath();
         switch (action) {
+
              /*case "/organ/organ-view-update":
                 id = request.getParameter("id");
                 Event event = new DaoEvent().findOne(id != null ? Long.parseLong(id) : 0);
@@ -87,6 +81,7 @@ public class ServletEvent extends HttpServlet {
                 //System.out.println(category);
                 user_id=request.getParameter("user_id");
                 organ_id=request.getParameter("organ_id");
+
                 //System.out.println(organ_id);
                 System.out.println(name+"|"+event_date+"|"+event_time+"|"+description+"|"+street+"|"+cologne+
                         "|"+postal_code+"|"+municipality+"|"+state+"|"+category+"|"+user_id+"|"+organ_id+"|");
@@ -105,6 +100,7 @@ public class ServletEvent extends HttpServlet {
                 event.setMunicipality(municipality);
                 event.setState(state);
                 event.setCategory(category);
+                event.setStatus(false);
 
                 User user  =new User();
                 user.setId_user(Long.valueOf(user_id));

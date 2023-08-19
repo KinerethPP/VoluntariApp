@@ -23,14 +23,17 @@ public class DaoOrgan {
 
     public List<Organ> findAll() {
         List<Organ> organs = new ArrayList<>();
+        Organ organ = null;
         try {
             conn = new MYSQLConnection().connect(); //Establecer la conexion
-            String query = "SELECT * FROM organization_user_info;"; //Preparamos la sentencia
-            pstm = conn.prepareStatement(query);   //Ejecutamos la sentencia en la base de datos
-            rs = pstm.executeQuery();
+            String query = "{Call GetOrganizations()}"; //Preparamos la sentencia
+            cs = conn.prepareCall(query);   //Ejecutamos la sentencia en la base de datos
+            boolean result = cs.execute();
+            if (result)
+                rs = cs.getResultSet();
             while (rs.next()) {
-                Organ organ = new Organ();
-                organ.setId(rs.getLong("id_organ"));
+                organ = new Organ();
+                organ.setId(rs.getLong("id"));
                 organ.setBussines_name(rs.getString("bussines_name"));
                 organ.setStreet(rs.getString("street"));
                 organ.setCologne(rs.getString("cologne"));
@@ -41,7 +44,7 @@ public class DaoOrgan {
                 organ.setRfc(rs.getString("rfc"));
                 organ.setUser_id(rs.getString("user_id"));
                 User user =new User();
-                user.setId_user(rs.getLong("id_user"));
+                user.setId_user(rs.getLong("id"));
                 user.setEmail(rs.getString("email"));
                 user.setStatus(rs.getBoolean("enable"));
                 organ.setUser(user);
@@ -61,21 +64,23 @@ public class DaoOrgan {
         return organs;
     }
 
-    public List<Organ> Organ_activo() {
+    public List<Organ> findAllActive() {
         List<Organ> organ2 = new ArrayList();
+        Organ organ1 = null;
         try {
             conn = new MYSQLConnection().connect();
-            String query = "   select*from organizacion_activos;";
-            pstm = conn.prepareStatement(query);
-            rs = pstm.executeQuery();
-
+            String query = "{Call GetOrganizationsActive()}";
+            cs = conn.prepareCall(query);
+            boolean result = cs.execute();
+            if(result)
+                rs = cs.getResultSet();
             while (rs.next()) {
-                Organ organ1 =new Organ();
-                organ1.setId(rs.getLong("id_organ"));
+                organ1 =new Organ();
+                organ1.setId(rs.getLong("id"));
                 organ1.setBussines_name(rs.getString("bussines_name"));
                 organ1.setUser_id(rs.getString("user_id"));
                 User user =new User();
-                user.setId_user(rs.getLong("id_user"));
+                user.setId_user(rs.getLong("id"));
                 user.setEmail(rs.getString("email"));
                 user.setStatus(rs.getBoolean("enable"));
                 organ1.setUser(user);
@@ -94,16 +99,19 @@ public class DaoOrgan {
     }
 
     //Listado para mostrar las organizaciones que aun no etan activadas
-    public List<Organ> findAllActive() {
+    public List<Organ> findAllInactive() {
         List<Organ> organ = new ArrayList<>();
+        Organ organ1 = null;
         try {
             conn = new MYSQLConnection().connect(); //Establecer la conexion
-            String query = "Select*from organizacion_active;"; //Preparamos la sentencia
-            pstm = conn.prepareStatement(query);   //Ejecutamos la sentencia en la base de datos
-            rs = pstm.executeQuery();
+            String query = "{call GetOrganizationsInactive()}"; //Preparamos la sentencia
+            cs = conn.prepareCall(query);   //Ejecutamos la sentencia en la base de datos
+            boolean result = cs.execute();
+            if(result)
+                rs = cs.getResultSet();
             while (rs.next()) {
-                Organ organ1 = new Organ();
-                organ1.setId(rs.getLong("id_organ"));
+                organ1 = new Organ();
+                organ1.setId(rs.getLong("id"));
                 organ1.setBussines_name(rs.getString("bussines_name"));
                 organ1.setStreet(rs.getString("street"));
                 organ1.setCologne(rs.getString("cologne"));
@@ -114,7 +122,7 @@ public class DaoOrgan {
                 organ1.setRfc(rs.getString("rfc"));
                 organ1.setUser_id(rs.getString("user_id"));
                 User user =new User();
-                user.setId_user(rs.getLong("id_user"));
+                user.setId_user(rs.getLong("id"));
                 user.setEmail(rs.getString("email"));
                 user.setStatus(rs.getBoolean("enable"));
                 organ1.setUser(user);
@@ -255,6 +263,57 @@ public class DaoOrgan {
         return false;
     }
 
+    public boolean delete(Long id,String organId) {
+        try {
+            conn = new MYSQLConnection().connect();
+            String query = "CALL DeleteAdminAndUser(?);";
+            cs= conn.prepareCall(query);
+            cs.setString(1, organId);
+            return pstm.executeUpdate() == 1;
+        } catch (SQLException e) {
+            Logger.getLogger(DaoAdmin.class.getName())
+                    .log(Level.SEVERE, "Error No se puede eliminar " + e.getMessage());
+        } finally {
+            close();
+        }
+        return false;
+    }
+
+
+
+    public boolean active(Long id) {
+        try{
+            conn = new MYSQLConnection().connect();
+            String query = "UPDATE users SET enable = true WHERE id = ?;";
+            pstm = conn.prepareStatement(query);
+            pstm.setLong(1, Long.parseLong(String.valueOf(id)));
+            return pstm.executeUpdate() > 0; // ==1
+        }catch(SQLException e){
+            Logger.getLogger(DaoAdmin.class.getName())
+                    .log(Level.SEVERE, "Error findAll"
+                            + e.getMessage());
+        }finally{
+            close();
+        }
+        return false;
+    }
+
+    public boolean inactive(Long id) {
+        try{
+            conn = new MYSQLConnection().connect();
+            String query = "UPDATE users SET enable = false WHERE id = ?;";
+            pstm = conn.prepareStatement(query);
+            pstm.setLong(1, Long.parseLong(String.valueOf(id)));
+            return pstm.executeUpdate() > 0; // ==1
+        }catch(SQLException e){
+            Logger.getLogger(DaoAdmin.class.getName())
+                    .log(Level.SEVERE, "Error findAll"
+                            + e.getMessage());
+        }finally{
+            close();
+        }
+        return false;
+    }
 
 
 

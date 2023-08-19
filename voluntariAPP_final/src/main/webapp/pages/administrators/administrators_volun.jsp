@@ -262,10 +262,22 @@
                                             </div>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal"></p>
+                                            <div class="col">
+                                                <form method="post" action="/admin/active-status-volunt">
+                                                    <input hidden value="${volun.user.id_user}" name="id"/>
+                                                    <button type="submit" class="btn btn-outline-success btn-sm">
+                                                        ACTIVAR
+                                                    </button>
+                                                </form>
+                                            </div>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0"></h6>
+                                            <form method="post" action="/admin/inactive-status-volunt">
+                                                <input hidden value="${volun.user.id_user}" name="id"/>
+                                                <button type="submit" class="btn btn-outline-success btn-sm">
+                                                    DESACTIVAR
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                     </c:forEach>

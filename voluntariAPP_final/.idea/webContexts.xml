@@ -6,6 +6,8 @@
         <entry key="file://$PROJECT_DIR$/src/main/webapp/pages/administrators/administrators_organization.jsp" value="file://$PROJECT_DIR$/src/main/webapp/pages/administrators" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/pages/administrators/index_admin.jsp" value="file://$PROJECT_DIR$/src/main/webapp/pages/administrators" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/pages/organizations/create_event.jsp" value="file://$PROJECT_DIR$/src/main/webapp/pages/organizations" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/pages/organizations/create_forms.jsp" value="file://$PROJECT_DIR$/src/main/webapp/pages/organizations" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/pages/organizations/organizations_aprob.jsp" value="file://$PROJECT_DIR$/src/main/webapp/pages/organizations" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/pages/organizations/organizations_events.jsp" value="file://$PROJECT_DIR$/src/main/webapp/pages/organizations" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/pages/volunteers/volunteer_porfile.jsp" value="file://$PROJECT_DIR$/src/main/webapp/pages/volunteers" />
       </map>

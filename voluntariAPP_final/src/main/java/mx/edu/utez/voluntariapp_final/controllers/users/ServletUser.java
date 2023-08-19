@@ -11,6 +11,8 @@ import mx.edu.utez.voluntariapp_final.models.Role.Role;
 import mx.edu.utez.voluntariapp_final.models.administrators.Admin;
 
 import mx.edu.utez.voluntariapp_final.models.organization.DaoOrgan;
+import mx.edu.utez.voluntariapp_final.models.organization.Event;
+import mx.edu.utez.voluntariapp_final.models.organization.Forms;
 import mx.edu.utez.voluntariapp_final.models.organization.Organ;
 import mx.edu.utez.voluntariapp_final.models.user.DaoUser;
 import mx.edu.utez.voluntariapp_final.models.user.User;
@@ -25,8 +27,8 @@ import java.sql.SQLException;
 
 
 @WebServlet(name = "users",urlPatterns = {
-        "/user/login",
-        "/user/main",
+        "/api/auth/logout",//Cierre en general
+        "/api/auth/login",//Redireccion al inicio de sesion
         "/user/main-admin",
         "/user/main-organ",
         "/user/main-volun",
@@ -47,7 +49,10 @@ import java.sql.SQLException;
         "/user/save-view",
         "/user/user-view-update",
         "/user/update",
-        "/user/delete"
+        "/user/delete",
+        "/user/main"
+
+
 })
 
 public class ServletUser extends HttpServlet {
@@ -59,8 +64,8 @@ public class ServletUser extends HttpServlet {
     private String id_role;
     private String email,password;
     private Organ organ;
-    private Volunteer volunteer;
-    private  Admin admin;
+
+
 
 
 
@@ -98,16 +103,20 @@ public class ServletUser extends HttpServlet {
             case "/user/save-view":
                 redirect = "/pages/create_administrator_account.jsp";
                 break;
-            case "/user/login":
+            case "/api/auth/login":
+                redirect = "/index.jsp";
+                break;
+
+            case "/api/auth/logout":
+                session = req.getSession();
+                session.invalidate();
                 redirect = "/index.jsp";
                 break;
             case "/user/role": //redirigir al inicio
                 redirect = "/pages/register_login.jsp";
                 break;
-            case "/user/role-save-admin": //redirigir al inicio
-                req.setAttribute("roles",new DaoUser().searchRole());
-                redirect = "/pages/create_administrator_account.jsp";
-                break;
+//
+
         }
         req.getRequestDispatcher(redirect).forward(req, resp);
     }
@@ -142,6 +151,7 @@ public class ServletUser extends HttpServlet {
                                 System.out.println(user.getId_user()+ " id de use");
                                 session.setAttribute("userId", user.getId_user());
                                 session.setAttribute("organId", +organ.getId());
+
                                 redirect = "/organ/main";
                                 break;
                             case "VOLUNTEER":

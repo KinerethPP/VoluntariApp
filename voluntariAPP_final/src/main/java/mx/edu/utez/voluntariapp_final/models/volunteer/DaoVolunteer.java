@@ -21,16 +21,18 @@ public class DaoVolunteer {
 
     public List<Volunteer> findAll() {
         List<Volunteer> volunteers = new ArrayList<>();
+        Volunteer volunteer = null;
         try {
             conn = new MYSQLConnection().connect();
-            String query = "SELECT * FROM VolunteerInfo;";
-            pstm = conn.prepareStatement(query);
-            rs = pstm.executeQuery();
-
+            String query = "{call GetVolunteers()}";
+            cs = conn.prepareCall(query);   //Ejecutamos la sentencia en la base de datos
+            boolean result = cs.execute();
+            if (result)
+                rs = cs.getResultSet();
             while (rs.next()) {
-                Volunteer volunteer = new Volunteer();
-                volunteer.setId(rs.getLong("id_volun"));
-                volunteer.setName(rs.getString("v_name"));
+                volunteer = new Volunteer();
+                volunteer.setId(rs.getLong("id"));
+                volunteer.setName(rs.getString("name"));
                 volunteer.setSurname(rs.getString("surname"));
                 volunteer.setLastanme(rs.getString("lastanme"));
                 volunteer.setBirthday(rs.getString("birthday"));
@@ -39,7 +41,7 @@ public class DaoVolunteer {
                 volunteer.setCurp(rs.getString("curp"));
                 volunteer.setUser_id(rs.getString("user_id"));
                 User user = new User();
-                user.setId_user(rs.getLong("id_user"));
+                user.setId_user(rs.getLong("id"));
                 user.setEmail(rs.getString("email"));
                 user.setStatus(rs.getBoolean("enable"));
                 volunteer.setUser(user);
@@ -57,21 +59,24 @@ public class DaoVolunteer {
         return volunteers;
     }
 
-    public List<Volunteer> Volunteer_activo() {
+    public List<Volunteer> findAllActive() {
         List<Volunteer> volunteer2 = new ArrayList();
+        Volunteer volunteer1 = null;
         try {
             conn = new MYSQLConnection().connect();
-            String query = "   select*from volunteer_activos;";
-            pstm = conn.prepareStatement(query);
-            rs = pstm.executeQuery();
+            String query = "{call GetVolunteersActive()}";
+            cs = conn.prepareCall(query);
+            boolean result = cs.execute();
+            if(result)
+                rs = cs.getResultSet();
 
             while (rs.next()) {
-                Volunteer volunteer1 =new Volunteer();
-                volunteer1.setId(rs.getLong("id_volun"));
-                volunteer1.setName(rs.getString("v_name"));
+                volunteer1 =new Volunteer();
+                volunteer1.setId(rs.getLong("id"));
+                volunteer1.setName(rs.getString("name"));
                 volunteer1.setUser_id(rs.getString("user_id"));
                 User user =new User();
-                user.setId_user(rs.getLong("id_user"));
+                user.setId_user(rs.getLong("id"));
                 user.setEmail(rs.getString("email"));
                 user.setStatus(rs.getBoolean("enable"));
                 volunteer1.setUser(user);
@@ -92,27 +97,29 @@ public class DaoVolunteer {
 
 
     //Listado para mostarar los voluntarios que seran activados
-    public List<Volunteer> findAllActive() {
+    public List<Volunteer> findAllinactive() {
         List<Volunteer> volunteer = new ArrayList<>();
+        Volunteer volunteer1 = null;
         try {
             conn = new MYSQLConnection().connect();
-            String query = "SELECT * FROM volunteer_desactive;";
-            pstm = conn.prepareStatement(query);
-            rs = pstm.executeQuery();
-
+            String query = "{call GetVolunteersInactive()}";
+            cs = conn.prepareCall(query);   //Ejecutamos la sentencia en la base de datos
+            boolean result = cs.execute();
+            if (result)
+                rs = cs.getResultSet();
             while (rs.next()) {
-                Volunteer volunteer1 = new Volunteer();
-                volunteer1.setId(rs.getLong("id_volun"));
-                volunteer1.setName(rs.getString("v_name"));
+                volunteer1 = new Volunteer();
+                volunteer1.setId(rs.getLong("id"));
+                volunteer1.setName(rs.getString("name"));
                 volunteer1.setSurname(rs.getString("surname"));
-                volunteer1.setLastanme(rs.getString("lastname"));
+                volunteer1.setLastanme(rs.getString("lastanme"));
                 volunteer1.setBirthday(rs.getString("birthday"));
                 volunteer1.setAddress(rs.getString("address"));
                 volunteer1.setPhone(rs.getString("phone"));
                 volunteer1.setCurp(rs.getString("curp"));
                 volunteer1.setUser_id(rs.getString("user_id"));
                 User user = new User();
-                user.setId_user(rs.getLong("id_user"));
+                user.setId_user(rs.getLong("id"));
                 user.setEmail(rs.getString("email"));
                 user.setStatus(rs.getBoolean("enable"));
                 volunteer1.setUser(user);

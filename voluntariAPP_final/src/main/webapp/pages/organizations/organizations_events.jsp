@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
     <link rel="stylesheet" href="../../assets/css/css/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
 </head>
 
 <body>
@@ -194,17 +196,19 @@
                 </div>
             </div>
             <hr>
+            <div class="form-floating">
+                <input type="hidden" id="organ_id" name="organ_id" value="<%= session.getAttribute("organId")%>"class="form-control">
+
+            </div>
             <!-- Fin Contenedor (Central) -->
 
             <!-- Inicia la tabla para los eventos -->
             <div class="row">
-                <!-- Aqui inicia el codigo 242 -->
-                <div class="col-lg- d-flex align-items-stretch">
+                <div class="col-lg-12 d-flex align-items-stretch">
                     <div class="card w-100">
                         <div class="card-body p-3">
                             <div class="table-responsive">
-                                <table class="table text-nowrap mb-0 align-middle">
-                                    <!--  -->
+                                <table id="example" class="table text-nowrap mb-0 align-middle">
                                     <thead class="text-dark fs-4">
                                     <tr>
                                         <th class="border-bottom-0">
@@ -226,13 +230,19 @@
                                             <h6 class="fw-semibold mb-0">Estado</h6>
                                         </th>
                                         <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Municipio</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Código Postal</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
                                             <h6 class="fw-semibold mb-0">Calle</h6>
                                         </th>
                                         <th class="border-bottom-0">
                                             <h6 class="fw-semibold mb-0">Colonia</h6>
                                         </th>
                                         <th class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0">Tipo de evento</h6>
+                                            <h6 class="fw-semibold mb-0">Categoria</h6>
                                         </th>
                                         <th class="border-bottom-0">
                                             <h6 class="fw-semibold mb-0">Editar</h6>
@@ -273,10 +283,12 @@
                                             <td class="border-bottom-0">
                                                 <p class="mb-0 fw-normal">
                                                     <c:out value="${eventito.state}"/>
+
                                                 </p>
                                             </td>
                                             <td class="border-bottom-0">
                                                 <h6 class="fw-semibold mb-0">
+
                                                     <c:out value="${eventito.municipality}"/>
                                                 </h6>
                                             </td>
@@ -309,14 +321,22 @@
                                                 </p>
                                             </td>
                                             <td class="border-bottom-0">
-                                                <p class="mb-0 fw-normal">
-
-                                                </p>
+                                                <div class="col">
+                                                    <form method="post" action="">
+                                                        <input hidden value="${organ.user.id_user}" name="id"/>
+                                                        <button type="submit" class="btn btn-outline-success btn-sm">
+                                                            EDITAR
+                                                        </button>
+                                                    </form>
+                                                </div>
                                             </td>
                                             <td class="border-bottom-0">
-                                                <p class="mb-0 fw-normal">
-
-                                                </p>
+                                                <form method="post" action="">
+                                                    <input hidden value="${organ.user.id_user}" name="id" />
+                                                    <button type="submit" class="btn btn-outline-success btn-sm">
+                                                        ELIMINAR
+                                                    </button>
+                                                </form>
                                             </td>
                                         </tr>
                                     </c:forEach>
@@ -356,6 +376,7 @@
 <script src="../../assets/js/dashboard.js"></script>
 <script src="../../assets/js/sweetalert2.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.js"> </script>
 <script>
     (function () {
         'use strict'
@@ -421,6 +442,20 @@
             }
         });
     }
+</script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable(
+            {
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json',
+                },
+            }
+        );
+    });
 </script>
 
 </body>

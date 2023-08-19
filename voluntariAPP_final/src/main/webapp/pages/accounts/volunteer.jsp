@@ -83,7 +83,7 @@
                         <div class="col-md-0 mb-4">
                             <div class="form-floating">
                                 <input name="curp" type="text" id="curp" class="form-control" placeholder="Curp"
-                                       required>
+                                       pattern=".{18}" required>
                                 <label for="curp">Curp</label>
                             </div>
                         </div>
@@ -97,7 +97,7 @@
                         <div class="col-md-0 mb-4">
                             <div class="form-floating form-control-icon">
                                 <input type="password" id="password" name="password" class="form-control"
-                                       placeholder="Contraseña"
+                                       placeholder="Contraseña" pattern=".{12,}" title="La contraseña debe tener al menos 12 caracteres"
                                        required>
                                 <label for="password">Contraseña</label>
                                 <div class="password-toggle" onclick="togglePasswordVisibility('password')">

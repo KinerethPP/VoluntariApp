@@ -154,7 +154,7 @@
                                         <i class="ti ti-user fs-6"></i>
                                         <p class="mb-0 fs-3">Mi perfil</p>
                                     </a>
-                                    <a href="/user/login" class="btn btn-outline-primary mx-3 mt-2 d-block">Cerrar
+                                    <a href="/api/auth/logout" class="btn btn-outline-primary mx-3 mt-2 d-block">Cerrar
                                         Sesion</a>
                                 </div>
                             </div>
@@ -189,21 +189,27 @@
                         <div class="card-body text-center alert alert-info">
                             <h1 class="card-title">Administradores</h1>
                             <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                            <h1>0</h1>
+                            <h1>
+                                <c:out value="${totalAdmin}"/>
+                            </h1>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card-body text-center alert alert-success">
                             <h1 class="card-title">Organizaciones</h1>
                             <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                            <h1>0</h1>
+                            <h1>
+                                <c:out value="${totalOrgan}"/>
+                            </h1>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card-body text-center alert alert-info">
                             <h1 class="card-title">Voluntarios</h1>
                             <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                            <h1>0</h1>
+                            <h1>
+                                <c:out value="${totalVolunt}"/>
+                            </h1>
                         </div>
                     </div>
                 </div>
@@ -227,7 +233,7 @@
                     <div class="col-md-12">
                         <a href="" class="d-flex align-items-center gap-2 dropdown-item">
                             <i class="ti ti-user-star fs-6"></i>
-                            <p class="mb-0 fs-3">Administradores activos</p>
+                            <p class="mb-0 fs-3">Administradores</p>
                         </a>
                     </div>
                 </div>

@@ -235,7 +235,7 @@
                                         </td>
                                         <td class="border-bottom-0">
                                             <p class="mb-0 fw-normal"></p>
-                                            <span class="badge rounded-3 fw-semibold
+                                            <span class="badge rounded-3 fw-
                                                 <c:if test="${admin.user.status == true}">bg-custom-success
                                                 </c:if>
                                                 <c:if test="${admin.user.status == false}">bg-custom-danger
@@ -262,14 +262,6 @@
                                             </form>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal"></p>
-                                        </td>
-                                        <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal"></p>
-                                        </td>
-                                        <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0 fs-4"></h6>
-                                        </td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>

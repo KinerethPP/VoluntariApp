@@ -290,21 +290,27 @@
                                             </h6>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <div class="d-flex align-items-center gap-2">
-                                                        <span
-                                                                class="badge bg-danger rounded-3 fw-semibold"> <c:out value="${organ.user.status}"/>
-                                                        </span>
+                                            <h6 class="fw-semibold mb-0">
+                                                <c:out value="${organ.user.status}"/>
+                                            </h6>
+                                        </td>
+                                        <td class="border-bottom-0">
+                                            <div class="col">
+                                                <form method="post" action="/admin/active-status-organ">
+                                                    <input hidden value="${organ.user.id_user}" name="id"/>
+                                                    <button type="submit" class="btn btn-outline-success btn-sm">
+                                                        ACTIVAR
+                                                    </button>
+                                                </form>
                                             </div>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal">
-
-                                            </p>
-                                        </td>
-                                        <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal">
-
-                                            </p>
+                                            <form method="post" action="/admin/inactive-status-organ">
+                                                <input hidden value="${organ.user.id_user}" name="id"/>
+                                                <button type="submit" class="btn btn-outline-success btn-sm">
+                                                    DESACTIVAR
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                     </c:forEach>
@@ -381,6 +387,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+
                                     <c:forEach var="eventito" items="${events}">
                                         <tr>
                                             <td class="border-bottom-0">

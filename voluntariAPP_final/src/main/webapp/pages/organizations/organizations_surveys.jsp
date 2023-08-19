@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!doctype html>
 <html lang="en">
@@ -7,11 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>VoluntariApp Encuestas</title>
     <!-- Se inserta la foto del logo de la empresa -->
-    <link rel="shortcut icon" type="image/png" href="../../assets/images/logos_voluntariapp/logo_VOLUNTARIAPP.png" />
-    <link rel="stylesheet" href="../../assets/css/styles.min.css" />
-    <link rel="stylesheet" href="../../assets/css/css/style_dashboard.css">
-    <link rel="stylesheet" href="{pageContext.request.contextPath}https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="{pageContext.request.contextPath}https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <jsp:include page="../../layouts/head.jsp"/>
 </head>
 
 <body>
@@ -30,7 +27,7 @@
                 <a href="/organ/main" class="text-nowrap logo-img">
                     <!-- Logo parte superior izquierda -->
                     <img src="../../assets/images/logos_voluntariapp/logo_extend.png" style="width:180px"
-                         alt="" /><!-- Logo de la barra lateral -->
+                         alt=""/><!-- Logo de la barra lateral -->
                 </a>
                 <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
                     <i class="ti ti-x fs-8"></i>
@@ -38,66 +35,7 @@
             </div>
             <!-- Fin Imagen del logo de la app -->
             <!-- Sidebar navigation-->
-            <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
-                <ul id="sidebarnav">
-                    <li class="nav-small-cap">
-                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                        <span class="hide-menu">Home</span>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="/organ/main" aria-expanded="false">
-                <span>
-                  <i class="ti ti-layout-dashboard"></i>
-                </span>
-                            <span class="hide-menu">Panel Organización</span>
-                        </a>
-                    </li>
-                    <li class="nav-small-cap">
-                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                        <span class="hide-menu">Administrar</span>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="/organ/events" aria-expanded="false">
-                <span>
-                  <i class="ti ti-calendar-event"></i>
-                </span>
-                            <span class="hide-menu">Eventos</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="/organ/surveys" aria-expanded="false">
-                <span>
-                  <i class="ti ti-clipboard-text"></i>
-                </span>
-                            <span class="hide-menu">Encuestas</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="/organ/postulations" aria-expanded="false">
-                <span>
-                  <i class="ti ti-man"></i>
-                </span>
-                            <span class="hide-menu">Postulados</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="/organ/aprob" aria-expanded="false">
-                <span>
-                  <i class="ti ti-check"></i>
-                </span>
-                            <span class="hide-menu">Aprobar</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="/organ/porfile" aria-expanded="false">
-                <span>
-                  <i class="ti ti-user-circle"></i>
-                </span>
-                            <span class="hide-menu">Perfil</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <jsp:include page="../../layouts/sidebar.jsp"/>
             <!-- End Sidebar navigation -->
         </div>
         <!-- End Sidebar scroll-->
@@ -109,76 +47,14 @@
     <div class="body-wrapper"> <!-- COLOR == | Fondo Central | ==-->
         <!--  Header Start -->
         <header class="app-header"> <!-- COLOR == | Barra Navegacion Superior | ==-->
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <ul class="navbar-nav">
-                    <li class="nav-item d-block d-xl-none">
-                        <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse" href="javascript:void(0)">
-                            <i class="ti ti-menu-2"></i>
-                        </a>
-                    </li>
-                </ul>
-                <!-- Nav parte superior de iconos -->
-                <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
-                    <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-                        <!-- Etiqueta para meter cosas -->
-                        <li class="nav-item d-none d-lg-block">
-                            <a class="nav-link nav-icon-hover" href="javascript:void(0)" data-bs-toggle="modal"
-                               data-bs-target="#exampleModal">
-                                <i class="ti ti-search"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-icon-hover" href="javascript:void(0)">
-                                <i class="ti ti-bell-ringing"></i>
-                                <div class="notification bg-primary rounded-circle"></div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-icon-hover">
-                                <i class="ti ti-question-mark"></i>
-                            </a>
-                        </li>
-                        <!-- Foto de perfil -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
-                               aria-expanded="false">
-                                <img src="../../assets/images/user-1.jpg" alt="" style="width:35px; height:35px"  class="rounded-circle">
-                            </a>
-
-                            <!-- Menu desplegable del la Foto fe perfil -->
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
-                                <!-- COLOR == | Fondo Desplegable Foto Perfil | ==    (Codigo de arriba)  -->
-                                <div class="message-body">
-                                    <a href="/organ/porfile" class="d-flex align-items-center gap-2 dropdown-item">
-                                        <i class="ti ti-user fs-6"></i>
-                                        <p class="mb-0 fs-3">Mi perfil</p>
-                                    </a>
-                                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                                        <i class="ti ti-tools fs-6"></i>
-                                        <p class="mb-0 fs-3">Perzonalizar</p>
-                                    </a>
-                                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                                        <i class="ti ti-list-check fs-6"></i>
-                                        <p class="mb-0 fs-3">Otros</p>
-                                    </a>
-                                    <a href="/user/login" class="btn btn-outline-primary mx-3 mt-2 d-block">Cerrar
-                                        Sesion</a>
-                                </div>
-                            </div>
-                            <!-- Fin del Menu desplegable del la Foto fe perfil -->
-                        </li>
-                        <!-- Fin Foto de perfil -->
-                    </ul>
-                </div>
-            </nav>
+            <jsp:include page="../../layouts/navbar.jsp"/>
         </header>
         <!--  Header End -->
         <!-- Inicio Contenedor (Principal) -->
-        <div class="container-fluid">
-
+        <div class="container-fluid d-block">
             <!-- Inicio Contenedor (Central) -->
             <div class="row">
-                <div class="col-md-12">
+                <div class="col">
                     <div class="d-flex align-items-center gap-2 dropdown-item text-b">
                         <i class="ti ti-clipboard-text fs-8"></i>
                         <h3 class="mb-0 text-b">Tus Encuestas</h3>
@@ -188,25 +64,72 @@
             </div>
             <hr>
             <!-- Fin Contenedor (Central) -->
-
+            <div class="row mt-2 mb-2">
+                <div class="col">
+                    <label for="opciones">Seleccionar evento</label>
+                    <select name="opciones" id="opciones" class="form-select" onchange="getallForms()">
+                        <option value="">Seleccione...</option>
+                        <c:forEach var="event" items="${events}">
+                            <option value="${event.id}">
+                                <c:out value="${event.name}"/>
+                                <c:out value="${event.event_date}"/>
+                            </option>
+                        </c:forEach>
+                    </select>
+                </div>
+            </div>
             <div class="row">
                 <!-- Inicio de barras de eventos -->
-                <div class="container barra-pading">
+                <div class="col">
+                    <div id="showForms"></div>
+                </div>
+                <!-- Fin de barras de eventos -->
+            </div>
+
+
+            <div class="row">
+                <div class="col container barra-pading text-center">
+                    <div class="event-card card ">
+                        <a class="event-action add-button" href="/organ/create_forms" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-circle-plus"></i>
+                                </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fin Contenedor (Principal) -->
+    </div>
+</div>
+<!-- JS -->
+<jsp:include page="../../layouts/footer.jsp"/>
+<script>
+    const getallForms = async () => {
+        const select = document.getElementById("opciones").value;
+        const response = await fetch('http://localhost:8080/forms?id=' + select);
+        const data = await response.json();
+        const text = document.getElementById("opciones").options[document.getElementById("opciones").selectedIndex].text;
+        const div = document.getElementById('showForms');
+        div.innerHTML = '';
+        let content = ``;
+        data?.map((form) => {
+            content += `<div class="container barra-pading">
                     <div class="event-card card">
                         <div class="event-details">
                             <img src="https://lacensura.com/wp-content/uploads/2021/06/utez_14-01-21.jpg"
                                  alt="Imagen del evento">
                             <div class="event-info">
-                                <h5 class="card-title">Nombre de la Encuesta</h5>
-                                <h6>Nombre del Evento</h6>
+                                <h5 class="card-title">` + form.name_form + `</h5>
+                                <h6>` + text + `</h6>
                             </div>
                             <div class="event-actions">
-                                <a class="event-action" href="#" aria-expanded="false">
+                                <a class="event-action" href="/forms/create-question?id=` + form.id_forms + `" aria-expanded="false">
                                         <span>
-                                            <i class="ti ti-eye"></i>
+                                            <i class="ti ti-list"></i>
                                         </span>
                                 </a>
-                                <a class="event-action" href="#" aria-expanded="false">
+                                <a class="event-action" href="#` + form.id_forms + `" aria-expanded="false">
                                         <span>
                                             <i class="ti ti-edit"></i>
                                         </span>
@@ -219,37 +142,28 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Fin de barras de eventos -->
-
-            </div>
-
-
-            <div class="row">
-                <div class="container barra-pading text-center">
-                    <div class="event-card card ">
-                        <a class="event-action add-button" href="#" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-circle-plus"></i>
-                                </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Fin Contenedor (Principal) -->
-
-    </div>
-</div>
-<!-- JS -->
-<script src="../../assets/js/jquery.min.js"></script>
-<script src="../../assets/js/bootstrap.bundle.min.js"></script>
-<script src="../../assets/js/sidebarmenu.js"></script>
-<script src="../../assets/js/app.min.js"></script>
-<!-- Estadisticas Library -->
-<script src="../../assets/js/apexcharts.min.js"></script>
-<script src="../../assets/js/dashboard.js"></script>
+                </div>`;
+        });
+        div.innerHTML = content;
+    }
+    window.addEventListener("DOMContentLoaded", () => {
+        if (!${param['result']==false?param['result']:true}) {
+            Swal.fire({
+                title: 'Accion realizada correctamente...',
+                text: '${param['message']}',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+        }
+        if (${param['result']==true?param['result']:false}) {
+            Swal.fire({
+                title: 'Error ¡Intenta de  nuevo!...',
+                text: '${param['message']}',
+                icon: 'success',
+                confirmButtonText: 'Aceptar'
+            });
+        }
+    }, false);
+</script>
 </body>
-
-
 </html>

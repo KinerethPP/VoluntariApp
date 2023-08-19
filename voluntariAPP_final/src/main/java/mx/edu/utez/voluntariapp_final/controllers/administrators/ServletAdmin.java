@@ -1,11 +1,9 @@
 package mx.edu.utez.voluntariapp_final.controllers.administrators;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.*;
 import mx.edu.utez.voluntariapp_final.models.Role.Role;
 import mx.edu.utez.voluntariapp_final.models.administrators.Admin;
 import mx.edu.utez.voluntariapp_final.models.administrators.DaoAdmin;
@@ -18,6 +16,7 @@ import mx.edu.utez.voluntariapp_final.models.volunteer.DaoVolunteer;
 import mx.edu.utez.voluntariapp_final.models.volunteer.Volunteer;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
@@ -29,6 +28,7 @@ import java.util.List;
         "/admin/save",
         "/admin/admin-view-update",
         "/admin/update",
+        "/admin/register",
         "/admin/delete",
         //Redirecciones de Administrador
         "/admin/administrators",
@@ -40,10 +40,14 @@ import java.util.List;
         "/admin/stadist",
         "/admin/aprobe",
         "/admin/active-status",
-        "/admin/inactive-status"
+        "/admin/inactive-status",
+        "/admin/active-status-organ",
+        "/admin/inactive-status-organ",
+        "/admin/active-status-volunt",
+        "/admin/inactive-status-volunt",
 
 })
-
+@MultipartConfig
 
 public class ServletAdmin extends HttpServlet {
     public String action;
@@ -60,18 +64,28 @@ public class ServletAdmin extends HttpServlet {
         action = req.getServletPath();
         switch (action) {
             case "/admin/main":
-                //Administradores activos
-                List<Admin> admin2 = new DaoAdmin().admActivo();
+                //Usuarios activos
+                List<Admin> admin2 = new DaoAdmin().findAllActive();
                 req.setAttribute("admin2", admin2);
-                List<Organ> organ2 = new DaoOrgan().Organ_activo();
+                List<Organ> organ2 = new DaoOrgan().findAllActive();
                 req.setAttribute("organ2", organ2);
-                List<Volunteer> volunteer2 = new DaoVolunteer().Volunteer_activo();
+                List<Volunteer> volunteer2 = new DaoVolunteer().findAllActive();
                 req.setAttribute("volunteer2", volunteer2);
+
+                // Total de Usuarios
+                int totalAdmin = new DaoAdmin().findAll().size();
+                req.setAttribute("totalAdmin", totalAdmin);
+
+                int totalOrgan = new DaoOrgan().findAll().size();
+                req.setAttribute("totalOrgan", totalOrgan);
+
+                int totalVolunt = new DaoVolunteer().findAll().size();
+                req.setAttribute("totalVolunt", totalVolunt);
                 redirect = "/pages/administrators/index_admin.jsp";
                 break;
-            case "/admin/admin-view":
+           /* case "/admin/admin-view":
                 redirect = "/pages/accounts/admin.jsp";
-                break;
+                break;*/
            /*case "/admin/admin-view-update":
                 id = req.getParameter("id");
                 admin = new DaoAdmin().findOne(id != null ? Long.parseLong(id) : 0);
@@ -86,16 +100,17 @@ public class ServletAdmin extends HttpServlet {
                 List<Admin> admins = new DaoAdmin().findAll();
                 req.setAttribute("admins", admins);
                 System.out.println("Datos de la Vista" + admins);
-
-
                 redirect = "/pages/administrators/administrators_admin.jsp";
                 break;
             case "/admin/main-organ":
                 List<Organ> organs = new DaoOrgan().findAll();
                 req.setAttribute("organs", organs);
+                /*
                 List<Event> events = new DaoEvent().relacionEvnt();
                 req.setAttribute("events", events);
                 System.out.println("Datos de la Vista" + events);
+
+                 */
                 redirect = "/pages/administrators/administrators_organization.jsp";
                 break;
             case "/admin/main-volunt":
@@ -108,22 +123,25 @@ public class ServletAdmin extends HttpServlet {
             case "/admin/surveys":
                 redirect = "/pages/administrators/administrators_surveys.jsp";
                 break;
+            case "/admin/register":
+                redirect = "/pages/accounts/admin.jsp";
+                break;
             case "/admin/stadist":
                 redirect = "/pages/administrators/administrators_stadist.jsp";
                 break;
             case "/admin/aprobe":
                 //Lista de aprobacion de los voluntarios
-                List<Volunteer> volunteer = new DaoVolunteer().findAllActive();
+                List<Volunteer> volunteer = new DaoVolunteer().findAllinactive();
                 req.setAttribute("volunteer", volunteer);
-                System.out.println("Datos de la Vista" + volunteer);
+                System.out.println("Datos de la Vista Volunteer " + volunteer);
 
                 //Lista de aprobacion de las organizaciones
-                List<Organ> organ = new DaoOrgan().findAllActive();
+                List<Organ> organ = new DaoOrgan().findAllInactive();
                 req.setAttribute("organ", organ);
-                System.out.println("Datos de la Vista" + organ);
+                System.out.println("Datos de la Vista Organ " + organ);
 
                 //Listado de aprobaion de los administradores
-                List<Admin> admin3 = new DaoAdmin().findAllActive();
+                List<Admin> admin3 = new DaoAdmin().findAllInactive();
                 req.setAttribute("admin3", admin3);
 
                 redirect = "/pages/administrators/administrators_aprob.jsp";
@@ -180,13 +198,22 @@ public class ServletAdmin extends HttpServlet {
                 break;
 
             case "/admin/update":
+                Admin admin1 = new Admin();
                 id_admin = req.getParameter("id_admin");
                 name = req.getParameter("name");
                 email = req.getParameter("email");
                 password = req.getParameter("password");
                 System.out.println(id_admin + " " + email + " " + password);
 
-                Admin admin1 = new Admin();
+                Part filePart = req.getPart("profilePic");
+                if(filePart != null && filePart.getSize() > 0){
+                    InputStream fileContent = filePart.getInputStream();
+                    byte[] imageBytes = new byte[(int) filePart.getSize()];
+                    fileContent.read(imageBytes, 0,imageBytes.length);
+                    admin1.setImageUser(imageBytes);
+                }
+
+
                 admin1.setId_admin(Long.valueOf(id_admin));
                 admin1.setName(name);
 
@@ -223,6 +250,43 @@ public class ServletAdmin extends HttpServlet {
                     redirect = "/admin/administrators?result= " + true + "&message=" + URLEncoder.encode("Administrador desactivado correctamente", StandardCharsets.UTF_8);
                 } else {
                     redirect = "/admin/administrators?result= " + false + "&message=" + URLEncoder.encode("error", StandardCharsets.UTF_8);
+                }
+                break;
+                case "/admin/active-status-organ":
+                id_user = req.getParameter("id");
+                System.out.println(id_user);
+                if (new DaoAdmin().activeOrg(Long.valueOf(id_user))) {
+                    redirect = "/admin/main-organ?result= " + true + "&message=" + URLEncoder.encode("Organizacion activada correctamente", StandardCharsets.UTF_8);
+                } else {
+                    redirect = "/admin/main-organ?result= " + false + "&message=" + URLEncoder.encode("error", StandardCharsets.UTF_8);
+                }
+                break;
+
+                case "/admin/inactive-status-organ":
+                id_user = req.getParameter("id");
+                System.out.println(id_user);
+                if (new DaoAdmin().inactiveOrg(Long.valueOf(id_user))) {
+                    redirect = "/admin/main-organ?result= " + true + "&message=" + URLEncoder.encode("Organizacion desactivada correctamente", StandardCharsets.UTF_8);
+                } else {
+                    redirect = "/admin/main-organ?result= " + false + "&message=" + URLEncoder.encode("error", StandardCharsets.UTF_8);
+                }
+                break;
+                case "/admin/active-status-volunt":
+                id_user = req.getParameter("id");
+                System.out.println(id_user);
+                if (new DaoAdmin().activeVol(Long.valueOf(id_user))) {
+                    redirect = "/admin/main-volunt?result= " + true + "&message=" + URLEncoder.encode("Voluntario activado correctamente", StandardCharsets.UTF_8);
+                } else {
+                    redirect = "/admin/main-volunt?result= " + false + "&message=" + URLEncoder.encode("error", StandardCharsets.UTF_8);
+                }
+                break;
+                case "/admin/inactive-status-volunt":
+                id_user = req.getParameter("id");
+                System.out.println(id_user);
+                if (new DaoAdmin().inactiveVol(Long.valueOf(id_user))) {
+                    redirect = "/admin/main-volunt?result= " + true + "&message=" + URLEncoder.encode("Voluntario desactivado correctamente", StandardCharsets.UTF_8);
+                } else {
+                    redirect = "/admin/main-volunt?result= " + false + "&message=" + URLEncoder.encode("error", StandardCharsets.UTF_8);
                 }
                 break;
            /* case "/admin/delete":

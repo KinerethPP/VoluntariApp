@@ -29,7 +29,7 @@ public class DaoUser implements DaoRepository<User> {
         System.out.println(email + password);
         try {
             conn = new MYSQLConnection().connect();
-            String query = "SELECT u.id, u.email, u.password,r.description FROM users u JOIN roles r ON u.role_id = r.id where email=? and password=?;";
+            String query = "SELECT u.id, u.email,u.enable ,u.password,r.description FROM users u JOIN roles r ON u.role_id = r.id where email=? and password=? and enable=1;";
             pstm = conn.prepareStatement(query);
             pstm.setString(1, email);
             pstm.setString(2, password);
